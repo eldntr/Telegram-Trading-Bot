@@ -6,33 +6,40 @@ from core.routines import (
     run_fetch_routine,
     run_decide_routine,
     run_execute_routine,
-    run_status_routine
+    run_status_routine,
+    run_autoloop_routine
 )
 
 async def main():
     """Fungsi utama untuk mengontrol alur kerja bot melalui argumen baris perintah."""
     parser = argparse.ArgumentParser(
         description="Auto Trade Bot for Telegram Signals.",
-        formatter_class=argparse.RawTextHelpFormatter # Untuk format help yang lebih baik
+        formatter_class=argparse.RawTextHelpFormatter
     )
+    # Argumen Aksi Utama
     parser.add_argument(
         'action',
-        choices=['fetch', 'decide', 'execute', 'status', 'run-all'],
+        choices=['fetch', 'decide', 'execute', 'status', 'run-all', 'autoloop'],
         help="""Pilih aksi yang ingin dijalankan:
-'fetch'   : Mengambil pesan baru dari Telegram dan menyimpannya ke data/.
-'decide'  : Membuat keputusan trading dari data/new_signals.json.
-'execute' : Mengeksekusi keputusan 'BUY' dari data/trade_decisions.json.
-'status'  : Memeriksa status akun Binance dan transaksi berjalan.
-'run-all' : Menjalankan 'fetch', 'decide', dan 'execute' secara berurutan di dalam memori.
+'fetch'    : Mengambil pesan baru dari Telegram.
+'decide'   : Membuat keputusan trading dari sinyal yang ada.
+'execute'  : Mengeksekusi keputusan 'BUY'.
+'status'   : Memeriksa status akun Binance dan transaksi berjalan.
+'run-all'  : Menjalankan 'fetch' > 'decide' > 'execute' satu kali.
+'autoloop' : Menjalankan bot secara otomatis dalam siklus berulang.
 """
     )
+    # Argumen Tambahan untuk Kustomisasi
+    parser.add_argument('-l', '--limit', type=int, default=50, help="Jumlah pesan yang di-fetch dari Telegram (default: 50).")
+    parser.add_argument('-d', '--duration', type=int, default=0, help="Durasi (menit) untuk mode 'autoloop'. Set 0 atau tidak diset untuk berjalan selamanya (default: selamanya).")
+    parser.add_argument('--delay', type=int, default=300, help="Jeda waktu (detik) antar siklus di mode 'autoloop' (default: 300).")
+    
     args = parser.parse_args()
     
-    # Membuat direktori data jika belum ada
     os.makedirs("data", exist_ok=True)
 
     if args.action == 'fetch':
-        await run_fetch_routine()
+        await run_fetch_routine(message_limit=args.limit)
     elif args.action == 'decide':
         run_decide_routine()
     elif args.action == 'execute':
@@ -41,23 +48,18 @@ async def main():
         run_status_routine()
     elif args.action == 'run-all':
         print("=== Memulai Alur Kerja Lengkap (run-all) ===")
-        
-        # 1. Fetch, dapatkan data di memori
-        parsed_data = await run_fetch_routine()
-        if not parsed_data:
-            print("\nAlur kerja dihentikan: Tidak ada data dari Telegram.")
-            return
-            
-        # 2. Decide, oper data dari fetch, dapatkan keputusan di memori
-        decisions = run_decide_routine(parsed_data=parsed_data)
-        if not decisions:
-            print("\nAlur kerja dihentikan: Tidak ada keputusan yang dihasilkan.")
-            return
-
-        # 3. Execute, oper data keputusan
-        run_execute_routine(decisions_data=decisions)
-        
+        parsed_data = await run_fetch_routine(message_limit=args.limit)
+        if parsed_data:
+            decisions = run_decide_routine(parsed_data=parsed_data)
+            if decisions:
+                run_execute_routine(decisions_data=decisions)
         print("\n=== Alur Kerja Lengkap Selesai ===")
+    elif args.action == 'autoloop':
+        await run_autoloop_routine(
+            duration_minutes=args.duration,
+            message_limit=args.limit,
+            cycle_delay_seconds=args.delay
+        )
 
 if __name__ == "__main__":
     asyncio.run(main())
