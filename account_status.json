@@ -1,3 +1,12 @@
 {
-    "error": "Gagal mendapatkan ringkasan akun. Periksa log di atas untuk detail."
+    "total_balance_usdt": 46.05,
+    "held_assets": [
+        {
+            "asset": "USDT",
+            "total_balance": 46.04978554,
+            "free_balance": 46.04978554,
+            "locked_balance": 0.0,
+            "value_in_usdt": 46.05
+        }
+    ]
 }

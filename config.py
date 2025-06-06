@@ -14,3 +14,6 @@ SESSION_NAME = "trading_bot_session"
 # Konfigurasi Binance
 BINANCE_API_KEY = os.getenv("BINANCE_API_KEY")
 BINANCE_API_SECRET = os.getenv("BINANCE_API_SECRET")
+
+# Konfigurasi Trading
+USDT_AMOUNT_PER_TRADE = float(os.getenv("USDT_AMOUNT_PER_TRADE", 5.0))
