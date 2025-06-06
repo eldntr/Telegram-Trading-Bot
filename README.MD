@@ -127,22 +127,22 @@ Diagram di bawah ini mengilustrasikan alur kerja utama bot saat berjalan dalam m
 
 ```mermaid
 graph TD
-    subgraph "Siklus Bot (Autoloop)"
+    subgraph "Siklus Bot Autoloop"
         A[Mulai Siklus] --> B{1. Fetch Pesan Telegram}
         B --> C[2. Parse & Filter Sinyal Baru]
         C --> D{3. Generate Keputusan}
-        D -- Sinyal 'BUY' Ditemukan --> E{4. Eksekusi Trade}
-        D -- Lainnya (SKIP/FAIL) --> G[Tunggu Siklus Berikutnya]
+        D -->|Sinyal BUY Ditemukan| E{4. Eksekusi Trade}
+        D -->|Lainnya SKIP/FAIL| G[Tunggu Siklus Berikutnya]
         E --> F{Cek Open Orders}
-        F -- Order Aktif Ada --> G
-        F -- Tidak Ada Order Aktif --> H{Cek Saldo & Aturan}
-        H -- Gagal Pengecekan --> G
-        H -- Lolos Pengecekan --> I[Beli Aset (Market Order)]
-        I -- Gagal Beli --> G
-        I -- Sukses Beli --> J[Pasang Proteksi (OCO Order)]
-        J -- Gagal OCO (CRITICAL) --> G
-        J -- Sukses OCO --> G
+        F -->|Order Aktif Ada| G
+        F -->|Tidak Ada Order Aktif| H{Cek Saldo & Aturan}
+        H -->|Gagal Pengecekan| G
+        H -->|Lolos Pengecekan| I[Beli Aset Market Order]
+        I -->|Gagal Beli| G
+        I -->|Sukses Beli| J[Pasang Proteksi OCO Order]
+        J -->|Gagal OCO CRITICAL| G
+        J -->|Sukses OCO| G
     end
 
-    G --> |Jeda Waktu (Delay)| A
+    G -->|Jeda Waktu Delay| A
 ```
