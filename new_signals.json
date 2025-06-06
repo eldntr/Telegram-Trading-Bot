@@ -1,0 +1,320 @@
+[
+    {
+        "raw_text": "🆕 NEW SIGNAL: FARTCOINUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 9th/468\nRisk Level: 🟢 Normal\n\nEntry: 0.9866\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         1.024      +3.79%\nTarget 2         1.061      +7.54%\nTarget 3         1.171      +18.69%\nTarget 4         1.356      +37.44%\nStop Loss 1    0.9014      -8.64%\nStop Loss 2    0.6909      -29.97%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $FARTCOIN\n📊 Analisis Data Coinglass untuk FARTCOIN",
+        "timestamp": "2025-06-05T20:50:03+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4917,
+        "coin_pair": "FARTCOINUSDT",
+        "risk_rank": "9th/468",
+        "risk_level": "Normal",
+        "entry_price": 0.9866,
+        "targets": [
+            {
+                "level": 1,
+                "price": 1.024,
+                "percentage_change": 3.79,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 1.061,
+                "percentage_change": 7.54,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 1.171,
+                "percentage_change": 18.69,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 1.356,
+                "percentage_change": 37.44,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.9014,
+                "percentage_change": -8.64,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.6909,
+                "percentage_change": -29.97,
+                "status": null
+            }
+        ],
+        "social_media_link": "Cek Sentimen Sosial Media untuk $FARTCOIN",
+        "data_analysis_link": "Analisis Data Coinglass untuk FARTCOIN",
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: BTCDOMUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 165th/468\nRisk Level: ⚠️ High\n\nEntry: 5226.90\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         5250.38      +0.45%\nTarget 2         5273.85      +0.90%\nTarget 3         5344.28      +2.25%\nTarget 4         5461.66      +4.49%\nStop Loss 1    5169.11      -1.11%\nStop Loss 2    5039.09      -3.59%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $BTCDOM\n📊 Analisis Data Coinglass untuk BTCDOM",
+        "timestamp": "2025-06-05T19:20:03+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4908,
+        "coin_pair": "BTCDOMUSDT",
+        "risk_rank": "165th/468",
+        "risk_level": "High",
+        "entry_price": 5226.9,
+        "targets": [
+            {
+                "level": 1,
+                "price": 5250.38,
+                "percentage_change": 0.45,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 5273.85,
+                "percentage_change": 0.9,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 5344.28,
+                "percentage_change": 2.25,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 5461.66,
+                "percentage_change": 4.49,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 5169.11,
+                "percentage_change": -1.11,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 5039.09,
+                "percentage_change": -3.59,
+                "status": null
+            }
+        ],
+        "social_media_link": "Cek Sentimen Sosial Media untuk $BTCDOM",
+        "data_analysis_link": "Analisis Data Coinglass untuk BTCDOM",
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: 1000XUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 392th/468\nRisk Level: ⚠️ High\n\nEntry: 0.0758\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.0768      +1.32%\nTarget 2         0.0779      +2.77%\nTarget 3         0.0809      +6.73%\nTarget 4         0.0859      +13.32%\nStop Loss 1    0.0734      -3.17%\nStop Loss 2    0.0678      -10.55%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $1000X\n📊 Analisis Data Coinglass untuk 1000X",
+        "timestamp": "2025-06-05T16:05:03+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4896,
+        "coin_pair": "1000XUSDT",
+        "risk_rank": "392th/468",
+        "risk_level": "High",
+        "entry_price": 0.0758,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.0768,
+                "percentage_change": 1.32,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0779,
+                "percentage_change": 2.77,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.0809,
+                "percentage_change": 6.73,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.0859,
+                "percentage_change": 13.32,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.0734,
+                "percentage_change": -3.17,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0678,
+                "percentage_change": -10.55,
+                "status": null
+            }
+        ],
+        "social_media_link": "Cek Sentimen Sosial Media untuk $1000X",
+        "data_analysis_link": "Analisis Data Coinglass untuk 1000X",
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: DFUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 118th/468\nRisk Level: 🟢 Normal\n\nEntry: 0.0434\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.0441      +1.61%\nTarget 2         0.0448      +3.23%\nTarget 3         0.0469      +8.06%\nTarget 4         0.0504      +16.13%\nStop Loss 1    0.0419      -3.46%\nStop Loss 2    0.0377      -13.13%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $DF\n📊 Analisis Data Coinglass untuk DF",
+        "timestamp": "2025-06-05T14:50:03+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4887,
+        "coin_pair": "DFUSDT",
+        "risk_rank": "118th/468",
+        "risk_level": "Normal",
+        "entry_price": 0.0434,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.0441,
+                "percentage_change": 1.61,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0448,
+                "percentage_change": 3.23,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.0469,
+                "percentage_change": 8.06,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.0504,
+                "percentage_change": 16.13,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.0419,
+                "percentage_change": -3.46,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0377,
+                "percentage_change": -13.13,
+                "status": null
+            }
+        ],
+        "social_media_link": "Cek Sentimen Sosial Media untuk $DF",
+        "data_analysis_link": "Analisis Data Coinglass untuk DF",
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: HIGHUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 327th/468\nRisk Level: ⚠️ High\n\nEntry: 0.5717\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.5803      +1.50%\nTarget 2         0.5889      +3.01%\nTarget 3         0.6146      +7.50%\nTarget 4         0.6576      +15.03%\nStop Loss 1    0.5527      -3.32%\nStop Loss 2    0.5030      -12.02%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $HIGH\n📊 Analisis Data Coinglass untuk HIGH",
+        "timestamp": "2025-06-05T14:25:05+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4884,
+        "coin_pair": "HIGHUSDT",
+        "risk_rank": "327th/468",
+        "risk_level": "High",
+        "entry_price": 0.5717,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.5803,
+                "percentage_change": 1.5,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.5889,
+                "percentage_change": 3.01,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.6146,
+                "percentage_change": 7.5,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.6576,
+                "percentage_change": 15.03,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.5527,
+                "percentage_change": -3.32,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.503,
+                "percentage_change": -12.02,
+                "status": null
+            }
+        ],
+        "social_media_link": "Cek Sentimen Sosial Media untuk $HIGH",
+        "data_analysis_link": "Analisis Data Coinglass untuk HIGH",
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: HIFIUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 274th/468\nRisk Level: ⚠️ High\n\nEntry: 0.0887\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.0902      +1.69%\nTarget 2         0.0917      +3.38%\nTarget 3         0.0962      +8.46%\nTarget 4         0.1036      +16.80%\nStop Loss 1    0.0854      -3.72%\nStop Loss 2    0.0768      -13.42%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $HIFI\n📊 Analisis Data Coinglass untuk HIFI",
+        "timestamp": "2025-06-05T13:35:03+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4880,
+        "coin_pair": "HIFIUSDT",
+        "risk_rank": "274th/468",
+        "risk_level": "High",
+        "entry_price": 0.0887,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.0902,
+                "percentage_change": 1.69,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0917,
+                "percentage_change": 3.38,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.0962,
+                "percentage_change": 8.46,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.1036,
+                "percentage_change": 16.8,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.0854,
+                "percentage_change": -3.72,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0768,
+                "percentage_change": -13.42,
+                "status": null
+            }
+        ],
+        "social_media_link": "Cek Sentimen Sosial Media untuk $HIFI",
+        "data_analysis_link": "Analisis Data Coinglass untuk HIFI",
+        "message_type": "NewSignal"
+    }
+]

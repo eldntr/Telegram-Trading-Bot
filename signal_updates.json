@@ -1,0 +1,380 @@
+[
+    {
+        "raw_text": "✅ SIGNAL UPDATE: B2USDT ✅\n\n🎯 Target 1 (0.4889) HIT!\n🎯 Target 2 (0.4916) HIT!\n🎯 Target 3 (0.4998) HIT!\n🎯 Target 4 (0.5134) HIT!",
+        "timestamp": "2025-06-06T00:56:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4927,
+        "coin_pair": "B2USDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 0.4889,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 2,
+                "price": 0.4916,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 3,
+                "price": 0.4998,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 4,
+                "price": 0.5134,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: TRXUSDT ✅\n\n🎯 Target 1 (0.2718) HIT!\n🎯 Target 2 (0.2729) HIT!\n🎯 Target 3 (0.2761) HIT!\n🎯 Target 4 (0.2815) HIT!",
+        "timestamp": "2025-06-05T23:26:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4926,
+        "coin_pair": "TRXUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 0.2718,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 2,
+                "price": 0.2729,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 3,
+                "price": 0.2761,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 4,
+                "price": 0.2815,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: FARTCOINUSDT ✅\n\n🎯 Target 1 (1.024) HIT!\n🎯 Target 2 (1.061) HIT!",
+        "timestamp": "2025-06-05T21:41:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4923,
+        "coin_pair": "FARTCOINUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 1.024,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 2,
+                "price": 1.061,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: BTCDOMUSDT ✅\n\n🎯 Target 1 (5250.38) HIT!\n🎯 Target 2 (5273.85) HIT!\n🎯 Target 3 (5344.28) HIT!",
+        "timestamp": "2025-06-05T20:56:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4921,
+        "coin_pair": "BTCDOMUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 5250.38,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 2,
+                "price": 5273.85,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 3,
+                "price": 5344.28,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: FARTCOINUSDT ✅\n\n🎯 Target 1 (1.024) HIT!",
+        "timestamp": "2025-06-05T20:51:53+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4920,
+        "coin_pair": "FARTCOINUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 1.024,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: BTCDOMUSDT ✅\n\n🎯 Target 1 (5250.38) HIT!\n🎯 Target 2 (5273.85) HIT!",
+        "timestamp": "2025-06-05T20:21:53+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4913,
+        "coin_pair": "BTCDOMUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 5250.38,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 2,
+                "price": 5273.85,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "🔴 SIGNAL UPDATE: TONUSDT 🔴\n\n⚠️ Stop Loss 1 (3.189) TRIGGERED!",
+        "timestamp": "2025-06-05T20:01:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4912,
+        "coin_pair": "TONUSDT",
+        "targets_hit": [],
+        "stop_losses_triggered": [
+            {
+                "level": 1,
+                "price": 3.189,
+                "percentage_change": null,
+                "status": "TRIGGERED"
+            }
+        ],
+        "update_type": "STOP_LOSS_TRIGGERED",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: HIGHUSDT ✅\n\n🎯 Target 1 (0.5803) HIT!\n🎯 Target 2 (0.5889) HIT!",
+        "timestamp": "2025-06-05T17:11:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4901,
+        "coin_pair": "HIGHUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 0.5803,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 2,
+                "price": 0.5889,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: HIGHUSDT ✅\n\n🎯 Target 1 (0.5803) HIT!",
+        "timestamp": "2025-06-05T17:01:56+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4900,
+        "coin_pair": "HIGHUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 0.5803,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "🔴 SIGNAL UPDATE: 1000XUSDT 🔴\n\n⚠️ Stop Loss 1 (0.0734) TRIGGERED!",
+        "timestamp": "2025-06-05T17:01:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4899,
+        "coin_pair": "1000XUSDT",
+        "targets_hit": [],
+        "stop_losses_triggered": [
+            {
+                "level": 1,
+                "price": 0.0734,
+                "percentage_change": null,
+                "status": "TRIGGERED"
+            }
+        ],
+        "update_type": "STOP_LOSS_TRIGGERED",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: OBOLUSDT ✅\n\n🎯 Target 1 (0.1312) HIT!\n🎯 Target 2 (0.1339) HIT!\n🎯 Target 3 (0.1418) HIT!\n🎯 Target 4 (0.1550) HIT!",
+        "timestamp": "2025-06-05T15:21:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4892,
+        "coin_pair": "OBOLUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 0.1312,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 2,
+                "price": 0.1339,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 3,
+                "price": 0.1418,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 4,
+                "price": 0.155,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "🔴 SIGNAL UPDATE: CHRUSDT 🔴\n\n⚠️ Stop Loss 1 (0.0871) TRIGGERED!",
+        "timestamp": "2025-06-05T15:01:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4889,
+        "coin_pair": "CHRUSDT",
+        "targets_hit": [],
+        "stop_losses_triggered": [
+            {
+                "level": 1,
+                "price": 0.0871,
+                "percentage_change": null,
+                "status": "TRIGGERED"
+            }
+        ],
+        "update_type": "STOP_LOSS_TRIGGERED",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: DFUSDT ✅\n\n🎯 Target 1 (0.0441) HIT!",
+        "timestamp": "2025-06-05T14:56:53+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4888,
+        "coin_pair": "DFUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 0.0441,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "🔴 SIGNAL UPDATE: BTCUSDT 🔴\n\n⚠️ Stop Loss 1 (104867.69) TRIGGERED!",
+        "timestamp": "2025-06-05T14:01:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4882,
+        "coin_pair": "BTCUSDT",
+        "targets_hit": [],
+        "stop_losses_triggered": [
+            {
+                "level": 1,
+                "price": 104867.69,
+                "percentage_change": null,
+                "status": "TRIGGERED"
+            }
+        ],
+        "update_type": "STOP_LOSS_TRIGGERED",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: HIFIUSDT ✅\n\n🎯 Target 1 (0.0902) HIT!",
+        "timestamp": "2025-06-05T13:56:53+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4881,
+        "coin_pair": "HIFIUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 0.0902,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: OGNUSDT ✅\n\n🎯 Target 1 (0.0620) HIT!\n🎯 Target 2 (0.0627) HIT!",
+        "timestamp": "2025-06-05T13:21:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4878,
+        "coin_pair": "OGNUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 0.062,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 2,
+                "price": 0.0627,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    }
+]

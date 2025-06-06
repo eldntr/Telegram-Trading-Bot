@@ -1,0 +1,24 @@
+[
+    {
+        "raw_text": "🆕 NEW SIGNAL 🆕\n\n⚡⚡⚡ ETH price decreased -1.03% in the last 15 minutes. Please be mindful of your positions and ensure proper risk management.\nETH 15分鐘內價格下跌-1.03%，請注意您的倉位及做好風險管理",
+        "timestamp": "2025-06-05T22:15:03+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4925,
+        "coin": "ETH",
+        "price_change_percentage": -1.03,
+        "timeframe_minutes": 15,
+        "alert_message": "🆕 NEW SIGNAL 🆕\n\n⚡⚡⚡ ETH price decreased -1.03% in the last 15 minutes. Please be mindful of your positions and ensure proper risk management.\nETH 15分鐘內價格下跌-1.03%，請注意您的倉位及做好風險管理",
+        "message_type": "MarketAlert"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL 🆕\n\n❗❗❗ ETH price amplitude is 2.09% in the last 15 minutes. Please be mindful of your positions and ensure proper risk management.\nETH 15分鐘內價格大幅波動2.09%，請注意您的倉位及做好風險管理",
+        "timestamp": "2025-06-05T21:00:04+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4922,
+        "coin": "ETH",
+        "price_change_percentage": 2.09,
+        "timeframe_minutes": 15,
+        "alert_message": "🆕 NEW SIGNAL 🆕\n\n❗❗❗ ETH price amplitude is 2.09% in the last 15 minutes. Please be mindful of your positions and ensure proper risk management.\nETH 15分鐘內價格大幅波動2.09%，請注意您的倉位及做好風險管理",
+        "message_type": "MarketAlert"
+    }
+]
