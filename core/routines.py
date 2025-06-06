@@ -2,198 +2,125 @@
 import sys
 import time
 import json
+import os
 import asyncio
 import config
 
-# Import dari modul telegram
 from telegram.client import TelegramClientWrapper
 from telegram.parser import TelegramMessageParser
 from telegram.utils import JsonWriter
-
-# Import dari modul binance
 from binance.client import BinanceClient
 from binance.strategy import TradingStrategy
 from binance.account import AccountManager
 from binance.trader import Trader
 
-# --- Rutinitas 1: Mengambil & Mem-parsing Pesan Telegram ---
+def _load_json_file(file_name: str, directory: str = "data"):
+    """Fungsi helper untuk memuat data dari file JSON di dalam direktori data."""
+    file_path = os.path.join(directory, file_name)
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        return None
+
 async def run_fetch_routine():
-    """Mengambil pesan dari Telegram, mem-parsing, dan menyimpannya ke file JSON."""
+    """Mengambil pesan, mem-parsing, dan MENGEMBALIKAN data yang sudah diparsing."""
     print("--- [1] Memulai Rutinitas Fetch Telegram ---")
-    client_wrapper = TelegramClientWrapper(
-        session_name=config.SESSION_NAME,
-        api_id=config.API_ID,
-        api_hash=config.API_HASH,
-        phone_number=config.PHONE_NUMBER
-    )
+    client_wrapper = TelegramClientWrapper(config.SESSION_NAME, config.API_ID, config.API_HASH, config.PHONE_NUMBER)
     parser = TelegramMessageParser()
-    
+    parsed_data = []
     try:
         await client_wrapper.connect()
-        print(f"Mengambil 50 pesan terakhir dari chat ID: {config.TARGET_CHAT_ID}...")
         messages = await client_wrapper.fetch_historical_messages(config.TARGET_CHAT_ID, limit=50)
+        if not messages: return []
         
-        if not messages:
-            print("Tidak ada pesan yang diambil. Selesai.")
-            return
-
-        print(f"Berhasil mengambil {len(messages)} pesan. Memulai parsing...")
         parsed_data = [parser.parse_message(msg).to_dict() for msg in messages]
         
-        writers = {
-            "all_messages": JsonWriter("parsed_messages.json"),
-            "new_signals": JsonWriter("new_signals.json"),
-            "market_alerts": JsonWriter("market_alerts.json"),
-            "signal_updates": JsonWriter("signal_updates.json")
-        }
-        filters = {"new_signals": "NewSignal", "market_alerts": "MarketAlert", "signal_updates": "SignalUpdate"}
-
-        writers["all_messages"].write(parsed_data)
-        for key, msg_type in filters.items():
-            filtered_list = [msg for msg in parsed_data if msg.get("message_type") == msg_type]
-            if filtered_list:
-                writers[key].write(filtered_list)
-        
+        JsonWriter("parsed_messages.json").write(parsed_data)
+        JsonWriter("new_signals.json").write([m for m in parsed_data if m.get("message_type") == "NewSignal"])
+        JsonWriter("market_alerts.json").write([m for m in parsed_data if m.get("message_type") == "MarketAlert"])
+        JsonWriter("signal_updates.json").write([m for m in parsed_data if m.get("message_type") == "SignalUpdate"])
         print("--- Rutinitas Fetch Telegram Selesai ---")
-
-    except Exception as e:
-        print(f"Terjadi kesalahan pada rutinitas fetch: {e}")
     finally:
-        if client_wrapper.client.is_connected():
-            await client_wrapper.disconnect()
+        if client_wrapper.client.is_connected(): await client_wrapper.disconnect()
+    return parsed_data
 
-# --- Rutinitas 2: Membuat Keputusan Trading ---
-def run_decide_routine():
-    """Membaca sinyal baru dan menghasilkan file keputusan trading."""
+def run_decide_routine(parsed_data=None):
+    """Menerima data, membuat keputusan, dan MENGEMBALIKAN keputusan tersebut."""
     print("\n--- [2] Memulai Rutinitas Keputusan Trading ---")
     client = BinanceClient()
     strategy = TradingStrategy(client)
-    decision_writer = JsonWriter("trade_decisions.json")
-
-    try:
-        with open("new_signals.json", 'r', encoding='utf-8') as f:
-            new_signals = json.load(f)
-    except (FileNotFoundError, json.JSONDecodeError):
-        print("File new_signals.json tidak ditemukan atau kosong. Lewati rutinitas.")
-        return
+    
+    if parsed_data:
+        new_signals = [msg for msg in parsed_data if msg.get("message_type") == "NewSignal"]
+    else:
+        new_signals = _load_json_file("new_signals.json")
 
     if not new_signals:
         print("Tidak ada sinyal baru untuk dievaluasi.")
-        return
+        return []
 
     all_decisions = [strategy.evaluate_new_signal(signal).to_dict() for signal in new_signals]
-    decision_writer.write(all_decisions)
-    print(f"Berhasil membuat {len(all_decisions)} keputusan trading di trade_decisions.json.")
+    JsonWriter("trade_decisions.json").write(all_decisions)
+    print(f"Berhasil membuat {len(all_decisions)} keputusan trading.")
     print("--- Rutinitas Keputusan Trading Selesai ---")
+    return all_decisions
 
-# --- Rutinitas 3: Mengeksekusi Trading ---
-def run_execute_routine():
-    """Membaca keputusan 'BUY' dan mengeksekusinya."""
+def run_execute_routine(decisions_data=None):
+    """Menerima data keputusan dan mengeksekusinya."""
     print("\n--- [3] Memulai Rutinitas Eksekusi Trading ---")
-    if not config.BINANCE_API_KEY or not config.BINANCE_API_SECRET:
-        print("Kunci API Binance tidak diatur. Lewati rutinitas.")
-        return
-
+    if not config.BINANCE_API_KEY or not config.BINANCE_API_SECRET: return
+    
     client = BinanceClient(config.BINANCE_API_KEY, config.BINANCE_API_SECRET)
     manager = AccountManager(client)
     trader = Trader(client, config.USDT_AMOUNT_PER_TRADE)
-    log_writer = JsonWriter("trade_log.json")
     
     account_summary = manager.get_account_summary()
-    if not account_summary:
-        print("Gagal mendapatkan status akun. Eksekusi dibatalkan.")
-        return
+    if not account_summary: return
 
-    try:
-        with open("trade_decisions.json", 'r', encoding='utf-8') as f:
-            decisions = json.load(f)
-    except (FileNotFoundError, json.JSONDecodeError):
-        print("File trade_decisions.json tidak ditemukan atau kosong. Lewati rutinitas.")
-        return
-        
+    decisions = decisions_data if decisions_data is not None else _load_json_file("trade_decisions.json")
+    if not decisions: return
+
     buy_decisions = [d for d in decisions if d.get('decision') == 'BUY']
     if not buy_decisions:
-        print("Tidak ditemukan keputusan 'BUY'. Tidak ada yang dieksekusi.")
+        print("Tidak ada keputusan 'BUY' untuk dieksekusi.")
         return
-    
+
     print(f"Ditemukan {len(buy_decisions)} keputusan 'BUY' untuk dieksekusi.")
     trade_logs = []
     for decision in buy_decisions:
-        coin_pair = decision.get("coin_pair", "N/A")
-        print(f"\n--- Mengevaluasi: {coin_pair} ---")
         result = trader.execute_trade(decision, account_summary)
         trade_logs.append({"decision_details": decision, "execution_result": result})
-        
         if result.get('status') == 'SUCCESS':
-            print("Trade berhasil, memperbarui status akun untuk iterasi selanjutnya...")
             time.sleep(1)
             refreshed_summary = manager.get_account_summary()
-            if refreshed_summary:
-                account_summary = refreshed_summary
-            else:
-                print("PERINGATAN: Gagal memperbarui status akun.")
+            if refreshed_summary: account_summary = refreshed_summary
 
-    if trade_logs:
-        log_writer.write(trade_logs)
+    if trade_logs: JsonWriter("trade_log.json").write(trade_logs)
     print("--- Rutinitas Eksekusi Trading Selesai ---")
 
-# --- Rutinitas Tambahan: Cek Status Akun & Transaksi Berjalan ---
 def run_status_routine():
-    """
-    Memeriksa dan menampilkan status akun Binance, termasuk saldo dan order aktif (transaksi berjalan).
-    """
+    """Memeriksa status akun dan order aktif."""
     print("--- Memulai Rutinitas Pengecekan Status ---")
-    if not config.BINANCE_API_KEY or not config.BINANCE_API_SECRET:
-        print("Kunci API Binance tidak diatur. Lewati rutinitas.")
-        return
+    if not config.BINANCE_API_KEY or not config.BINANCE_API_SECRET: return
 
     client = BinanceClient(config.BINANCE_API_KEY, config.BINANCE_API_SECRET)
     
-    # Bagian 1: Cek Saldo Aset
     print("\n[1/2] Memeriksa Saldo Aset...")
     manager = AccountManager(client)
     summary = manager.get_account_summary()
     if summary:
         JsonWriter("account_status.json").write(summary)
         print(f"Total Estimasi Nilai Akun: ${summary.get('total_balance_usdt', 0)}")
-        print("Detail saldo disimpan di account_status.json.")
-    else:
-        print("Gagal mendapatkan ringkasan saldo akun.")
-
-    # Bagian 2: Cek Order Aktif (Transaksi Berjalan)
+    
     print("\n[2/2] Memeriksa Transaksi Berjalan (Open Orders)...")
     open_orders = client.get_open_orders()
-    
-    if open_orders is None:
-        print("Gagal mengambil data order aktif.")
-    elif not open_orders:
+    if not open_orders:
         print("Tidak ada transaksi berjalan (order aktif) yang ditemukan.")
     else:
-        print(f"Ditemukan {len(open_orders)} order aktif:")
-        processed_orders = []
-        for order in open_orders:
-            # Karena OCO terdiri dari 2 order (STOP_LOSS_LIMIT dan LIMIT_MAKER), kita bisa kelompokkan
-            info = {
-                "symbol": order.get('symbol'),
-                "orderId": order.get('orderId'),
-                "type": order.get('type'),
-                "side": order.get('side'),
-                "quantity": order.get('origQty'),
-                "price": order.get('price'),
-                "stopPrice": order.get('stopPrice'),
-                "orderListId": order.get('orderListId') # ID untuk grup OCO
-            }
-            processed_orders.append(info)
-        
-        # Cetak ke konsol
-        for order in processed_orders:
-            if order['type'] == 'LIMIT_MAKER':
-                print(f"  - TAKE PROFIT  | {order['symbol']:<12} | Qty: {order['quantity']:<15} | Target Harga: {order['price']}")
-            elif order['type'] == 'STOP_LOSS_LIMIT':
-                print(f"  - STOP LOSS    | {order['symbol']:<12} | Qty: {order['quantity']:<15} | Pemicu Harga: {order['stopPrice']}")
-
-        # Simpan ke file
-        JsonWriter("open_orders_status.json").write(processed_orders)
-        print("\nDetail transaksi berjalan disimpan di open_orders_status.json.")
-
+        processed = [{"symbol": o.get('symbol'), "type": o.get('type'), "side": o.get('side'), "quantity": o.get('origQty'), "price": o.get('price'), "stopPrice": o.get('stopPrice')} for o in open_orders]
+        JsonWriter("open_orders_status.json").write(processed)
+        for order in processed:
+            if order['type'] == 'LIMIT_MAKER': print(f"  - TAKE PROFIT | {order['symbol']:<12} | Target: {order['price']}")
+            elif order['type'] == 'STOP_LOSS_LIMIT': print(f"  - STOP LOSS   | {order['symbol']:<12} | Pemicu: {order['stopPrice']}")
     print("\n--- Rutinitas Pengecekan Status Selesai ---")
