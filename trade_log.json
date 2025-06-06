@@ -1,11 +1,10 @@
 [
     {
-        "coin_pair": "FUNUSDT",
         "decision_details": {
             "decision": "BUY",
             "coin_pair": "FUNUSDT",
-            "reason": "Harga saat ini (0.003436) lebih rendah dari atau sama dengan harga masuk (0.00348).",
-            "current_price": 0.003436,
+            "reason": "Harga saat ini (0.003417) lebih rendah dari atau sama dengan harga masuk (0.00348).",
+            "current_price": 0.003417,
             "entry_price": 0.00348,
             "targets": [
                 {

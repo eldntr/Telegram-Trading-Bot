@@ -263,58 +263,5 @@
         "social_media_link": null,
         "data_analysis_link": null,
         "message_type": "NewSignal"
-    },
-    {
-        "raw_text": "🆕 NEW SIGNAL: DFUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 118th/468\nRisk Level: 🟢 Normal\n\nEntry: 0.0434\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.0441      +1.61%\nTarget 2         0.0448      +3.23%\nTarget 3         0.0469      +8.06%\nTarget 4         0.0504      +16.13%\nStop Loss 1    0.0419      -3.46%\nStop Loss 2    0.0377      -13.13%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $DF\n📊 Analisis Data Coinglass untuk DF",
-        "timestamp": "2025-06-05T14:50:03+00:00",
-        "sender_id": 1218062484,
-        "message_id": 4887,
-        "coin_pair": "DFUSDT",
-        "risk_rank": "118th/468",
-        "risk_level": "Normal",
-        "entry_price": 0.0434,
-        "targets": [
-            {
-                "level": 1,
-                "price": 0.0441,
-                "percentage_change": 1.61,
-                "status": null
-            },
-            {
-                "level": 2,
-                "price": 0.0448,
-                "percentage_change": 3.23,
-                "status": null
-            },
-            {
-                "level": 3,
-                "price": 0.0469,
-                "percentage_change": 8.06,
-                "status": null
-            },
-            {
-                "level": 4,
-                "price": 0.0504,
-                "percentage_change": 16.13,
-                "status": null
-            }
-        ],
-        "stop_losses": [
-            {
-                "level": 1,
-                "price": 0.0419,
-                "percentage_change": -3.46,
-                "status": null
-            },
-            {
-                "level": 2,
-                "price": 0.0377,
-                "percentage_change": -13.13,
-                "status": null
-            }
-        ],
-        "social_media_link": null,
-        "data_analysis_link": null,
-        "message_type": "NewSignal"
     }
 ]

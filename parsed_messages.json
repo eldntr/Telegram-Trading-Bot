@@ -1,5 +1,104 @@
 [
     {
+        "raw_text": "‼️ Musk-Trump feud triggers crypto market crash\n\nCrypto liquidations surpassed $1 billion in a single day, with Bitcoin falling to $100,000 and Ethereum briefly dipping to $2,400.\n\nThe crash followed an escalating dispute between Elon Musk and Donald Trump over a controversial spending bill. Musk accused Trump of inefficiency and hinted at ties to the Epstein case, while Trump threatened to cut Tesla’s government contracts.\n\nMusk responded defiantly, stating Trump wouldn’t have become president without his help and even threatened to halt SpaceX launches.\n\n😁 In one post, Musk wrote: “Trump has 3.5 years left as president, but I’ll be around for another 40+ years…”\n\nSource: TU Crypto News",
+        "timestamp": "2025-06-06T08:17:07+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4944,
+        "content": "‼️ Musk-Trump feud triggers crypto market crash\n\nCrypto liquidations surpassed $1 billion in a single day, with Bitcoin falling to $100,000 and Ethereum briefly dipping to $2,400.\n\nThe crash followed an escalating dispute between Elon Musk and Donald Trump over a controversial spending bill. Musk accused Trump of inefficiency and hinted at ties to the Epstein case, while Trump threatened to cut Tesla’s government contracts.\n\nMusk responded defiantly, stating Trump wouldn’t have become president without his help and even threatened to halt SpaceX launches.\n\n😁 In one post, Musk wrote: “Trump has 3.5 years left as president, but I’ll be around for another 40+ years…”\n\nSource: TU Crypto News",
+        "original_sender": "TU Crypto News",
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "Trump already has his own token.\n\nNow the community is calling on Musk to join the PvP — and launch his own.\n\nPump.fun hints: the timing is perfect, and this could be the funniest launch in history.\n\nSource: Crypto Insider",
+        "timestamp": "2025-06-06T08:02:07+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4943,
+        "content": "Trump already has his own token.\n\nNow the community is calling on Musk to join the PvP — and launch his own.\n\nPump.fun hints: the timing is perfect, and this could be the funniest launch in history.\n\nSource: Crypto Insider",
+        "original_sender": "Crypto Insider",
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "🇷🇴 Romania’s national postal service, Poșta Română, has launched its first Bitcoin ATM\n\n🤝 The partnership with Bitcoin Romania ensures regulatory compliance and technical expertise, facilitating a seamless crypto transaction experience.\n\nPoșta Română introduces Bitcoin ATMs to enhance crypto accessibility in Romania, combining traditional infrastructure with digital finance innovation. \n\nThe launch of four more devices is planned in the near future — in Alexandria, Piatra Neamț, Botoșani, and Nădlac.\n\nSource: TU Crypto News",
+        "timestamp": "2025-06-06T07:57:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4942,
+        "content": "🇷🇴 Romania’s national postal service, Poșta Română, has launched its first Bitcoin ATM\n\n🤝 The partnership with Bitcoin Romania ensures regulatory compliance and technical expertise, facilitating a seamless crypto transaction experience.\n\nPoșta Română introduces Bitcoin ATMs to enhance crypto accessibility in Romania, combining traditional infrastructure with digital finance innovation. \n\nThe launch of four more devices is planned in the near future — in Alexandria, Piatra Neamț, Botoșani, and Nădlac.\n\nSource: TU Crypto News",
+        "original_sender": "TU Crypto News",
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: GRASSUSDT ✅\n\n🎯 Target 1 (1.882) HIT!\n🎯 Target 2 (1.914) HIT!\n🎯 Target 3 (2.009) HIT!",
+        "timestamp": "2025-06-06T07:31:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4941,
+        "coin_pair": "GRASSUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 1.882,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 2,
+                "price": 1.914,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 3,
+                "price": 2.009,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "⚖️ World Liberty Financial has filed a legal demand for a cease and desist order against Fight Fight Fight LLC\n\nWorld Liberty Financial, a company partially controlled by Donald Trump’s family, has officially sent a cease and desist letter to the developers of the TRUMP memecoin (Fight Fight Fight LLC), demanding an immediate halt to the project and its promotion.\n\nThe reason is the unauthorized use of Trump’s name, including in the “TRUMP Wallet” on Magic Eden, which was presented as the “official” wallet.\n\n✍️ Trump’s legal team is demanding the termination of all marketing campaigns and the removal of all TRUMP branding from the project.\n\nSource: TU Crypto News",
+        "timestamp": "2025-06-06T07:27:53+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4940,
+        "content": "⚖️ World Liberty Financial has filed a legal demand for a cease and desist order against Fight Fight Fight LLC\n\nWorld Liberty Financial, a company partially controlled by Donald Trump’s family, has officially sent a cease and desist letter to the developers of the TRUMP memecoin (Fight Fight Fight LLC), demanding an immediate halt to the project and its promotion.\n\nThe reason is the unauthorized use of Trump’s name, including in the “TRUMP Wallet” on Magic Eden, which was presented as the “official” wallet.\n\n✍️ Trump’s legal team is demanding the termination of all marketing campaigns and the removal of all TRUMP branding from the project.\n\nSource: TU Crypto News",
+        "original_sender": "TU Crypto News",
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: COMPUSDT ✅\n\n🎯 Target 1 (48.77) HIT!\n🎯 Target 2 (49.62) HIT!",
+        "timestamp": "2025-06-06T07:21:53+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4939,
+        "coin_pair": "COMPUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 48.77,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 2,
+                "price": 49.62,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "🐎🐘🦢🐚🪸\n\nCentral banks keep stacking gold.\n\nIn April, they added a net 12 tonnes — the 23rd straight month of accumulation.\n\nTop buyers included Poland, China, Turkey, and the Czech Republic.\n\n🥫 t.me/FinancialWorldUpdates\n\nSource: Financial World Updates",
+        "timestamp": "2025-06-06T07:19:47+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4938,
+        "content": "🐎🐘🦢🐚🪸\n\nCentral banks keep stacking gold.\n\nIn April, they added a net 12 tonnes — the 23rd straight month of accumulation.\n\nTop buyers included Poland, China, Turkey, and the Czech Republic.\n\n🥫 t.me/FinancialWorldUpdates\n\nSource: Financial World Updates",
+        "original_sender": "Financial World Updates",
+        "message_type": "UnstructuredMessage"
+    },
+    {
         "raw_text": "🤩😘😗☺️\n\n🇷🇺🇺🇦⚡- Massive Russian missile strikes on Lutsk, Ukraine.\n\n@PoliticFinance 🐄\n\nSource: Financial World Updates",
         "timestamp": "2025-06-06T07:04:47+00:00",
         "sender_id": 1218062484,
@@ -853,130 +952,5 @@
         "stop_losses_triggered": [],
         "update_type": "TARGET_HIT",
         "message_type": "SignalUpdate"
-    },
-    {
-        "raw_text": "James Wynn is $120 away from liquidation\n\nSource: Crypto Insider",
-        "timestamp": "2025-06-05T15:10:11+00:00",
-        "sender_id": 1218062484,
-        "message_id": 4891,
-        "content": "James Wynn is $120 away from liquidation\n\nSource: Crypto Insider",
-        "original_sender": "Crypto Insider",
-        "message_type": "UnstructuredMessage"
-    },
-    {
-        "raw_text": "📰 CRYPTO NEWS UPDATE 📰\n\nSource: Crypto Insider",
-        "timestamp": "2025-06-05T15:10:11+00:00",
-        "sender_id": 1218062484,
-        "message_id": 4890,
-        "content": "📰 CRYPTO NEWS UPDATE 📰\n\nSource: Crypto Insider",
-        "original_sender": "Crypto Insider",
-        "message_type": "UnstructuredMessage"
-    },
-    {
-        "raw_text": "🔴 SIGNAL UPDATE: CHRUSDT 🔴\n\n⚠️ Stop Loss 1 (0.0871) TRIGGERED!",
-        "timestamp": "2025-06-05T15:01:54+00:00",
-        "sender_id": 1218062484,
-        "message_id": 4889,
-        "coin_pair": "CHRUSDT",
-        "targets_hit": [],
-        "stop_losses_triggered": [
-            {
-                "level": 1,
-                "price": 0.0871,
-                "percentage_change": null,
-                "status": "TRIGGERED"
-            }
-        ],
-        "update_type": "STOP_LOSS_TRIGGERED",
-        "message_type": "SignalUpdate"
-    },
-    {
-        "raw_text": "✅ SIGNAL UPDATE: DFUSDT ✅\n\n🎯 Target 1 (0.0441) HIT!",
-        "timestamp": "2025-06-05T14:56:53+00:00",
-        "sender_id": 1218062484,
-        "message_id": 4888,
-        "coin_pair": "DFUSDT",
-        "targets_hit": [
-            {
-                "level": 1,
-                "price": 0.0441,
-                "percentage_change": null,
-                "status": "HIT"
-            }
-        ],
-        "stop_losses_triggered": [],
-        "update_type": "TARGET_HIT",
-        "message_type": "SignalUpdate"
-    },
-    {
-        "raw_text": "🆕 NEW SIGNAL: DFUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 118th/468\nRisk Level: 🟢 Normal\n\nEntry: 0.0434\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.0441      +1.61%\nTarget 2         0.0448      +3.23%\nTarget 3         0.0469      +8.06%\nTarget 4         0.0504      +16.13%\nStop Loss 1    0.0419      -3.46%\nStop Loss 2    0.0377      -13.13%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $DF\n📊 Analisis Data Coinglass untuk DF",
-        "timestamp": "2025-06-05T14:50:03+00:00",
-        "sender_id": 1218062484,
-        "message_id": 4887,
-        "coin_pair": "DFUSDT",
-        "risk_rank": "118th/468",
-        "risk_level": "Normal",
-        "entry_price": 0.0434,
-        "targets": [
-            {
-                "level": 1,
-                "price": 0.0441,
-                "percentage_change": 1.61,
-                "status": null
-            },
-            {
-                "level": 2,
-                "price": 0.0448,
-                "percentage_change": 3.23,
-                "status": null
-            },
-            {
-                "level": 3,
-                "price": 0.0469,
-                "percentage_change": 8.06,
-                "status": null
-            },
-            {
-                "level": 4,
-                "price": 0.0504,
-                "percentage_change": 16.13,
-                "status": null
-            }
-        ],
-        "stop_losses": [
-            {
-                "level": 1,
-                "price": 0.0419,
-                "percentage_change": -3.46,
-                "status": null
-            },
-            {
-                "level": 2,
-                "price": 0.0377,
-                "percentage_change": -13.13,
-                "status": null
-            }
-        ],
-        "social_media_link": null,
-        "data_analysis_link": null,
-        "message_type": "NewSignal"
-    },
-    {
-        "raw_text": "🦺👓🕶🥽🥼\n\nXi Jinping after Trump call:\n\nThe U.S. should lift its harmful measures against China.\n\nBoth nations must reduce misunderstandings and strengthen economic and trade cooperation.\n\nThe message came after a phone call with Donald Trump, signaling possible thawing in relations.\n\n🥫 t.me/FinancialWorldUpdates\n\nSource: Financial World Updates",
-        "timestamp": "2025-06-05T14:47:05+00:00",
-        "sender_id": 1218062484,
-        "message_id": 4886,
-        "content": "🦺👓🕶🥽🥼\n\nXi Jinping after Trump call:\n\nThe U.S. should lift its harmful measures against China.\n\nBoth nations must reduce misunderstandings and strengthen economic and trade cooperation.\n\nThe message came after a phone call with Donald Trump, signaling possible thawing in relations.\n\n🥫 t.me/FinancialWorldUpdates\n\nSource: Financial World Updates",
-        "original_sender": "Financial World Updates",
-        "message_type": "UnstructuredMessage"
-    },
-    {
-        "raw_text": "🕯 Circle shares debut on NYSE\n\nCircle’s shares are trading at $31 today on the New York Stock Exchange.\n\nThe company stated that they are satisfied with the IPO results and confident in future stock growth.\n\nSource: TU Crypto News",
-        "timestamp": "2025-06-05T14:32:05+00:00",
-        "sender_id": 1218062484,
-        "message_id": 4885,
-        "content": "🕯 Circle shares debut on NYSE\n\nCircle’s shares are trading at $31 today on the New York Stock Exchange.\n\nThe company stated that they are satisfied with the IPO results and confident in future stock growth.\n\nSource: TU Crypto News",
-        "original_sender": "TU Crypto News",
-        "message_type": "UnstructuredMessage"
     }
 ]

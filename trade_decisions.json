@@ -2,8 +2,8 @@
     {
         "decision": "BUY",
         "coin_pair": "FUNUSDT",
-        "reason": "Harga saat ini (0.003436) lebih rendah dari atau sama dengan harga masuk (0.00348).",
-        "current_price": 0.003436,
+        "reason": "Harga saat ini (0.003417) lebih rendah dari atau sama dengan harga masuk (0.00348).",
+        "current_price": 0.003417,
         "entry_price": 0.00348,
         "targets": [
             {
@@ -49,8 +49,8 @@
     {
         "decision": "SKIP",
         "coin_pair": "COMPUSDT",
-        "reason": "Harga saat ini (49.67) lebih mahal dari harga masuk (47.92).",
-        "current_price": 49.67,
+        "reason": "Harga saat ini (49.62) lebih mahal dari harga masuk (47.92).",
+        "current_price": 49.62,
         "entry_price": 47.92,
         "targets": [],
         "stop_losses": []
@@ -79,15 +79,6 @@
         "reason": "Gagal mendapatkan harga terkini untuk 1000XUSDT.",
         "current_price": null,
         "entry_price": 0.0758,
-        "targets": [],
-        "stop_losses": []
-    },
-    {
-        "decision": "FAIL",
-        "coin_pair": "DFUSDT",
-        "reason": "Harga saat ini (0.04164) sudah di bawah level Stop Loss 1 (0.0419). Sinyal dibatalkan untuk keamanan.",
-        "current_price": 0.04164,
-        "entry_price": 0.0434,
         "targets": [],
         "stop_losses": []
     }

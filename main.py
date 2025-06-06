@@ -1,65 +1,42 @@
-# main.py
+# Auto Trade Bot/main.py
+import argparse
 import asyncio
-import config
-from telegram.client import TelegramClientWrapper
-from telegram.parser import TelegramMessageParser
-from telegram.utils import JsonWriter
+from core.routines import (
+    run_fetch_routine,
+    run_decide_routine,
+    run_execute_routine,
+    run_status_routine
+)
 
 async def main():
-    """Fungsi utama untuk menjalankan keseluruhan proses."""
-    if not all([config.API_ID, config.API_HASH, config.PHONE_NUMBER, config.TARGET_CHAT_ID]):
-        print("Harap konfigurasikan variabel di file .env Anda.")
-        return
-
-    client_wrapper = TelegramClientWrapper(
-        session_name=config.SESSION_NAME,
-        api_id=config.API_ID,
-        api_hash=config.API_HASH,
-        phone_number=config.PHONE_NUMBER
+    """Fungsi utama untuk mengontrol alur kerja bot melalui argumen baris perintah."""
+    parser = argparse.ArgumentParser(description="Auto Trade Bot for Telegram Signals.")
+    parser.add_argument(
+        'action',
+        choices=['fetch', 'decide', 'execute', 'status', 'run-all'],
+        help="""
+        Pilih aksi yang ingin dijalankan:
+        'fetch': Mengambil pesan baru dari Telegram.
+        'decide': Membuat keputusan trading dari sinyal yang ada.
+        'execute': Mengeksekusi keputusan trading 'BUY'.
+        'status': Memeriksa status akun Binance.
+        'run-all': Menjalankan 'fetch', 'decide', dan 'execute' secara berurutan.
+        """
     )
-    
-    parser = TelegramMessageParser()
-    writers = {
-        "all_messages": JsonWriter("parsed_messages.json"),
-        "new_signals": JsonWriter("new_signals.json"),
-        "market_alerts": JsonWriter("market_alerts.json"),
-        "signal_updates": JsonWriter("signal_updates.json")
-    }
-    
-    try:
-        await client_wrapper.connect()
-        me = await client_wrapper.client.get_me()
-        print(f"Terhubung sebagai: {me.first_name}")
-        
-        print(f"Mengambil 50 pesan terakhir dari chat ID: {config.TARGET_CHAT_ID}...")
-        messages = await client_wrapper.fetch_historical_messages(config.TARGET_CHAT_ID, limit=50)
-        print(f"Berhasil mengambil {len(messages)} pesan.")
-        
-        if not messages: return
+    args = parser.parse_args()
 
-        parsed_data = [parser.parse_message(msg).to_dict() for msg in messages]
-        print(f"Berhasil mem-parsing {len(parsed_data)} pesan.")
-        
-        writers["all_messages"].write(parsed_data)
-        
-        print("\n--- Memulai Proses Pemfilteran ---")
-        filters = {
-            "new_signals": "NewSignal",
-            "market_alerts": "MarketAlert",
-            "signal_updates": "SignalUpdate",
-        }
-        for key, msg_type in filters.items():
-            filtered_list = [msg for msg in parsed_data if msg.get("message_type") == msg_type]
-            print(f"Ditemukan {len(filtered_list)} pesan '{msg_type}'.")
-            if filtered_list:
-                writers[key].write(filtered_list)
-            
-    except Exception as e:
-        print(f"\nTerjadi kesalahan: {e}")
-    finally:
-        if client_wrapper.client.is_connected():
-            await client_wrapper.disconnect()
-            print("\nKoneksi Telegram ditutup.")
+    if args.action == 'fetch':
+        await run_fetch_routine()
+    elif args.action == 'decide':
+        run_decide_routine()
+    elif args.action == 'execute':
+        run_execute_routine()
+    elif args.action == 'status':
+        run_status_routine()
+    elif args.action == 'run-all':
+        await run_fetch_routine()
+        run_decide_routine()
+        run_execute_routine()
 
 if __name__ == "__main__":
     asyncio.run(main())

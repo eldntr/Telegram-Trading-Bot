@@ -1,5 +1,59 @@
 [
     {
+        "raw_text": "✅ SIGNAL UPDATE: GRASSUSDT ✅\n\n🎯 Target 1 (1.882) HIT!\n🎯 Target 2 (1.914) HIT!\n🎯 Target 3 (2.009) HIT!",
+        "timestamp": "2025-06-06T07:31:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4941,
+        "coin_pair": "GRASSUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 1.882,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 2,
+                "price": 1.914,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 3,
+                "price": 2.009,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: COMPUSDT ✅\n\n🎯 Target 1 (48.77) HIT!\n🎯 Target 2 (49.62) HIT!",
+        "timestamp": "2025-06-06T07:21:53+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4939,
+        "coin_pair": "COMPUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 48.77,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 2,
+                "price": 49.62,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
         "raw_text": "✅ SIGNAL UPDATE: COMPUSDT ✅\n\n🎯 Target 1 (48.77) HIT!",
         "timestamp": "2025-06-06T06:16:53+00:00",
         "sender_id": 1218062484,
@@ -291,42 +345,6 @@
             {
                 "level": 4,
                 "price": 0.155,
-                "percentage_change": null,
-                "status": "HIT"
-            }
-        ],
-        "stop_losses_triggered": [],
-        "update_type": "TARGET_HIT",
-        "message_type": "SignalUpdate"
-    },
-    {
-        "raw_text": "🔴 SIGNAL UPDATE: CHRUSDT 🔴\n\n⚠️ Stop Loss 1 (0.0871) TRIGGERED!",
-        "timestamp": "2025-06-05T15:01:54+00:00",
-        "sender_id": 1218062484,
-        "message_id": 4889,
-        "coin_pair": "CHRUSDT",
-        "targets_hit": [],
-        "stop_losses_triggered": [
-            {
-                "level": 1,
-                "price": 0.0871,
-                "percentage_change": null,
-                "status": "TRIGGERED"
-            }
-        ],
-        "update_type": "STOP_LOSS_TRIGGERED",
-        "message_type": "SignalUpdate"
-    },
-    {
-        "raw_text": "✅ SIGNAL UPDATE: DFUSDT ✅\n\n🎯 Target 1 (0.0441) HIT!",
-        "timestamp": "2025-06-05T14:56:53+00:00",
-        "sender_id": 1218062484,
-        "message_id": 4888,
-        "coin_pair": "DFUSDT",
-        "targets_hit": [
-            {
-                "level": 1,
-                "price": 0.0441,
                 "percentage_change": null,
                 "status": "HIT"
             }
