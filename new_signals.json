@@ -1,5 +1,58 @@
 [
     {
+        "raw_text": "🆕 NEW SIGNAL: COMPUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 89th/468\nRisk Level: 🟢 Normal\n\nEntry: 47.92\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         48.77      +1.77%\nTarget 2         49.62      +3.55%\nTarget 3         52.16      +8.85%\nTarget 4         56.40      +17.70%\nStop Loss 1    46.13      -3.74%\nStop Loss 2    41.13      -14.17%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $COMP\n📊 Analisis Data Coinglass untuk COMP",
+        "timestamp": "2025-06-06T06:15:04+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4932,
+        "coin_pair": "COMPUSDT",
+        "risk_rank": "89th/468",
+        "risk_level": "Normal",
+        "entry_price": 47.92,
+        "targets": [
+            {
+                "level": 1,
+                "price": 48.77,
+                "percentage_change": 1.77,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 49.62,
+                "percentage_change": 3.55,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 52.16,
+                "percentage_change": 8.85,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 56.4,
+                "percentage_change": 17.7,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 46.13,
+                "percentage_change": -3.74,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 41.13,
+                "percentage_change": -14.17,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
         "raw_text": "🆕 NEW SIGNAL: FARTCOINUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 9th/468\nRisk Level: 🟢 Normal\n\nEntry: 0.9866\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         1.024      +3.79%\nTarget 2         1.061      +7.54%\nTarget 3         1.171      +18.69%\nTarget 4         1.356      +37.44%\nStop Loss 1    0.9014      -8.64%\nStop Loss 2    0.6909      -29.97%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $FARTCOIN\n📊 Analisis Data Coinglass untuk FARTCOIN",
         "timestamp": "2025-06-05T20:50:03+00:00",
         "sender_id": 1218062484,
@@ -310,6 +363,1755 @@
                 "level": 2,
                 "price": 0.0768,
                 "percentage_change": -13.42,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: CHRUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 320th/468\nRisk Level: ⚠️ High\n\nEntry: 0.0902\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.0915      +1.44%\nTarget 2         0.0928      +2.88%\nTarget 3         0.0966      +7.10%\nTarget 4         0.1030      +14.19%\nStop Loss 1    0.0871      -3.44%\nStop Loss 2    0.0799      -11.42%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $CHR\n📊 Analisis Data Coinglass untuk CHR",
+        "timestamp": "2025-06-05T13:10:04+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4877,
+        "coin_pair": "CHRUSDT",
+        "risk_rank": "320th/468",
+        "risk_level": "High",
+        "entry_price": 0.0902,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.0915,
+                "percentage_change": 1.44,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0928,
+                "percentage_change": 2.88,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.0966,
+                "percentage_change": 7.1,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.103,
+                "percentage_change": 14.19,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.0871,
+                "percentage_change": -3.44,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0799,
+                "percentage_change": -11.42,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: BTCUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 🥈 2/468\nRisk Level: 🟢 Normal\n\nEntry: 105653.60\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         106038.99      +0.36%\nTarget 2         106424.39      +0.73%\nTarget 3         107580.57      +1.82%\nTarget 4         109507.55      +3.65%\nStop Loss 1    104867.69      -0.74%\nStop Loss 2    102570.44      -2.92%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $BTC\n📊 Analisis Data Coinglass untuk BTC",
+        "timestamp": "2025-06-05T12:50:04+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4876,
+        "coin_pair": "BTCUSDT",
+        "risk_rank": "🥈",
+        "risk_level": "Normal",
+        "entry_price": 105653.6,
+        "targets": [
+            {
+                "level": 1,
+                "price": 106038.99,
+                "percentage_change": 0.36,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 106424.39,
+                "percentage_change": 0.73,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 107580.57,
+                "percentage_change": 1.82,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 109507.55,
+                "percentage_change": 3.65,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 104867.69,
+                "percentage_change": -0.74,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 102570.44,
+                "percentage_change": -2.92,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: LISTAUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 158th/468\nRisk Level: ⚠️ High\n\nEntry: 0.2540\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.2581      +1.61%\nTarget 2         0.2622      +3.23%\nTarget 3         0.2745      +8.07%\nTarget 4         0.2949      +16.10%\nStop Loss 1    0.2447      -3.66%\nStop Loss 2    0.2212      -12.91%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $LISTA\n📊 Analisis Data Coinglass untuk LISTA",
+        "timestamp": "2025-06-05T12:25:03+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4871,
+        "coin_pair": "LISTAUSDT",
+        "risk_rank": "158th/468",
+        "risk_level": "High",
+        "entry_price": 0.254,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.2581,
+                "percentage_change": 1.61,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.2622,
+                "percentage_change": 3.23,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.2745,
+                "percentage_change": 8.07,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.2949,
+                "percentage_change": 16.1,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.2447,
+                "percentage_change": -3.66,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.2212,
+                "percentage_change": -12.91,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: WALUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 207th/468\nRisk Level: ⚠️ High\n\nEntry: 0.5096\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.5162      +1.30%\nTarget 2         0.5227      +2.57%\nTarget 3         0.5424      +6.44%\nTarget 4         0.5752      +12.87%\nStop Loss 1    0.4964      -2.59%\nStop Loss 2    0.4571      -10.30%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $WAL\n📊 Analisis Data Coinglass untuk WAL",
+        "timestamp": "2025-06-05T10:45:03+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4860,
+        "coin_pair": "WALUSDT",
+        "risk_rank": "207th/468",
+        "risk_level": "High",
+        "entry_price": 0.5096,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.5162,
+                "percentage_change": 1.3,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.5227,
+                "percentage_change": 2.57,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.5424,
+                "percentage_change": 6.44,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.5752,
+                "percentage_change": 12.87,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.4964,
+                "percentage_change": -2.59,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.4571,
+                "percentage_change": -10.3,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: TONUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 80th/468\nRisk Level: 🟢 Normal\n\nEntry: 3.241\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         3.264      +0.71%\nTarget 2         3.288      +1.45%\nTarget 3         3.360      +3.67%\nTarget 4         3.478      +7.31%\nStop Loss 1    3.189      -1.60%\nStop Loss 2    3.050      -5.89%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $TON\n📊 Analisis Data Coinglass untuk TON",
+        "timestamp": "2025-06-05T09:10:04+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4856,
+        "coin_pair": "TONUSDT",
+        "risk_rank": "80th/468",
+        "risk_level": "Normal",
+        "entry_price": 3.241,
+        "targets": [
+            {
+                "level": 1,
+                "price": 3.264,
+                "percentage_change": 0.71,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 3.288,
+                "percentage_change": 1.45,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 3.36,
+                "percentage_change": 3.67,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 3.478,
+                "percentage_change": 7.31,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 3.189,
+                "percentage_change": -1.6,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 3.05,
+                "percentage_change": -5.89,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: SPELLUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 310th/466\nRisk Level: ⚠️ High\n\nEntry: 0.000556\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.000561      +0.90%\nTarget 2         0.000566      +1.80%\nTarget 3         0.000581      +4.50%\nTarget 4         0.000606      +8.99%\nStop Loss 1    0.000546      -1.80%\nStop Loss 2    0.000517      -7.01%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $SPELL\n📊 Analisis Data Coinglass untuk SPELL",
+        "timestamp": "2025-06-05T08:45:03+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4851,
+        "coin_pair": "SPELLUSDT",
+        "risk_rank": "310th/466",
+        "risk_level": "High",
+        "entry_price": 0.000556,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.000561,
+                "percentage_change": 0.9,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.000566,
+                "percentage_change": 1.8,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.000581,
+                "percentage_change": 4.5,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.000606,
+                "percentage_change": 8.99,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.000546,
+                "percentage_change": -1.8,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.000517,
+                "percentage_change": -7.01,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: DUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 413th/466\nRisk Level: ⚠️ High\n\nEntry: 0.0356\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.0360      +1.12%\nTarget 2         0.0364      +2.25%\nTarget 3         0.0376      +5.62%\nTarget 4         0.0397      +11.52%\nStop Loss 1    0.0346      -2.81%\nStop Loss 2    0.0324      -8.99%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $D\n📊 Analisis Data Coinglass untuk D",
+        "timestamp": "2025-06-05T07:25:04+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4839,
+        "coin_pair": "DUSDT",
+        "risk_rank": "413th/466",
+        "risk_level": "High",
+        "entry_price": 0.0356,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.036,
+                "percentage_change": 1.12,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0364,
+                "percentage_change": 2.25,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.0376,
+                "percentage_change": 5.62,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.0397,
+                "percentage_change": 11.52,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.0346,
+                "percentage_change": -2.81,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0324,
+                "percentage_change": -8.99,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: HOTUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 333th/466\nRisk Level: ⚠️ High\n\nEntry: 0.00102\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.00104      +1.96%\nTarget 2         0.00105      +2.94%\nTarget 3         0.00108      +5.88%\nTarget 4         0.00114      +11.76%\nStop Loss 1    0.000996      -2.35%\nStop Loss 2    0.000935      -8.33%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $HOT\n📊 Analisis Data Coinglass untuk HOT",
+        "timestamp": "2025-06-05T07:25:03+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4838,
+        "coin_pair": "HOTUSDT",
+        "risk_rank": "333th/466",
+        "risk_level": "High",
+        "entry_price": 0.00102,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.00104,
+                "percentage_change": 1.96,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.00105,
+                "percentage_change": 2.94,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.00108,
+                "percentage_change": 5.88,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.00114,
+                "percentage_change": 11.76,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.000996,
+                "percentage_change": -2.35,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.000935,
+                "percentage_change": -8.33,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: RVNUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 328th/466\nRisk Level: ⚠️ High\n\nEntry: 0.0200\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.0201      +0.50%\nTarget 2         0.0202      +1.00%\nTarget 3         0.0206      +3.00%\nTarget 4         0.0211      +5.50%\nStop Loss 1    0.0198      -1.00%\nStop Loss 2    0.0191      -4.50%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $RVN\n📊 Analisis Data Coinglass untuk RVN",
+        "timestamp": "2025-06-05T07:20:45+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4835,
+        "coin_pair": "RVNUSDT",
+        "risk_rank": "328th/466",
+        "risk_level": "High",
+        "entry_price": 0.02,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.0201,
+                "percentage_change": 0.5,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0202,
+                "percentage_change": 1.0,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.0206,
+                "percentage_change": 3.0,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.0211,
+                "percentage_change": 5.5,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.0198,
+                "percentage_change": -1.0,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0191,
+                "percentage_change": -4.5,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: ZILUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 258th/466\nRisk Level: ⚠️ High\n\nEntry: 0.0121\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.0122      +0.83%\nTarget 2         0.0123      +1.65%\nTarget 3         0.0127      +4.96%\nTarget 4         0.0132      +9.09%\nStop Loss 1    0.0119      -1.65%\nStop Loss 2    0.0112      -7.44%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $ZIL\n📊 Analisis Data Coinglass untuk ZIL",
+        "timestamp": "2025-06-05T07:20:04+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4834,
+        "coin_pair": "ZILUSDT",
+        "risk_rank": "258th/466",
+        "risk_level": "High",
+        "entry_price": 0.0121,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.0122,
+                "percentage_change": 0.83,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0123,
+                "percentage_change": 1.65,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.0127,
+                "percentage_change": 4.96,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.0132,
+                "percentage_change": 9.09,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.0119,
+                "percentage_change": -1.65,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0112,
+                "percentage_change": -7.44,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: BSWUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 365th/466\nRisk Level: ⚠️ High\n\nEntry: 0.0277\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.0280      +1.08%\nTarget 2         0.0283      +2.17%\nTarget 3         0.0293      +5.78%\nTarget 4         0.0308      +11.19%\nStop Loss 1    0.0270      -2.53%\nStop Loss 2    0.0253      -8.66%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $BSW\n📊 Analisis Data Coinglass untuk BSW",
+        "timestamp": "2025-06-05T07:20:03+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4833,
+        "coin_pair": "BSWUSDT",
+        "risk_rank": "365th/466",
+        "risk_level": "High",
+        "entry_price": 0.0277,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.028,
+                "percentage_change": 1.08,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0283,
+                "percentage_change": 2.17,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.0293,
+                "percentage_change": 5.78,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.0308,
+                "percentage_change": 11.19,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.027,
+                "percentage_change": -2.53,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0253,
+                "percentage_change": -8.66,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: HMSTRUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 342th/466\nRisk Level: ⚠️ High\n\nEntry: 0.00205\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.00207      +0.98%\nTarget 2         0.00209      +1.95%\nTarget 3         0.00214      +4.39%\nTarget 4         0.00222      +8.29%\nStop Loss 1    0.00202      -1.46%\nStop Loss 2    0.00192      -6.34%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $HMSTR\n📊 Analisis Data Coinglass untuk HMSTR",
+        "timestamp": "2025-06-05T07:15:05+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4830,
+        "coin_pair": "HMSTRUSDT",
+        "risk_rank": "342th/466",
+        "risk_level": "High",
+        "entry_price": 0.00205,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.00207,
+                "percentage_change": 0.98,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.00209,
+                "percentage_change": 1.95,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.00214,
+                "percentage_change": 4.39,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.00222,
+                "percentage_change": 8.29,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.00202,
+                "percentage_change": -1.46,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.00192,
+                "percentage_change": -6.34,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: ACEUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 391th/466\nRisk Level: ⚠️ High\n\nEntry: 0.5951\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.6024      +1.23%\nTarget 2         0.6097      +2.45%\nTarget 3         0.6316      +6.13%\nTarget 4         0.6681      +12.27%\nStop Loss 1    0.5802      -2.50%\nStop Loss 2    0.5367      -9.81%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $ACE\n📊 Analisis Data Coinglass untuk ACE",
+        "timestamp": "2025-06-05T07:15:03+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4829,
+        "coin_pair": "ACEUSDT",
+        "risk_rank": "391th/466",
+        "risk_level": "High",
+        "entry_price": 0.5951,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.6024,
+                "percentage_change": 1.23,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.6097,
+                "percentage_change": 2.45,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.6316,
+                "percentage_change": 6.13,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.6681,
+                "percentage_change": 12.27,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.5802,
+                "percentage_change": -2.5,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.5367,
+                "percentage_change": -9.81,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: RVNUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 328th/466\nRisk Level: ⚠️ High\n\nEntry: 0.0189\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.0190      +0.53%\nTarget 2         0.0192      +1.59%\nTarget 3         0.0195      +3.17%\nTarget 4         0.0200      +5.82%\nStop Loss 1    0.0187      -1.06%\nStop Loss 2    0.0180      -4.76%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $RVN\n📊 Analisis Data Coinglass untuk RVN",
+        "timestamp": "2025-06-05T07:10:05+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4826,
+        "coin_pair": "RVNUSDT",
+        "risk_rank": "328th/466",
+        "risk_level": "High",
+        "entry_price": 0.0189,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.019,
+                "percentage_change": 0.53,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0192,
+                "percentage_change": 1.59,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.0195,
+                "percentage_change": 3.17,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.02,
+                "percentage_change": 5.82,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.0187,
+                "percentage_change": -1.06,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.018,
+                "percentage_change": -4.76,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: REIUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 401th/466\nRisk Level: ⚠️ High\n\nEntry: 0.0187\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.0189      +1.07%\nTarget 2         0.0190      +1.60%\nTarget 3         0.0196      +4.81%\nTarget 4         0.0205      +9.63%\nStop Loss 1    0.0183      -2.14%\nStop Loss 2    0.0172      -8.02%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $REI\n📊 Analisis Data Coinglass untuk REI",
+        "timestamp": "2025-06-05T07:10:03+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4825,
+        "coin_pair": "REIUSDT",
+        "risk_rank": "401th/466",
+        "risk_level": "High",
+        "entry_price": 0.0187,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.0189,
+                "percentage_change": 1.07,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.019,
+                "percentage_change": 1.6,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.0196,
+                "percentage_change": 4.81,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.0205,
+                "percentage_change": 9.63,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.0183,
+                "percentage_change": -2.14,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0172,
+                "percentage_change": -8.02,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: RVNUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 328th/466\nRisk Level: ⚠️ High\n\nEntry: 0.0161\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.0162      +0.62%\nTarget 2         0.0163      +1.24%\nTarget 3         0.0167      +3.73%\nTarget 4         0.0172      +6.83%\nStop Loss 1    0.0158      -1.86%\nStop Loss 2    0.0152      -5.59%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $RVN\n📊 Analisis Data Coinglass untuk RVN",
+        "timestamp": "2025-06-05T07:05:04+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4823,
+        "coin_pair": "RVNUSDT",
+        "risk_rank": "328th/466",
+        "risk_level": "High",
+        "entry_price": 0.0161,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.0162,
+                "percentage_change": 0.62,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0163,
+                "percentage_change": 1.24,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.0167,
+                "percentage_change": 3.73,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.0172,
+                "percentage_change": 6.83,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.0158,
+                "percentage_change": -1.86,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0152,
+                "percentage_change": -5.59,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: AGLDUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 148th/466\nRisk Level: 🟢 Normal\n\nEntry: 0.8783\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.8934      +1.72%\nTarget 2         0.9085      +3.44%\nTarget 3         0.9537      +8.58%\nTarget 4         1.029      +17.16%\nStop Loss 1    0.8460      -3.68%\nStop Loss 2    0.7576      -13.74%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $AGLD\n📊 Analisis Data Coinglass untuk AGLD",
+        "timestamp": "2025-06-05T00:20:03+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4814,
+        "coin_pair": "AGLDUSDT",
+        "risk_rank": "148th/466",
+        "risk_level": "Normal",
+        "entry_price": 0.8783,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.8934,
+                "percentage_change": 1.72,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.9085,
+                "percentage_change": 3.44,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.9537,
+                "percentage_change": 8.58,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 1.029,
+                "percentage_change": 17.16,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.846,
+                "percentage_change": -3.68,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.7576,
+                "percentage_change": -13.74,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: ZKJUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 397th/466\nRisk Level: ⚠️ High\n\nEntry: 2.006\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         2.009      +0.15%\nTarget 2         2.011      +0.25%\nTarget 3         2.019      +0.65%\nTarget 4         2.032      +1.30%\nStop Loss 1    2.000      -0.30%\nStop Loss 2    1.985      -1.05%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $ZKJ\n📊 Analisis Data Coinglass untuk ZKJ",
+        "timestamp": "2025-06-04T22:55:03+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4811,
+        "coin_pair": "ZKJUSDT",
+        "risk_rank": "397th/466",
+        "risk_level": "High",
+        "entry_price": 2.006,
+        "targets": [
+            {
+                "level": 1,
+                "price": 2.009,
+                "percentage_change": 0.15,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 2.011,
+                "percentage_change": 0.25,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 2.019,
+                "percentage_change": 0.65,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 2.032,
+                "percentage_change": 1.3,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 2.0,
+                "percentage_change": -0.3,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 1.985,
+                "percentage_change": -1.05,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: OGNUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 313th/466\nRisk Level: ⚠️ High\n\nEntry: 0.0613\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.0620      +1.14%\nTarget 2         0.0627      +2.28%\nTarget 3         0.0648      +5.71%\nTarget 4         0.0682      +11.26%\nStop Loss 1    0.0599      -2.28%\nStop Loss 2    0.0558      -8.97%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $OGN\n📊 Analisis Data Coinglass untuk OGN",
+        "timestamp": "2025-06-04T19:50:03+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4805,
+        "coin_pair": "OGNUSDT",
+        "risk_rank": "313th/466",
+        "risk_level": "High",
+        "entry_price": 0.0613,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.062,
+                "percentage_change": 1.14,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0627,
+                "percentage_change": 2.28,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.0648,
+                "percentage_change": 5.71,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.0682,
+                "percentage_change": 11.26,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.0599,
+                "percentage_change": -2.28,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0558,
+                "percentage_change": -8.97,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: CAKEUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 92th/466\nRisk Level: 🟢 Normal\n\nEntry: 2.481\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         2.512      +1.25%\nTarget 2         2.542      +2.46%\nTarget 3         2.633      +6.13%\nTarget 4         2.785      +12.25%\nStop Loss 1    2.418      -2.54%\nStop Loss 2    2.239      -9.75%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $CAKE\n📊 Analisis Data Coinglass untuk CAKE",
+        "timestamp": "2025-06-04T19:25:03+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4803,
+        "coin_pair": "CAKEUSDT",
+        "risk_rank": "92th/466",
+        "risk_level": "Normal",
+        "entry_price": 2.481,
+        "targets": [
+            {
+                "level": 1,
+                "price": 2.512,
+                "percentage_change": 1.25,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 2.542,
+                "percentage_change": 2.46,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 2.633,
+                "percentage_change": 6.13,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 2.785,
+                "percentage_change": 12.25,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 2.418,
+                "percentage_change": -2.54,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 2.239,
+                "percentage_change": -9.75,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: B3USDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 291th/466\nRisk Level: ⚠️ High\n\nEntry: 0.00323\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.00328      +1.55%\nTarget 2         0.00333      +3.10%\nTarget 3         0.00348      +7.74%\nTarget 4         0.00373      +15.48%\nStop Loss 1    0.00311      -3.72%\nStop Loss 2    0.00283      -12.38%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $B3\n📊 Analisis Data Coinglass untuk B3",
+        "timestamp": "2025-06-04T16:39:37+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4789,
+        "coin_pair": "B3USDT",
+        "risk_rank": "291th/466",
+        "risk_level": "High",
+        "entry_price": 0.00323,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.00328,
+                "percentage_change": 1.55,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.00333,
+                "percentage_change": 3.1,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.00348,
+                "percentage_change": 7.74,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.00373,
+                "percentage_change": 15.48,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.00311,
+                "percentage_change": -3.72,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.00283,
+                "percentage_change": -12.38,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: NMRUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 218th/466\nRisk Level: ⚠️ High\n\nEntry: 8.430\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         8.530      +1.19%\nTarget 2         8.630      +2.37%\nTarget 3         8.929      +5.92%\nTarget 4         9.428      +11.84%\nStop Loss 1    8.205      -2.67%\nStop Loss 2    7.632      -9.47%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $NMR\n📊 Analisis Data Coinglass untuk NMR",
+        "timestamp": "2025-06-04T16:04:37+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4780,
+        "coin_pair": "NMRUSDT",
+        "risk_rank": "218th/466",
+        "risk_level": "High",
+        "entry_price": 8.43,
+        "targets": [
+            {
+                "level": 1,
+                "price": 8.53,
+                "percentage_change": 1.19,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 8.63,
+                "percentage_change": 2.37,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 8.929,
+                "percentage_change": 5.92,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 9.428,
+                "percentage_change": 11.84,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 8.205,
+                "percentage_change": -2.67,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 7.632,
+                "percentage_change": -9.47,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: LPTUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 31th/466\nRisk Level: 🟢 Normal\n\nEntry: 8.596\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         8.742      +1.70%\nTarget 2         8.888      +3.40%\nTarget 3         9.325      +8.48%\nTarget 4         10.05      +16.91%\nStop Loss 1    8.266      -3.84%\nStop Loss 2    7.430      -13.56%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $LPT\n📊 Analisis Data Coinglass untuk LPT",
+        "timestamp": "2025-06-04T15:54:38+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4776,
+        "coin_pair": "LPTUSDT",
+        "risk_rank": "31th/466",
+        "risk_level": "Normal",
+        "entry_price": 8.596,
+        "targets": [
+            {
+                "level": 1,
+                "price": 8.742,
+                "percentage_change": 1.7,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 8.888,
+                "percentage_change": 3.4,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 9.325,
+                "percentage_change": 8.48,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 10.05,
+                "percentage_change": 16.91,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 8.266,
+                "percentage_change": -3.84,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 7.43,
+                "percentage_change": -13.56,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: LDOUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 62th/466\nRisk Level: 🟢 Normal\n\nEntry: 0.8969\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.9111      +1.58%\nTarget 2         0.9253      +3.17%\nTarget 3         0.9679      +7.92%\nTarget 4         1.039      +15.84%\nStop Loss 1    0.8636      -3.71%\nStop Loss 2    0.7834      -12.65%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $LDO\n📊 Analisis Data Coinglass untuk LDO",
+        "timestamp": "2025-06-04T15:54:37+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4775,
+        "coin_pair": "LDOUSDT",
+        "risk_rank": "62th/466",
+        "risk_level": "Normal",
+        "entry_price": 0.8969,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.9111,
+                "percentage_change": 1.58,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.9253,
+                "percentage_change": 3.17,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.9679,
+                "percentage_change": 7.92,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 1.039,
+                "percentage_change": 15.84,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.8636,
+                "percentage_change": -3.71,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.7834,
+                "percentage_change": -12.65,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: RPLUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 53th/466\nRisk Level: 🟢 Normal\n\nEntry: 6.393\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         6.557      +2.57%\nTarget 2         6.720      +5.11%\nTarget 3         7.211      +12.80%\nTarget 4         8.029      +25.59%\nStop Loss 1    6.045      -5.44%\nStop Loss 2    5.084      -20.48%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $RPL\n📊 Analisis Data Coinglass untuk RPL",
+        "timestamp": "2025-06-04T15:29:37+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4771,
+        "coin_pair": "RPLUSDT",
+        "risk_rank": "53th/466",
+        "risk_level": "Normal",
+        "entry_price": 6.393,
+        "targets": [
+            {
+                "level": 1,
+                "price": 6.557,
+                "percentage_change": 2.57,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 6.72,
+                "percentage_change": 5.11,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 7.211,
+                "percentage_change": 12.8,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 8.029,
+                "percentage_change": 25.59,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 6.045,
+                "percentage_change": -5.44,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 5.084,
+                "percentage_change": -20.48,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: BMTUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 67th/466\nRisk Level: 🟢 Normal\n\nEntry: 0.1203\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.1237      +2.83%\nTarget 2         0.1272      +5.74%\nTarget 3         0.1375      +14.30%\nTarget 4         0.1547      +28.60%\nStop Loss 1    0.1129      -6.15%\nStop Loss 2    0.0928      -22.86%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $BMT\n📊 Analisis Data Coinglass untuk BMT",
+        "timestamp": "2025-06-04T15:04:39+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4768,
+        "coin_pair": "BMTUSDT",
+        "risk_rank": "67th/466",
+        "risk_level": "Normal",
+        "entry_price": 0.1203,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.1237,
+                "percentage_change": 2.83,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.1272,
+                "percentage_change": 5.74,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.1375,
+                "percentage_change": 14.3,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.1547,
+                "percentage_change": 28.6,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.1129,
+                "percentage_change": -6.15,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0928,
+                "percentage_change": -22.86,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: STOUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 257th/466\nRisk Level: ⚠️ High\n\nEntry: 0.1044\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.1059      +1.44%\nTarget 2         0.1074      +2.87%\nTarget 3         0.1120      +7.28%\nTarget 4         0.1196      +14.56%\nStop Loss 1    0.1013      -2.97%\nStop Loss 2    0.0922      -11.69%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $STO\n📊 Analisis Data Coinglass untuk STO",
+        "timestamp": "2025-06-04T11:09:39+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4756,
+        "coin_pair": "STOUSDT",
+        "risk_rank": "257th/466",
+        "risk_level": "High",
+        "entry_price": 0.1044,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.1059,
+                "percentage_change": 1.44,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.1074,
+                "percentage_change": 2.87,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.112,
+                "percentage_change": 7.28,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.1196,
+                "percentage_change": 14.56,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.1013,
+                "percentage_change": -2.97,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0922,
+                "percentage_change": -11.69,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: DOLOUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 391th/466\nRisk Level: ⚠️ High\n\nEntry: 0.0377\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.0382      +1.33%\nTarget 2         0.0387      +2.65%\nTarget 3         0.0402      +6.63%\nTarget 4         0.0427      +13.26%\nStop Loss 1    0.0367      -2.65%\nStop Loss 2    0.0338      -10.34%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $DOLO\n📊 Analisis Data Coinglass untuk DOLO",
+        "timestamp": "2025-06-04T11:09:38+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4755,
+        "coin_pair": "DOLOUSDT",
+        "risk_rank": "391th/466",
+        "risk_level": "High",
+        "entry_price": 0.0377,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.0382,
+                "percentage_change": 1.33,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0387,
+                "percentage_change": 2.65,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.0402,
+                "percentage_change": 6.63,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.0427,
+                "percentage_change": 13.26,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.0367,
+                "percentage_change": -2.65,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0338,
+                "percentage_change": -10.34,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: KERNELUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 123th/466\nRisk Level: 🟢 Normal\n\nEntry: 0.1618\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.1650      +1.98%\nTarget 2         0.1681      +3.89%\nTarget 3         0.1777      +9.83%\nTarget 4         0.1935      +19.59%\nStop Loss 1    0.1550      -4.20%\nStop Loss 2    0.1364      -15.70%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $KERNEL\n📊 Analisis Data Coinglass untuk KERNEL",
+        "timestamp": "2025-06-04T11:04:37+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4754,
+        "coin_pair": "KERNELUSDT",
+        "risk_rank": "123th/466",
+        "risk_level": "Normal",
+        "entry_price": 0.1618,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.165,
+                "percentage_change": 1.98,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.1681,
+                "percentage_change": 3.89,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.1777,
+                "percentage_change": 9.83,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.1935,
+                "percentage_change": 19.59,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.155,
+                "percentage_change": -4.2,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.1364,
+                "percentage_change": -15.7,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: GRASSUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 157th/466\nRisk Level: ⚠️ High\n\nEntry: 1.850\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         1.882      +1.73%\nTarget 2         1.914      +3.46%\nTarget 3         2.009      +8.59%\nTarget 4         2.169      +17.24%\nStop Loss 1    1.777      -3.95%\nStop Loss 2    1.595      -13.78%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $GRASS\n📊 Analisis Data Coinglass untuk GRASS",
+        "timestamp": "2025-06-04T10:19:36+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4753,
+        "coin_pair": "GRASSUSDT",
+        "risk_rank": "157th/466",
+        "risk_level": "High",
+        "entry_price": 1.85,
+        "targets": [
+            {
+                "level": 1,
+                "price": 1.882,
+                "percentage_change": 1.73,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 1.914,
+                "percentage_change": 3.46,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 2.009,
+                "percentage_change": 8.59,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 2.169,
+                "percentage_change": 17.24,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 1.777,
+                "percentage_change": -3.95,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 1.595,
+                "percentage_change": -13.78,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: AIOTUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 211th/466\nRisk Level: ⚠️ High\n\nEntry: 0.1440\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.1467      +1.88%\nTarget 2         0.1494      +3.75%\nTarget 3         0.1574      +9.31%\nTarget 4         0.1709      +18.68%\nStop Loss 1    0.1386      -3.75%\nStop Loss 2    0.1225      -14.93%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $AIOT\n📊 Analisis Data Coinglass untuk AIOT",
+        "timestamp": "2025-06-04T09:14:36+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4745,
+        "coin_pair": "AIOTUSDT",
+        "risk_rank": "211th/466",
+        "risk_level": "High",
+        "entry_price": 0.144,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.1467,
+                "percentage_change": 1.88,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.1494,
+                "percentage_change": 3.75,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.1574,
+                "percentage_change": 9.31,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.1709,
+                "percentage_change": 18.68,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.1386,
+                "percentage_change": -3.75,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.1225,
+                "percentage_change": -14.93,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: WAXPUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 392th/464\nRisk Level: ⚠️ High\n\nEntry: 0.0224\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.0226      +0.89%\nTarget 2         0.0228      +1.79%\nTarget 3         0.0234      +4.46%\nTarget 4         0.0244      +8.93%\nStop Loss 1    0.0219      -2.23%\nStop Loss 2    0.0208      -7.14%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $WAXP\n📊 Analisis Data Coinglass untuk WAXP",
+        "timestamp": "2025-06-04T05:05:03+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4736,
+        "coin_pair": "WAXPUSDT",
+        "risk_rank": "392th/464",
+        "risk_level": "High",
+        "entry_price": 0.0224,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.0226,
+                "percentage_change": 0.89,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0228,
+                "percentage_change": 1.79,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.0234,
+                "percentage_change": 4.46,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.0244,
+                "percentage_change": 8.93,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.0219,
+                "percentage_change": -2.23,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0208,
+                "percentage_change": -7.14,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: EPICUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 384th/464\nRisk Level: ⚠️ High\n\nEntry: 1.225\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         1.238      +1.06%\nTarget 2         1.252      +2.20%\nTarget 3         1.291      +5.39%\nTarget 4         1.357      +10.78%\nStop Loss 1    1.194      -2.53%\nStop Loss 2    1.119      -8.65%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $EPIC\n📊 Analisis Data Coinglass untuk EPIC",
+        "timestamp": "2025-06-04T04:55:04+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4734,
+        "coin_pair": "EPICUSDT",
+        "risk_rank": "384th/464",
+        "risk_level": "High",
+        "entry_price": 1.225,
+        "targets": [
+            {
+                "level": 1,
+                "price": 1.238,
+                "percentage_change": 1.06,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 1.252,
+                "percentage_change": 2.2,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 1.291,
+                "percentage_change": 5.39,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 1.357,
+                "percentage_change": 10.78,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 1.194,
+                "percentage_change": -2.53,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 1.119,
+                "percentage_change": -8.65,
                 "status": null
             }
         ],

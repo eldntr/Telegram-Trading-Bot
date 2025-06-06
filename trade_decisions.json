@@ -1,0 +1,1464 @@
+[
+    {
+        "decision": "SKIP",
+        "coin_pair": "COMPUSDT",
+        "reason": "Harga saat ini (49.25) lebih mahal dari harga masuk (47.92).",
+        "current_price": 49.25,
+        "entry_price": 47.92,
+        "targets": [],
+        "stop_losses": []
+    },
+    {
+        "decision": "FAIL",
+        "coin_pair": "FARTCOINUSDT",
+        "reason": "Gagal mendapatkan harga terkini untuk FARTCOINUSDT. Koin kemungkinan tidak ada di Binance.",
+        "current_price": null,
+        "entry_price": 0.9866,
+        "targets": [],
+        "stop_losses": []
+    },
+    {
+        "decision": "FAIL",
+        "coin_pair": "BTCDOMUSDT",
+        "reason": "Gagal mendapatkan harga terkini untuk BTCDOMUSDT. Koin kemungkinan tidak ada di Binance.",
+        "current_price": null,
+        "entry_price": 5226.9,
+        "targets": [],
+        "stop_losses": []
+    },
+    {
+        "decision": "FAIL",
+        "coin_pair": "1000XUSDT",
+        "reason": "Gagal mendapatkan harga terkini untuk 1000XUSDT. Koin kemungkinan tidak ada di Binance.",
+        "current_price": null,
+        "entry_price": 0.0758,
+        "targets": [],
+        "stop_losses": []
+    },
+    {
+        "decision": "BUY",
+        "coin_pair": "DFUSDT",
+        "reason": "Harga saat ini (0.04166) lebih rendah dari atau sama dengan harga masuk (0.0434).",
+        "current_price": 0.04166,
+        "entry_price": 0.0434,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.0441,
+                "percentage_change": 1.61,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0448,
+                "percentage_change": 3.23,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.0469,
+                "percentage_change": 8.06,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.0504,
+                "percentage_change": 16.13,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.0419,
+                "percentage_change": -3.46,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0377,
+                "percentage_change": -13.13,
+                "status": null
+            }
+        ]
+    },
+    {
+        "decision": "BUY",
+        "coin_pair": "HIGHUSDT",
+        "reason": "Harga saat ini (0.543) lebih rendah dari atau sama dengan harga masuk (0.5717).",
+        "current_price": 0.543,
+        "entry_price": 0.5717,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.5803,
+                "percentage_change": 1.5,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.5889,
+                "percentage_change": 3.01,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.6146,
+                "percentage_change": 7.5,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.6576,
+                "percentage_change": 15.03,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.5527,
+                "percentage_change": -3.32,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.503,
+                "percentage_change": -12.02,
+                "status": null
+            }
+        ]
+    },
+    {
+        "decision": "BUY",
+        "coin_pair": "HIFIUSDT",
+        "reason": "Harga saat ini (0.0755) lebih rendah dari atau sama dengan harga masuk (0.0887).",
+        "current_price": 0.0755,
+        "entry_price": 0.0887,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.0902,
+                "percentage_change": 1.69,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0917,
+                "percentage_change": 3.38,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.0962,
+                "percentage_change": 8.46,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.1036,
+                "percentage_change": 16.8,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.0854,
+                "percentage_change": -3.72,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0768,
+                "percentage_change": -13.42,
+                "status": null
+            }
+        ]
+    },
+    {
+        "decision": "BUY",
+        "coin_pair": "CHRUSDT",
+        "reason": "Harga saat ini (0.0815) lebih rendah dari atau sama dengan harga masuk (0.0902).",
+        "current_price": 0.0815,
+        "entry_price": 0.0902,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.0915,
+                "percentage_change": 1.44,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0928,
+                "percentage_change": 2.88,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.0966,
+                "percentage_change": 7.1,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.103,
+                "percentage_change": 14.19,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.0871,
+                "percentage_change": -3.44,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0799,
+                "percentage_change": -11.42,
+                "status": null
+            }
+        ]
+    },
+    {
+        "decision": "BUY",
+        "coin_pair": "BTCUSDT",
+        "reason": "Harga saat ini (103143.53) lebih rendah dari atau sama dengan harga masuk (105653.6).",
+        "current_price": 103143.53,
+        "entry_price": 105653.6,
+        "targets": [
+            {
+                "level": 1,
+                "price": 106038.99,
+                "percentage_change": 0.36,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 106424.39,
+                "percentage_change": 0.73,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 107580.57,
+                "percentage_change": 1.82,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 109507.55,
+                "percentage_change": 3.65,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 104867.69,
+                "percentage_change": -0.74,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 102570.44,
+                "percentage_change": -2.92,
+                "status": null
+            }
+        ]
+    },
+    {
+        "decision": "BUY",
+        "coin_pair": "LISTAUSDT",
+        "reason": "Harga saat ini (0.2378) lebih rendah dari atau sama dengan harga masuk (0.254).",
+        "current_price": 0.2378,
+        "entry_price": 0.254,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.2581,
+                "percentage_change": 1.61,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.2622,
+                "percentage_change": 3.23,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.2745,
+                "percentage_change": 8.07,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.2949,
+                "percentage_change": 16.1,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.2447,
+                "percentage_change": -3.66,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.2212,
+                "percentage_change": -12.91,
+                "status": null
+            }
+        ]
+    },
+    {
+        "decision": "FAIL",
+        "coin_pair": "WALUSDT",
+        "reason": "Gagal mendapatkan harga terkini untuk WALUSDT. Koin kemungkinan tidak ada di Binance.",
+        "current_price": null,
+        "entry_price": 0.5096,
+        "targets": [],
+        "stop_losses": []
+    },
+    {
+        "decision": "BUY",
+        "coin_pair": "TONUSDT",
+        "reason": "Harga saat ini (3.098) lebih rendah dari atau sama dengan harga masuk (3.241).",
+        "current_price": 3.098,
+        "entry_price": 3.241,
+        "targets": [
+            {
+                "level": 1,
+                "price": 3.264,
+                "percentage_change": 0.71,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 3.288,
+                "percentage_change": 1.45,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 3.36,
+                "percentage_change": 3.67,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 3.478,
+                "percentage_change": 7.31,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 3.189,
+                "percentage_change": -1.6,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 3.05,
+                "percentage_change": -5.89,
+                "status": null
+            }
+        ]
+    },
+    {
+        "decision": "BUY",
+        "coin_pair": "SPELLUSDT",
+        "reason": "Harga saat ini (0.0005097) lebih rendah dari atau sama dengan harga masuk (0.000556).",
+        "current_price": 0.0005097,
+        "entry_price": 0.000556,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.000561,
+                "percentage_change": 0.9,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.000566,
+                "percentage_change": 1.8,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.000581,
+                "percentage_change": 4.5,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.000606,
+                "percentage_change": 8.99,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.000546,
+                "percentage_change": -1.8,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.000517,
+                "percentage_change": -7.01,
+                "status": null
+            }
+        ]
+    },
+    {
+        "decision": "BUY",
+        "coin_pair": "DUSDT",
+        "reason": "Harga saat ini (0.03335) lebih rendah dari atau sama dengan harga masuk (0.0356).",
+        "current_price": 0.03335,
+        "entry_price": 0.0356,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.036,
+                "percentage_change": 1.12,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0364,
+                "percentage_change": 2.25,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.0376,
+                "percentage_change": 5.62,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.0397,
+                "percentage_change": 11.52,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.0346,
+                "percentage_change": -2.81,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0324,
+                "percentage_change": -8.99,
+                "status": null
+            }
+        ]
+    },
+    {
+        "decision": "BUY",
+        "coin_pair": "HOTUSDT",
+        "reason": "Harga saat ini (0.000948) lebih rendah dari atau sama dengan harga masuk (0.00102).",
+        "current_price": 0.000948,
+        "entry_price": 0.00102,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.00104,
+                "percentage_change": 1.96,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.00105,
+                "percentage_change": 2.94,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.00108,
+                "percentage_change": 5.88,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.00114,
+                "percentage_change": 11.76,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.000996,
+                "percentage_change": -2.35,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.000935,
+                "percentage_change": -8.33,
+                "status": null
+            }
+        ]
+    },
+    {
+        "decision": "BUY",
+        "coin_pair": "RVNUSDT",
+        "reason": "Harga saat ini (0.01451) lebih rendah dari atau sama dengan harga masuk (0.02).",
+        "current_price": 0.01451,
+        "entry_price": 0.02,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.0201,
+                "percentage_change": 0.5,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0202,
+                "percentage_change": 1.0,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.0206,
+                "percentage_change": 3.0,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.0211,
+                "percentage_change": 5.5,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.0198,
+                "percentage_change": -1.0,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0191,
+                "percentage_change": -4.5,
+                "status": null
+            }
+        ]
+    },
+    {
+        "decision": "BUY",
+        "coin_pair": "ZILUSDT",
+        "reason": "Harga saat ini (0.01099) lebih rendah dari atau sama dengan harga masuk (0.0121).",
+        "current_price": 0.01099,
+        "entry_price": 0.0121,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.0122,
+                "percentage_change": 0.83,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0123,
+                "percentage_change": 1.65,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.0127,
+                "percentage_change": 4.96,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.0132,
+                "percentage_change": 9.09,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.0119,
+                "percentage_change": -1.65,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0112,
+                "percentage_change": -7.44,
+                "status": null
+            }
+        ]
+    },
+    {
+        "decision": "BUY",
+        "coin_pair": "BSWUSDT",
+        "reason": "Harga saat ini (0.0246) lebih rendah dari atau sama dengan harga masuk (0.0277).",
+        "current_price": 0.0246,
+        "entry_price": 0.0277,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.028,
+                "percentage_change": 1.08,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0283,
+                "percentage_change": 2.17,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.0293,
+                "percentage_change": 5.78,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.0308,
+                "percentage_change": 11.19,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.027,
+                "percentage_change": -2.53,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0253,
+                "percentage_change": -8.66,
+                "status": null
+            }
+        ]
+    },
+    {
+        "decision": "BUY",
+        "coin_pair": "HMSTRUSDT",
+        "reason": "Harga saat ini (0.002019) lebih rendah dari atau sama dengan harga masuk (0.00205).",
+        "current_price": 0.002019,
+        "entry_price": 0.00205,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.00207,
+                "percentage_change": 0.98,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.00209,
+                "percentage_change": 1.95,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.00214,
+                "percentage_change": 4.39,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.00222,
+                "percentage_change": 8.29,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.00202,
+                "percentage_change": -1.46,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.00192,
+                "percentage_change": -6.34,
+                "status": null
+            }
+        ]
+    },
+    {
+        "decision": "BUY",
+        "coin_pair": "ACEUSDT",
+        "reason": "Harga saat ini (0.544) lebih rendah dari atau sama dengan harga masuk (0.5951).",
+        "current_price": 0.544,
+        "entry_price": 0.5951,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.6024,
+                "percentage_change": 1.23,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.6097,
+                "percentage_change": 2.45,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.6316,
+                "percentage_change": 6.13,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.6681,
+                "percentage_change": 12.27,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.5802,
+                "percentage_change": -2.5,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.5367,
+                "percentage_change": -9.81,
+                "status": null
+            }
+        ]
+    },
+    {
+        "decision": "BUY",
+        "coin_pair": "RVNUSDT",
+        "reason": "Harga saat ini (0.01451) lebih rendah dari atau sama dengan harga masuk (0.0189).",
+        "current_price": 0.01451,
+        "entry_price": 0.0189,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.019,
+                "percentage_change": 0.53,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0192,
+                "percentage_change": 1.59,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.0195,
+                "percentage_change": 3.17,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.02,
+                "percentage_change": 5.82,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.0187,
+                "percentage_change": -1.06,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.018,
+                "percentage_change": -4.76,
+                "status": null
+            }
+        ]
+    },
+    {
+        "decision": "BUY",
+        "coin_pair": "REIUSDT",
+        "reason": "Harga saat ini (0.01837) lebih rendah dari atau sama dengan harga masuk (0.0187).",
+        "current_price": 0.01837,
+        "entry_price": 0.0187,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.0189,
+                "percentage_change": 1.07,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.019,
+                "percentage_change": 1.6,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.0196,
+                "percentage_change": 4.81,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.0205,
+                "percentage_change": 9.63,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.0183,
+                "percentage_change": -2.14,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0172,
+                "percentage_change": -8.02,
+                "status": null
+            }
+        ]
+    },
+    {
+        "decision": "BUY",
+        "coin_pair": "RVNUSDT",
+        "reason": "Harga saat ini (0.01451) lebih rendah dari atau sama dengan harga masuk (0.0161).",
+        "current_price": 0.01451,
+        "entry_price": 0.0161,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.0162,
+                "percentage_change": 0.62,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0163,
+                "percentage_change": 1.24,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.0167,
+                "percentage_change": 3.73,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.0172,
+                "percentage_change": 6.83,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.0158,
+                "percentage_change": -1.86,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0152,
+                "percentage_change": -5.59,
+                "status": null
+            }
+        ]
+    },
+    {
+        "decision": "BUY",
+        "coin_pair": "AGLDUSDT",
+        "reason": "Harga saat ini (0.768) lebih rendah dari atau sama dengan harga masuk (0.8783).",
+        "current_price": 0.768,
+        "entry_price": 0.8783,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.8934,
+                "percentage_change": 1.72,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.9085,
+                "percentage_change": 3.44,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.9537,
+                "percentage_change": 8.58,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 1.029,
+                "percentage_change": 17.16,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.846,
+                "percentage_change": -3.68,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.7576,
+                "percentage_change": -13.74,
+                "status": null
+            }
+        ]
+    },
+    {
+        "decision": "FAIL",
+        "coin_pair": "ZKJUSDT",
+        "reason": "Gagal mendapatkan harga terkini untuk ZKJUSDT. Koin kemungkinan tidak ada di Binance.",
+        "current_price": null,
+        "entry_price": 2.006,
+        "targets": [],
+        "stop_losses": []
+    },
+    {
+        "decision": "BUY",
+        "coin_pair": "OGNUSDT",
+        "reason": "Harga saat ini (0.0539) lebih rendah dari atau sama dengan harga masuk (0.0613).",
+        "current_price": 0.0539,
+        "entry_price": 0.0613,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.062,
+                "percentage_change": 1.14,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0627,
+                "percentage_change": 2.28,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.0648,
+                "percentage_change": 5.71,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.0682,
+                "percentage_change": 11.26,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.0599,
+                "percentage_change": -2.28,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0558,
+                "percentage_change": -8.97,
+                "status": null
+            }
+        ]
+    },
+    {
+        "decision": "BUY",
+        "coin_pair": "CAKEUSDT",
+        "reason": "Harga saat ini (2.283) lebih rendah dari atau sama dengan harga masuk (2.481).",
+        "current_price": 2.283,
+        "entry_price": 2.481,
+        "targets": [
+            {
+                "level": 1,
+                "price": 2.512,
+                "percentage_change": 1.25,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 2.542,
+                "percentage_change": 2.46,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 2.633,
+                "percentage_change": 6.13,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 2.785,
+                "percentage_change": 12.25,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 2.418,
+                "percentage_change": -2.54,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 2.239,
+                "percentage_change": -9.75,
+                "status": null
+            }
+        ]
+    },
+    {
+        "decision": "FAIL",
+        "coin_pair": "B3USDT",
+        "reason": "Gagal mendapatkan harga terkini untuk B3USDT. Koin kemungkinan tidak ada di Binance.",
+        "current_price": null,
+        "entry_price": 0.00323,
+        "targets": [],
+        "stop_losses": []
+    },
+    {
+        "decision": "BUY",
+        "coin_pair": "NMRUSDT",
+        "reason": "Harga saat ini (8.03) lebih rendah dari atau sama dengan harga masuk (8.43).",
+        "current_price": 8.03,
+        "entry_price": 8.43,
+        "targets": [
+            {
+                "level": 1,
+                "price": 8.53,
+                "percentage_change": 1.19,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 8.63,
+                "percentage_change": 2.37,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 8.929,
+                "percentage_change": 5.92,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 9.428,
+                "percentage_change": 11.84,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 8.205,
+                "percentage_change": -2.67,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 7.632,
+                "percentage_change": -9.47,
+                "status": null
+            }
+        ]
+    },
+    {
+        "decision": "BUY",
+        "coin_pair": "LPTUSDT",
+        "reason": "Harga saat ini (7.678) lebih rendah dari atau sama dengan harga masuk (8.596).",
+        "current_price": 7.678,
+        "entry_price": 8.596,
+        "targets": [
+            {
+                "level": 1,
+                "price": 8.742,
+                "percentage_change": 1.7,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 8.888,
+                "percentage_change": 3.4,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 9.325,
+                "percentage_change": 8.48,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 10.05,
+                "percentage_change": 16.91,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 8.266,
+                "percentage_change": -3.84,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 7.43,
+                "percentage_change": -13.56,
+                "status": null
+            }
+        ]
+    },
+    {
+        "decision": "BUY",
+        "coin_pair": "LDOUSDT",
+        "reason": "Harga saat ini (0.768) lebih rendah dari atau sama dengan harga masuk (0.8969).",
+        "current_price": 0.768,
+        "entry_price": 0.8969,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.9111,
+                "percentage_change": 1.58,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.9253,
+                "percentage_change": 3.17,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.9679,
+                "percentage_change": 7.92,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 1.039,
+                "percentage_change": 15.84,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.8636,
+                "percentage_change": -3.71,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.7834,
+                "percentage_change": -12.65,
+                "status": null
+            }
+        ]
+    },
+    {
+        "decision": "BUY",
+        "coin_pair": "RPLUSDT",
+        "reason": "Harga saat ini (5.69) lebih rendah dari atau sama dengan harga masuk (6.393).",
+        "current_price": 5.69,
+        "entry_price": 6.393,
+        "targets": [
+            {
+                "level": 1,
+                "price": 6.557,
+                "percentage_change": 2.57,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 6.72,
+                "percentage_change": 5.11,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 7.211,
+                "percentage_change": 12.8,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 8.029,
+                "percentage_change": 25.59,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 6.045,
+                "percentage_change": -5.44,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 5.084,
+                "percentage_change": -20.48,
+                "status": null
+            }
+        ]
+    },
+    {
+        "decision": "SKIP",
+        "coin_pair": "BMTUSDT",
+        "reason": "Harga saat ini (0.1226) lebih mahal dari harga masuk (0.1203).",
+        "current_price": 0.1226,
+        "entry_price": 0.1203,
+        "targets": [],
+        "stop_losses": []
+    },
+    {
+        "decision": "BUY",
+        "coin_pair": "STOUSDT",
+        "reason": "Harga saat ini (0.0917) lebih rendah dari atau sama dengan harga masuk (0.1044).",
+        "current_price": 0.0917,
+        "entry_price": 0.1044,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.1059,
+                "percentage_change": 1.44,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.1074,
+                "percentage_change": 2.87,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.112,
+                "percentage_change": 7.28,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.1196,
+                "percentage_change": 14.56,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.1013,
+                "percentage_change": -2.97,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0922,
+                "percentage_change": -11.69,
+                "status": null
+            }
+        ]
+    },
+    {
+        "decision": "FAIL",
+        "coin_pair": "DOLOUSDT",
+        "reason": "Gagal mendapatkan harga terkini untuk DOLOUSDT. Koin kemungkinan tidak ada di Binance.",
+        "current_price": null,
+        "entry_price": 0.0377,
+        "targets": [],
+        "stop_losses": []
+    },
+    {
+        "decision": "BUY",
+        "coin_pair": "KERNELUSDT",
+        "reason": "Harga saat ini (0.1399) lebih rendah dari atau sama dengan harga masuk (0.1618).",
+        "current_price": 0.1399,
+        "entry_price": 0.1618,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.165,
+                "percentage_change": 1.98,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.1681,
+                "percentage_change": 3.89,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.1777,
+                "percentage_change": 9.83,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.1935,
+                "percentage_change": 19.59,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.155,
+                "percentage_change": -4.2,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.1364,
+                "percentage_change": -15.7,
+                "status": null
+            }
+        ]
+    },
+    {
+        "decision": "FAIL",
+        "coin_pair": "GRASSUSDT",
+        "reason": "Gagal mendapatkan harga terkini untuk GRASSUSDT. Koin kemungkinan tidak ada di Binance.",
+        "current_price": null,
+        "entry_price": 1.85,
+        "targets": [],
+        "stop_losses": []
+    },
+    {
+        "decision": "FAIL",
+        "coin_pair": "AIOTUSDT",
+        "reason": "Gagal mendapatkan harga terkini untuk AIOTUSDT. Koin kemungkinan tidak ada di Binance.",
+        "current_price": null,
+        "entry_price": 0.144,
+        "targets": [],
+        "stop_losses": []
+    },
+    {
+        "decision": "BUY",
+        "coin_pair": "WAXPUSDT",
+        "reason": "Harga saat ini (0.02119) lebih rendah dari atau sama dengan harga masuk (0.0224).",
+        "current_price": 0.02119,
+        "entry_price": 0.0224,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.0226,
+                "percentage_change": 0.89,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0228,
+                "percentage_change": 1.79,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.0234,
+                "percentage_change": 4.46,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.0244,
+                "percentage_change": 8.93,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.0219,
+                "percentage_change": -2.23,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0208,
+                "percentage_change": -7.14,
+                "status": null
+            }
+        ]
+    },
+    {
+        "decision": "BUY",
+        "coin_pair": "EPICUSDT",
+        "reason": "Harga saat ini (1.123) lebih rendah dari atau sama dengan harga masuk (1.225).",
+        "current_price": 1.123,
+        "entry_price": 1.225,
+        "targets": [
+            {
+                "level": 1,
+                "price": 1.238,
+                "percentage_change": 1.06,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 1.252,
+                "percentage_change": 2.2,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 1.291,
+                "percentage_change": 5.39,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 1.357,
+                "percentage_change": 10.78,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 1.194,
+                "percentage_change": -2.53,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 1.119,
+                "percentage_change": -8.65,
+                "status": null
+            }
+        ]
+    }
+]

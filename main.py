@@ -32,7 +32,7 @@ async def main():
         print(f"Terhubung sebagai: {me.first_name}")
         
         print(f"Mengambil 50 pesan terakhir dari chat ID: {config.TARGET_CHAT_ID}...")
-        messages = await client_wrapper.fetch_historical_messages(config.TARGET_CHAT_ID, limit=50)
+        messages = await client_wrapper.fetch_historical_messages(config.TARGET_CHAT_ID, limit=200)
         print(f"Berhasil mengambil {len(messages)} pesan.")
         
         if not messages: return

@@ -1,5 +1,76 @@
 [
     {
+        "raw_text": "✅ SIGNAL UPDATE: COMPUSDT ✅\n\n🎯 Target 1 (48.77) HIT!",
+        "timestamp": "2025-06-06T06:16:53+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4933,
+        "coin_pair": "COMPUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 48.77,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: COMPUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 89th/468\nRisk Level: 🟢 Normal\n\nEntry: 47.92\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         48.77      +1.77%\nTarget 2         49.62      +3.55%\nTarget 3         52.16      +8.85%\nTarget 4         56.40      +17.70%\nStop Loss 1    46.13      -3.74%\nStop Loss 2    41.13      -14.17%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $COMP\n📊 Analisis Data Coinglass untuk COMP",
+        "timestamp": "2025-06-06T06:15:04+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4932,
+        "coin_pair": "COMPUSDT",
+        "risk_rank": "89th/468",
+        "risk_level": "Normal",
+        "entry_price": 47.92,
+        "targets": [
+            {
+                "level": 1,
+                "price": 48.77,
+                "percentage_change": 1.77,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 49.62,
+                "percentage_change": 3.55,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 52.16,
+                "percentage_change": 8.85,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 56.4,
+                "percentage_change": 17.7,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 46.13,
+                "percentage_change": -3.74,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 41.13,
+                "percentage_change": -14.17,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
         "raw_text": "📈 Circle ends NYSE debut up 167% from IPO price\n\nThe company’s stock opened around $69 — more than double the upsized IPO price of $31 per share. \n\n🚀 CRCL shares peaked at $103.75 before settling at $82 when the market closed, up 167% from the IPO price and about 20% from the opening price.\n\nSource: TU Crypto News",
         "timestamp": "2025-06-06T06:04:45+00:00",
         "sender_id": 1218062484,
@@ -987,5 +1058,3793 @@
         "content": "🏆 Binance becomes leader among CEXs in stablecoin reserves\n\nAs of May, Binance holds $31 billion in USDT/USDC reserves and $180 billion in total reserves.\n\n📊 Coinbase and Binance also recorded the largest capital inflows in 2025—$344 billion and $335 billion, respectively—far ahead of other exchanges.\n\nSource: TU Crypto News",
         "original_sender": "TU Crypto News",
         "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: OGNUSDT ✅\n\n🎯 Target 1 (0.0620) HIT!\n🎯 Target 2 (0.0627) HIT!",
+        "timestamp": "2025-06-05T13:21:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4878,
+        "coin_pair": "OGNUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 0.062,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 2,
+                "price": 0.0627,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: CHRUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 320th/468\nRisk Level: ⚠️ High\n\nEntry: 0.0902\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.0915      +1.44%\nTarget 2         0.0928      +2.88%\nTarget 3         0.0966      +7.10%\nTarget 4         0.1030      +14.19%\nStop Loss 1    0.0871      -3.44%\nStop Loss 2    0.0799      -11.42%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $CHR\n📊 Analisis Data Coinglass untuk CHR",
+        "timestamp": "2025-06-05T13:10:04+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4877,
+        "coin_pair": "CHRUSDT",
+        "risk_rank": "320th/468",
+        "risk_level": "High",
+        "entry_price": 0.0902,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.0915,
+                "percentage_change": 1.44,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0928,
+                "percentage_change": 2.88,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.0966,
+                "percentage_change": 7.1,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.103,
+                "percentage_change": 14.19,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.0871,
+                "percentage_change": -3.44,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0799,
+                "percentage_change": -11.42,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: BTCUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 🥈 2/468\nRisk Level: 🟢 Normal\n\nEntry: 105653.60\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         106038.99      +0.36%\nTarget 2         106424.39      +0.73%\nTarget 3         107580.57      +1.82%\nTarget 4         109507.55      +3.65%\nStop Loss 1    104867.69      -0.74%\nStop Loss 2    102570.44      -2.92%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $BTC\n📊 Analisis Data Coinglass untuk BTC",
+        "timestamp": "2025-06-05T12:50:04+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4876,
+        "coin_pair": "BTCUSDT",
+        "risk_rank": "🥈",
+        "risk_level": "Normal",
+        "entry_price": 105653.6,
+        "targets": [
+            {
+                "level": 1,
+                "price": 106038.99,
+                "percentage_change": 0.36,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 106424.39,
+                "percentage_change": 0.73,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 107580.57,
+                "percentage_change": 1.82,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 109507.55,
+                "percentage_change": 3.65,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 104867.69,
+                "percentage_change": -0.74,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 102570.44,
+                "percentage_change": -2.92,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🌍🌐🧭⛰️\n\nChatGPT Now Syncs with Gmail, Drive, Teams, and Zoom\n\nOpenAI’s latest update enables ChatGPT to integrate with Gmail, Google Drive, Outlook, Teams, Zoom, Dropbox, and other platforms.\n\nPro and Team users can leverage ChatGPT to analyze documents, search files, and record meetings. On macOS, it transcribes calls, summarizes key points, and generates tasks automatically.\n\n\n🥫 t.me/FinancialWorldUpdates\n\nSource: Financial World Updates",
+        "timestamp": "2025-06-05T12:46:57+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4875,
+        "content": "🌍🌐🧭⛰️\n\nChatGPT Now Syncs with Gmail, Drive, Teams, and Zoom\n\nOpenAI’s latest update enables ChatGPT to integrate with Gmail, Google Drive, Outlook, Teams, Zoom, Dropbox, and other platforms.\n\nPro and Team users can leverage ChatGPT to analyze documents, search files, and record meetings. On macOS, it transcribes calls, summarizes key points, and generates tasks automatically.\n\n\n🥫 t.me/FinancialWorldUpdates\n\nSource: Financial World Updates",
+        "original_sender": "Financial World Updates",
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "🦺👓🕶🥽🥼\n\n🇪🇺 The European Central Bank cut interest rates to 2%.\n\n\n🥫 t.me/FinancialWorldUpdates\n\nSource: Financial World Updates",
+        "timestamp": "2025-06-05T12:44:13+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4874,
+        "content": "🦺👓🕶🥽🥼\n\n🇪🇺 The European Central Bank cut interest rates to 2%.\n\n\n🥫 t.me/FinancialWorldUpdates\n\nSource: Financial World Updates",
+        "original_sender": "Financial World Updates",
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "Someone just bet $1.2B on Bitcoin calls\n\nA trader bought a massive batch of BTC call options, paying $50M in premiums. These options give the right to buy BTC at specific prices on set dates — and they’re ultra-bullish:\n\n• $112K–$120K strikes for July 25 (3,750 BTC total)\n• $115K & $140K strikes for Sept. 26 (7,600 BTC total)\n\nIs this a bet on $120K BTC by late July — and $140K by September?\n\nSource: Crypto Insider",
+        "timestamp": "2025-06-05T12:43:40+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4873,
+        "content": "Someone just bet $1.2B on Bitcoin calls\n\nA trader bought a massive batch of BTC call options, paying $50M in premiums. These options give the right to buy BTC at specific prices on set dates — and they’re ultra-bullish:\n\n• $112K–$120K strikes for July 25 (3,750 BTC total)\n• $115K & $140K strikes for Sept. 26 (7,600 BTC total)\n\nIs this a bet on $120K BTC by late July — and $140K by September?\n\nSource: Crypto Insider",
+        "original_sender": "Crypto Insider",
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: LISTAUSDT ✅\n\n🎯 Target 1 (0.2581) HIT!",
+        "timestamp": "2025-06-05T12:31:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4872,
+        "coin_pair": "LISTAUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 0.2581,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: LISTAUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 158th/468\nRisk Level: ⚠️ High\n\nEntry: 0.2540\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.2581      +1.61%\nTarget 2         0.2622      +3.23%\nTarget 3         0.2745      +8.07%\nTarget 4         0.2949      +16.10%\nStop Loss 1    0.2447      -3.66%\nStop Loss 2    0.2212      -12.91%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $LISTA\n📊 Analisis Data Coinglass untuk LISTA",
+        "timestamp": "2025-06-05T12:25:03+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4871,
+        "coin_pair": "LISTAUSDT",
+        "risk_rank": "158th/468",
+        "risk_level": "High",
+        "entry_price": 0.254,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.2581,
+                "percentage_change": 1.61,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.2622,
+                "percentage_change": 3.23,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.2745,
+                "percentage_change": 8.07,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.2949,
+                "percentage_change": 16.1,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.2447,
+                "percentage_change": -3.66,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.2212,
+                "percentage_change": -12.91,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "[Pesan Media atau Aksi: Tanpa konten teks]",
+        "timestamp": "2025-06-05T12:22:10+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4870,
+        "content": "[Pesan Media atau Aksi: Tanpa konten teks]",
+        "original_sender": null,
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "🇧🇬🇧🇫🇨🇮🇩🇯🇪🇬\n\n\nRomania's largest postal services operator Posta Romana to install Bitcoin and crypto Terminals.\n\n\n🥫 t.me/FinancialWorldUpdates\n\nSource: Financial World Updates",
+        "timestamp": "2025-06-05T12:18:23+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4869,
+        "content": "🇧🇬🇧🇫🇨🇮🇩🇯🇪🇬\n\n\nRomania's largest postal services operator Posta Romana to install Bitcoin and crypto Terminals.\n\n\n🥫 t.me/FinancialWorldUpdates\n\nSource: Financial World Updates",
+        "original_sender": "Financial World Updates",
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "🌈 Charles Hoskinson believes Midnight has potential to unite blockchains\n\nThe Cardano founder responded to concerns about the growing tension between Ethereum, Solana and Polkadot.\n\n🔗 He suggested using Midnight to bridge the gap between Ethereum, Solana and Polkadot. \n\nMidnight promotes the concept of a cooperative economy where blockchains will be able to interact as world currencies.\n\nSource: TU Crypto News",
+        "timestamp": "2025-06-05T12:02:26+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4868,
+        "content": "🌈 Charles Hoskinson believes Midnight has potential to unite blockchains\n\nThe Cardano founder responded to concerns about the growing tension between Ethereum, Solana and Polkadot.\n\n🔗 He suggested using Midnight to bridge the gap between Ethereum, Solana and Polkadot. \n\nMidnight promotes the concept of a cooperative economy where blockchains will be able to interact as world currencies.\n\nSource: TU Crypto News",
+        "original_sender": "TU Crypto News",
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "[Pesan Media atau Aksi: Tanpa konten teks]",
+        "timestamp": "2025-06-05T11:48:37+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4867,
+        "content": "[Pesan Media atau Aksi: Tanpa konten teks]",
+        "original_sender": null,
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: BMTUSDT ✅\n\n🎯 Target 1 (0.1237) HIT!\n🎯 Target 2 (0.1272) HIT!",
+        "timestamp": "2025-06-05T11:46:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4866,
+        "coin_pair": "BMTUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 0.1237,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 2,
+                "price": 0.1272,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "🦺👓🕶🥽🥼\n\n🚨Hong Kong financial regulators plan to legalize Bitcoin and crypto derivatives trading.\n\n\n🥫 t.me/FinancialWorldUpdates\n\nSource: Financial World Updates",
+        "timestamp": "2025-06-05T11:36:20+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4865,
+        "content": "🦺👓🕶🥽🥼\n\n🚨Hong Kong financial regulators plan to legalize Bitcoin and crypto derivatives trading.\n\n\n🥫 t.me/FinancialWorldUpdates\n\nSource: Financial World Updates",
+        "original_sender": "Financial World Updates",
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "⚠️🚯↪️🔂⬅️\n\nThe US just bought $10B of its own debt.\n\nThat’s a new record.\n\n\n🥫 t.me/FinancialWorldUpdates\n\nSource: Financial World Updates",
+        "timestamp": "2025-06-05T11:36:20+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4864,
+        "content": "⚠️🚯↪️🔂⬅️\n\nThe US just bought $10B of its own debt.\n\nThat’s a new record.\n\n\n🥫 t.me/FinancialWorldUpdates\n\nSource: Financial World Updates",
+        "original_sender": "Financial World Updates",
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "Michael Saylor:\n\n“When your bank finally tells you to buy Bitcoin, it’ll be priced at a million dollars.”\n\nSource: Crypto Insider",
+        "timestamp": "2025-06-05T11:13:39+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4863,
+        "content": "Michael Saylor:\n\n“When your bank finally tells you to buy Bitcoin, it’ll be priced at a million dollars.”\n\nSource: Crypto Insider",
+        "original_sender": "Crypto Insider",
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: BMTUSDT ✅\n\n🎯 Target 1 (0.1237) HIT!",
+        "timestamp": "2025-06-05T11:11:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4862,
+        "coin_pair": "BMTUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 0.1237,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: WALUSDT ✅\n\n🎯 Target 1 (0.5162) HIT!",
+        "timestamp": "2025-06-05T10:46:53+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4861,
+        "coin_pair": "WALUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 0.5162,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: WALUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 207th/468\nRisk Level: ⚠️ High\n\nEntry: 0.5096\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.5162      +1.30%\nTarget 2         0.5227      +2.57%\nTarget 3         0.5424      +6.44%\nTarget 4         0.5752      +12.87%\nStop Loss 1    0.4964      -2.59%\nStop Loss 2    0.4571      -10.30%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $WAL\n📊 Analisis Data Coinglass untuk WAL",
+        "timestamp": "2025-06-05T10:45:03+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4860,
+        "coin_pair": "WALUSDT",
+        "risk_rank": "207th/468",
+        "risk_level": "High",
+        "entry_price": 0.5096,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.5162,
+                "percentage_change": 1.3,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.5227,
+                "percentage_change": 2.57,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.5424,
+                "percentage_change": 6.44,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.5752,
+                "percentage_change": 12.87,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.4964,
+                "percentage_change": -2.59,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.4571,
+                "percentage_change": -10.3,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🇧🇬🇧🇫🇨🇮🇩🇯🇪🇬\n\nTrump Calls for Eliminating Debt Ceiling\n\nPresident Trump now supports scrapping the debt ceiling, agreeing with some senators. If approved, Congress would no longer vote to raise the borrowing limit, ending a major fiscal pressure point in Washington.\n\n\n🥫 t.me/FinancialWorldUpdates\n\nSource: Financial World Updates",
+        "timestamp": "2025-06-05T10:32:44+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4859,
+        "content": "🇧🇬🇧🇫🇨🇮🇩🇯🇪🇬\n\nTrump Calls for Eliminating Debt Ceiling\n\nPresident Trump now supports scrapping the debt ceiling, agreeing with some senators. If approved, Congress would no longer vote to raise the borrowing limit, ending a major fiscal pressure point in Washington.\n\n\n🥫 t.me/FinancialWorldUpdates\n\nSource: Financial World Updates",
+        "original_sender": "Financial World Updates",
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "⚠️🚯↪️🔂⬅️\n\nUK public gold miner Bluebird Mining Ventures to adopt Bitcoin treasury strategy.\n\n\n🥫 t.me/FinancialWorldUpdates\n\nSource: Financial World Updates",
+        "timestamp": "2025-06-05T10:01:41+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4858,
+        "content": "⚠️🚯↪️🔂⬅️\n\nUK public gold miner Bluebird Mining Ventures to adopt Bitcoin treasury strategy.\n\n\n🥫 t.me/FinancialWorldUpdates\n\nSource: Financial World Updates",
+        "original_sender": "Financial World Updates",
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "Tim Draper: Bitcoin could hit $250K this year — or even go infinite against the dollar as institutional demand, banks, and Web3 adoption pick up speed.\n\nSource: Crypto Insider",
+        "timestamp": "2025-06-05T09:43:37+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4857,
+        "content": "Tim Draper: Bitcoin could hit $250K this year — or even go infinite against the dollar as institutional demand, banks, and Web3 adoption pick up speed.\n\nSource: Crypto Insider",
+        "original_sender": "Crypto Insider",
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: TONUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 80th/468\nRisk Level: 🟢 Normal\n\nEntry: 3.241\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         3.264      +0.71%\nTarget 2         3.288      +1.45%\nTarget 3         3.360      +3.67%\nTarget 4         3.478      +7.31%\nStop Loss 1    3.189      -1.60%\nStop Loss 2    3.050      -5.89%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $TON\n📊 Analisis Data Coinglass untuk TON",
+        "timestamp": "2025-06-05T09:10:04+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4856,
+        "coin_pair": "TONUSDT",
+        "risk_rank": "80th/468",
+        "risk_level": "Normal",
+        "entry_price": 3.241,
+        "targets": [
+            {
+                "level": 1,
+                "price": 3.264,
+                "percentage_change": 0.71,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 3.288,
+                "percentage_change": 1.45,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 3.36,
+                "percentage_change": 3.67,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 3.478,
+                "percentage_change": 7.31,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 3.189,
+                "percentage_change": -1.6,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 3.05,
+                "percentage_change": -5.89,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🔴 SIGNAL UPDATE: SPELLUSDT 🔴\n\n⚠️ Stop Loss 1 (0.000546) TRIGGERED!",
+        "timestamp": "2025-06-05T09:02:03+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4855,
+        "coin_pair": "SPELLUSDT",
+        "targets_hit": [],
+        "stop_losses_triggered": [
+            {
+                "level": 1,
+                "price": 0.000546,
+                "percentage_change": null,
+                "status": "TRIGGERED"
+            }
+        ],
+        "update_type": "STOP_LOSS_TRIGGERED",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "🔴 SIGNAL UPDATE: ZKJUSDT 🔴\n\n⚠️ Stop Loss 1 (2.000) TRIGGERED!",
+        "timestamp": "2025-06-05T09:01:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4854,
+        "coin_pair": "ZKJUSDT",
+        "targets_hit": [],
+        "stop_losses_triggered": [
+            {
+                "level": 1,
+                "price": 2.0,
+                "percentage_change": null,
+                "status": "TRIGGERED"
+            }
+        ],
+        "update_type": "STOP_LOSS_TRIGGERED",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: DUSDT ✅\n\n🎯 Target 1 (0.0360) HIT!\n🎯 Target 2 (0.0364) HIT!\n🎯 Target 3 (0.0376) HIT!",
+        "timestamp": "2025-06-05T08:51:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4853,
+        "coin_pair": "DUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 0.036,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 2,
+                "price": 0.0364,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 3,
+                "price": 0.0376,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "🦺👓🕶🥽🥼\n\nReddit has filed a lawsuit against AI startup Anthropic in San Francisco, alleging breach of contract and unfair competition. The suit claims Anthropic used Reddit users' personal data for model training without consent, harming Reddit through unauthorized commercial use of its content.\n\n\n🥫 t.me/FinancialWorldUpdates\n\nSource: Financial World Updates",
+        "timestamp": "2025-06-05T08:51:17+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4852,
+        "content": "🦺👓🕶🥽🥼\n\nReddit has filed a lawsuit against AI startup Anthropic in San Francisco, alleging breach of contract and unfair competition. The suit claims Anthropic used Reddit users' personal data for model training without consent, harming Reddit through unauthorized commercial use of its content.\n\n\n🥫 t.me/FinancialWorldUpdates\n\nSource: Financial World Updates",
+        "original_sender": "Financial World Updates",
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: SPELLUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 310th/466\nRisk Level: ⚠️ High\n\nEntry: 0.000556\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.000561      +0.90%\nTarget 2         0.000566      +1.80%\nTarget 3         0.000581      +4.50%\nTarget 4         0.000606      +8.99%\nStop Loss 1    0.000546      -1.80%\nStop Loss 2    0.000517      -7.01%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $SPELL\n📊 Analisis Data Coinglass untuk SPELL",
+        "timestamp": "2025-06-05T08:45:03+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4851,
+        "coin_pair": "SPELLUSDT",
+        "risk_rank": "310th/466",
+        "risk_level": "High",
+        "entry_price": 0.000556,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.000561,
+                "percentage_change": 0.9,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.000566,
+                "percentage_change": 1.8,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.000581,
+                "percentage_change": 4.5,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.000606,
+                "percentage_change": 8.99,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.000546,
+                "percentage_change": -1.8,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.000517,
+                "percentage_change": -7.01,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "The U.S. housing market faces a significant imbalance:  \n\nIn April, sellers outnumbered buyers by 33.7%, the largest gap since tracking started in 2013.  \n\nNew listings reached a 4-year high, while buyer demand fell to a 4-year low.  \n\nLast year, the gap was only 6.5%.  \nPrice reductions may follow.\n\n\n🥫 t.me/FinancialWorldUpdates\n\nSource: Financial World Updates",
+        "timestamp": "2025-06-05T08:36:16+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4850,
+        "content": "The U.S. housing market faces a significant imbalance:  \n\nIn April, sellers outnumbered buyers by 33.7%, the largest gap since tracking started in 2013.  \n\nNew listings reached a 4-year high, while buyer demand fell to a 4-year low.  \n\nLast year, the gap was only 6.5%.  \nPrice reductions may follow.\n\n\n🥫 t.me/FinancialWorldUpdates\n\nSource: Financial World Updates",
+        "original_sender": "Financial World Updates",
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "⚡️ Ethereum Foundation cuts costs to boost DeFi\n\nThe Ethereum Foundation has introduced a new treasury policy aimed at strengthening the decentralization and resilience of the network.\n\n✅ Over the next five years, the foundation plans to reduce its operating expenses to 5%, following an endowment-style model.\n\nThe Ethereum Foundation is betting on DeFi tools, including staking and lending, with a focus on security and rejection of centralized solutions.\n\nSource: TU Crypto News",
+        "timestamp": "2025-06-05T08:17:22+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4849,
+        "content": "⚡️ Ethereum Foundation cuts costs to boost DeFi\n\nThe Ethereum Foundation has introduced a new treasury policy aimed at strengthening the decentralization and resilience of the network.\n\n✅ Over the next five years, the foundation plans to reduce its operating expenses to 5%, following an endowment-style model.\n\nThe Ethereum Foundation is betting on DeFi tools, including staking and lending, with a focus on security and rejection of centralized solutions.\n\nSource: TU Crypto News",
+        "original_sender": "TU Crypto News",
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "Jewish co-founder claims other chains like Ethereum are anti-Semitic, while Solana is kosher.\n\n“We’ve been persecuted by gas before, and Ethereum’s high gas fees came for us again.” Toly said.\n\nSource: Crypto Insider",
+        "timestamp": "2025-06-05T08:12:17+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4848,
+        "content": "Jewish co-founder claims other chains like Ethereum are anti-Semitic, while Solana is kosher.\n\n“We’ve been persecuted by gas before, and Ethereum’s high gas fees came for us again.” Toly said.\n\nSource: Crypto Insider",
+        "original_sender": "Crypto Insider",
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: HOTUSDT ✅\n\n🎯 Target 1 (0.00104) HIT!\n🎯 Target 2 (0.00105) HIT!\n🎯 Target 3 (0.00108) HIT!",
+        "timestamp": "2025-06-05T08:11:53+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4847,
+        "coin_pair": "HOTUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 0.00104,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 2,
+                "price": 0.00105,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 3,
+                "price": 0.00108,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "🔴 SIGNAL UPDATE: HMSTRUSDT 🔴\n\n⚠️ Stop Loss 1 (0.00202) TRIGGERED!",
+        "timestamp": "2025-06-05T08:01:55+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4846,
+        "coin_pair": "HMSTRUSDT",
+        "targets_hit": [],
+        "stop_losses_triggered": [
+            {
+                "level": 1,
+                "price": 0.00202,
+                "percentage_change": null,
+                "status": "TRIGGERED"
+            }
+        ],
+        "update_type": "STOP_LOSS_TRIGGERED",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "🔴 SIGNAL UPDATE: MASKUSDT 🔴\n\n⚠️ Stop Loss 1 (2.790) TRIGGERED!",
+        "timestamp": "2025-06-05T08:01:53+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4845,
+        "coin_pair": "MASKUSDT",
+        "targets_hit": [],
+        "stop_losses_triggered": [
+            {
+                "level": 1,
+                "price": 2.79,
+                "percentage_change": null,
+                "status": "TRIGGERED"
+            }
+        ],
+        "update_type": "STOP_LOSS_TRIGGERED",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "🐙 Kraken launches crypto brokerage for institutional clients\n\nCrypto exchange Kraken has introduced Kraken Prime — a brokerage platform designed to serve institutional clients.\n\n🕯 Major players will gain access to digital asset trading and secure custody solutions.\n\nThe new project targets asset managers, hedge funds, and corporate entities.\n\nSource: TU Crypto News",
+        "timestamp": "2025-06-05T07:47:22+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4844,
+        "content": "🐙 Kraken launches crypto brokerage for institutional clients\n\nCrypto exchange Kraken has introduced Kraken Prime — a brokerage platform designed to serve institutional clients.\n\n🕯 Major players will gain access to digital asset trading and secure custody solutions.\n\nThe new project targets asset managers, hedge funds, and corporate entities.\n\nSource: TU Crypto News",
+        "original_sender": "TU Crypto News",
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: HOTUSDT ✅\n\n🎯 Target 1 (0.00104) HIT!\n🎯 Target 2 (0.00105) HIT!",
+        "timestamp": "2025-06-05T07:46:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4843,
+        "coin_pair": "HOTUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 0.00104,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 2,
+                "price": 0.00105,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: HOTUSDT ✅\n\n🎯 Target 1 (0.00104) HIT!",
+        "timestamp": "2025-06-05T07:31:56+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4842,
+        "coin_pair": "HOTUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 0.00104,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: DUSDT ✅\n\n🎯 Target 1 (0.0360) HIT!",
+        "timestamp": "2025-06-05T07:31:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4841,
+        "coin_pair": "DUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 0.036,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: ZILUSDT ✅\n\n🎯 Target 1 (0.0122) HIT!",
+        "timestamp": "2025-06-05T07:26:53+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4840,
+        "coin_pair": "ZILUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 0.0122,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: DUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 413th/466\nRisk Level: ⚠️ High\n\nEntry: 0.0356\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.0360      +1.12%\nTarget 2         0.0364      +2.25%\nTarget 3         0.0376      +5.62%\nTarget 4         0.0397      +11.52%\nStop Loss 1    0.0346      -2.81%\nStop Loss 2    0.0324      -8.99%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $D\n📊 Analisis Data Coinglass untuk D",
+        "timestamp": "2025-06-05T07:25:04+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4839,
+        "coin_pair": "DUSDT",
+        "risk_rank": "413th/466",
+        "risk_level": "High",
+        "entry_price": 0.0356,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.036,
+                "percentage_change": 1.12,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0364,
+                "percentage_change": 2.25,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.0376,
+                "percentage_change": 5.62,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.0397,
+                "percentage_change": 11.52,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.0346,
+                "percentage_change": -2.81,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0324,
+                "percentage_change": -8.99,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: HOTUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 333th/466\nRisk Level: ⚠️ High\n\nEntry: 0.00102\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.00104      +1.96%\nTarget 2         0.00105      +2.94%\nTarget 3         0.00108      +5.88%\nTarget 4         0.00114      +11.76%\nStop Loss 1    0.000996      -2.35%\nStop Loss 2    0.000935      -8.33%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $HOT\n📊 Analisis Data Coinglass untuk HOT",
+        "timestamp": "2025-06-05T07:25:03+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4838,
+        "coin_pair": "HOTUSDT",
+        "risk_rank": "333th/466",
+        "risk_level": "High",
+        "entry_price": 0.00102,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.00104,
+                "percentage_change": 1.96,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.00105,
+                "percentage_change": 2.94,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.00108,
+                "percentage_change": 5.88,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.00114,
+                "percentage_change": 11.76,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.000996,
+                "percentage_change": -2.35,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.000935,
+                "percentage_change": -8.33,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: BSWUSDT ✅\n\n🎯 Target 1 (0.0280) HIT!\n🎯 Target 2 (0.0283) HIT!\n🎯 Target 3 (0.0293) HIT!",
+        "timestamp": "2025-06-05T07:21:56+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4837,
+        "coin_pair": "BSWUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 0.028,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 2,
+                "price": 0.0283,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 3,
+                "price": 0.0293,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: RVNUSDT ✅\n\n🎯 Target 1 (0.0201) HIT!\n🎯 Target 2 (0.0202) HIT!\n🎯 Target 3 (0.0206) HIT!",
+        "timestamp": "2025-06-05T07:21:53+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4836,
+        "coin_pair": "RVNUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 0.0201,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 2,
+                "price": 0.0202,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 3,
+                "price": 0.0206,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: RVNUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 328th/466\nRisk Level: ⚠️ High\n\nEntry: 0.0200\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.0201      +0.50%\nTarget 2         0.0202      +1.00%\nTarget 3         0.0206      +3.00%\nTarget 4         0.0211      +5.50%\nStop Loss 1    0.0198      -1.00%\nStop Loss 2    0.0191      -4.50%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $RVN\n📊 Analisis Data Coinglass untuk RVN",
+        "timestamp": "2025-06-05T07:20:45+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4835,
+        "coin_pair": "RVNUSDT",
+        "risk_rank": "328th/466",
+        "risk_level": "High",
+        "entry_price": 0.02,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.0201,
+                "percentage_change": 0.5,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0202,
+                "percentage_change": 1.0,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.0206,
+                "percentage_change": 3.0,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.0211,
+                "percentage_change": 5.5,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.0198,
+                "percentage_change": -1.0,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0191,
+                "percentage_change": -4.5,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: ZILUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 258th/466\nRisk Level: ⚠️ High\n\nEntry: 0.0121\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.0122      +0.83%\nTarget 2         0.0123      +1.65%\nTarget 3         0.0127      +4.96%\nTarget 4         0.0132      +9.09%\nStop Loss 1    0.0119      -1.65%\nStop Loss 2    0.0112      -7.44%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $ZIL\n📊 Analisis Data Coinglass untuk ZIL",
+        "timestamp": "2025-06-05T07:20:04+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4834,
+        "coin_pair": "ZILUSDT",
+        "risk_rank": "258th/466",
+        "risk_level": "High",
+        "entry_price": 0.0121,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.0122,
+                "percentage_change": 0.83,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0123,
+                "percentage_change": 1.65,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.0127,
+                "percentage_change": 4.96,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.0132,
+                "percentage_change": 9.09,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.0119,
+                "percentage_change": -1.65,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0112,
+                "percentage_change": -7.44,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: BSWUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 365th/466\nRisk Level: ⚠️ High\n\nEntry: 0.0277\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.0280      +1.08%\nTarget 2         0.0283      +2.17%\nTarget 3         0.0293      +5.78%\nTarget 4         0.0308      +11.19%\nStop Loss 1    0.0270      -2.53%\nStop Loss 2    0.0253      -8.66%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $BSW\n📊 Analisis Data Coinglass untuk BSW",
+        "timestamp": "2025-06-05T07:20:03+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4833,
+        "coin_pair": "BSWUSDT",
+        "risk_rank": "365th/466",
+        "risk_level": "High",
+        "entry_price": 0.0277,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.028,
+                "percentage_change": 1.08,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0283,
+                "percentage_change": 2.17,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.0293,
+                "percentage_change": 5.78,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.0308,
+                "percentage_change": 11.19,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.027,
+                "percentage_change": -2.53,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0253,
+                "percentage_change": -8.66,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: REIUSDT ✅\n\n🎯 Target 1 (0.0189) HIT!\n🎯 Target 2 (0.0190) HIT!\n🎯 Target 3 (0.0196) HIT!\n🎯 Target 4 (0.0205) HIT!",
+        "timestamp": "2025-06-05T07:16:55+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4832,
+        "coin_pair": "REIUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 0.0189,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 2,
+                "price": 0.019,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 3,
+                "price": 0.0196,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 4,
+                "price": 0.0205,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: ACEUSDT ✅\n\n🎯 Target 1 (0.6024) HIT!",
+        "timestamp": "2025-06-05T07:16:53+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4831,
+        "coin_pair": "ACEUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 0.6024,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: HMSTRUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 342th/466\nRisk Level: ⚠️ High\n\nEntry: 0.00205\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.00207      +0.98%\nTarget 2         0.00209      +1.95%\nTarget 3         0.00214      +4.39%\nTarget 4         0.00222      +8.29%\nStop Loss 1    0.00202      -1.46%\nStop Loss 2    0.00192      -6.34%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $HMSTR\n📊 Analisis Data Coinglass untuk HMSTR",
+        "timestamp": "2025-06-05T07:15:05+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4830,
+        "coin_pair": "HMSTRUSDT",
+        "risk_rank": "342th/466",
+        "risk_level": "High",
+        "entry_price": 0.00205,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.00207,
+                "percentage_change": 0.98,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.00209,
+                "percentage_change": 1.95,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.00214,
+                "percentage_change": 4.39,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.00222,
+                "percentage_change": 8.29,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.00202,
+                "percentage_change": -1.46,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.00192,
+                "percentage_change": -6.34,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: ACEUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 391th/466\nRisk Level: ⚠️ High\n\nEntry: 0.5951\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.6024      +1.23%\nTarget 2         0.6097      +2.45%\nTarget 3         0.6316      +6.13%\nTarget 4         0.6681      +12.27%\nStop Loss 1    0.5802      -2.50%\nStop Loss 2    0.5367      -9.81%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $ACE\n📊 Analisis Data Coinglass untuk ACE",
+        "timestamp": "2025-06-05T07:15:03+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4829,
+        "coin_pair": "ACEUSDT",
+        "risk_rank": "391th/466",
+        "risk_level": "High",
+        "entry_price": 0.5951,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.6024,
+                "percentage_change": 1.23,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.6097,
+                "percentage_change": 2.45,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.6316,
+                "percentage_change": 6.13,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.6681,
+                "percentage_change": 12.27,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.5802,
+                "percentage_change": -2.5,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.5367,
+                "percentage_change": -9.81,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: REIUSDT ✅\n\n🎯 Target 1 (0.0189) HIT!",
+        "timestamp": "2025-06-05T07:11:57+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4828,
+        "coin_pair": "REIUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 0.0189,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: RVNUSDT ✅\n\n🎯 Target 1 (0.0190) HIT!\n🎯 Target 2 (0.0192) HIT!\n🎯 Target 3 (0.0195) HIT!\n🎯 Target 4 (0.0200) HIT!",
+        "timestamp": "2025-06-05T07:11:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4827,
+        "coin_pair": "RVNUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 0.019,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 2,
+                "price": 0.0192,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 3,
+                "price": 0.0195,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 4,
+                "price": 0.02,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: RVNUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 328th/466\nRisk Level: ⚠️ High\n\nEntry: 0.0189\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.0190      +0.53%\nTarget 2         0.0192      +1.59%\nTarget 3         0.0195      +3.17%\nTarget 4         0.0200      +5.82%\nStop Loss 1    0.0187      -1.06%\nStop Loss 2    0.0180      -4.76%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $RVN\n📊 Analisis Data Coinglass untuk RVN",
+        "timestamp": "2025-06-05T07:10:05+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4826,
+        "coin_pair": "RVNUSDT",
+        "risk_rank": "328th/466",
+        "risk_level": "High",
+        "entry_price": 0.0189,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.019,
+                "percentage_change": 0.53,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0192,
+                "percentage_change": 1.59,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.0195,
+                "percentage_change": 3.17,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.02,
+                "percentage_change": 5.82,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.0187,
+                "percentage_change": -1.06,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.018,
+                "percentage_change": -4.76,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: REIUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 401th/466\nRisk Level: ⚠️ High\n\nEntry: 0.0187\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.0189      +1.07%\nTarget 2         0.0190      +1.60%\nTarget 3         0.0196      +4.81%\nTarget 4         0.0205      +9.63%\nStop Loss 1    0.0183      -2.14%\nStop Loss 2    0.0172      -8.02%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $REI\n📊 Analisis Data Coinglass untuk REI",
+        "timestamp": "2025-06-05T07:10:03+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4825,
+        "coin_pair": "REIUSDT",
+        "risk_rank": "401th/466",
+        "risk_level": "High",
+        "entry_price": 0.0187,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.0189,
+                "percentage_change": 1.07,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.019,
+                "percentage_change": 1.6,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.0196,
+                "percentage_change": 4.81,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.0205,
+                "percentage_change": 9.63,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.0183,
+                "percentage_change": -2.14,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0172,
+                "percentage_change": -8.02,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: RVNUSDT ✅\n\n🎯 Target 1 (0.0162) HIT!\n🎯 Target 2 (0.0163) HIT!\n🎯 Target 3 (0.0167) HIT!\n🎯 Target 4 (0.0172) HIT!",
+        "timestamp": "2025-06-05T07:06:53+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4824,
+        "coin_pair": "RVNUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 0.0162,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 2,
+                "price": 0.0163,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 3,
+                "price": 0.0167,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 4,
+                "price": 0.0172,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: RVNUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 328th/466\nRisk Level: ⚠️ High\n\nEntry: 0.0161\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.0162      +0.62%\nTarget 2         0.0163      +1.24%\nTarget 3         0.0167      +3.73%\nTarget 4         0.0172      +6.83%\nStop Loss 1    0.0158      -1.86%\nStop Loss 2    0.0152      -5.59%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $RVN\n📊 Analisis Data Coinglass untuk RVN",
+        "timestamp": "2025-06-05T07:05:04+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4823,
+        "coin_pair": "RVNUSDT",
+        "risk_rank": "328th/466",
+        "risk_level": "High",
+        "entry_price": 0.0161,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.0162,
+                "percentage_change": 0.62,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0163,
+                "percentage_change": 1.24,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.0167,
+                "percentage_change": 3.73,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.0172,
+                "percentage_change": 6.83,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.0158,
+                "percentage_change": -1.86,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0152,
+                "percentage_change": -5.59,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🏦 JPMorgan to accept crypto assets as loan collateral\n\nThe largest U.S. bank, JPMorgan, will offer its clients the option to use cryptocurrency assets as collateral for loans.\n\n📈 In the coming weeks, loans will be available backed by crypto ETFs.\n\nJPMorgan clients will also soon be able to purchase Bitcoin.\n\nSource: TU Crypto News",
+        "timestamp": "2025-06-05T06:58:44+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4822,
+        "content": "🏦 JPMorgan to accept crypto assets as loan collateral\n\nThe largest U.S. bank, JPMorgan, will offer its clients the option to use cryptocurrency assets as collateral for loans.\n\n📈 In the coming weeks, loans will be available backed by crypto ETFs.\n\nJPMorgan clients will also soon be able to purchase Bitcoin.\n\nSource: TU Crypto News",
+        "original_sender": "TU Crypto News",
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "🛫 WazirX exchange moves from Singapore to Panama\n\nThe India-serving exchange, based in Singapore, is relocating its operations to Panama.\n\n⚖️ The trading platform made this decision after local courts declined to approve the company’s restructuring plan.\n\nThe move is also linked to Singapore’s ban on crypto services offering trading in overseas markets.\n\nSource: TU Crypto News",
+        "timestamp": "2025-06-05T06:28:43+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4821,
+        "content": "🛫 WazirX exchange moves from Singapore to Panama\n\nThe India-serving exchange, based in Singapore, is relocating its operations to Panama.\n\n⚖️ The trading platform made this decision after local courts declined to approve the company’s restructuring plan.\n\nThe move is also linked to Singapore’s ban on crypto services offering trading in overseas markets.\n\nSource: TU Crypto News",
+        "original_sender": "TU Crypto News",
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: AERGOUSDT ✅\n\n🎯 Target 1 (0.1290) HIT!\n🎯 Target 2 (0.1305) HIT!\n🎯 Target 3 (0.1349) HIT!",
+        "timestamp": "2025-06-05T05:41:53+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4820,
+        "coin_pair": "AERGOUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 0.129,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 2,
+                "price": 0.1305,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 3,
+                "price": 0.1349,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "💼 Circle raised more than planned through its IPO\n\nCircle, the issuer of the USDC stablecoin, raised $1.1 billion through its initial public offering (IPO).\n\n📈 The company's market capitalization now stands at $6.9 billion.\n\nOriginally, Circle aimed to raise $896 million.\n\nSource: TU Crypto News",
+        "timestamp": "2025-06-05T05:41:15+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4819,
+        "content": "💼 Circle raised more than planned through its IPO\n\nCircle, the issuer of the USDC stablecoin, raised $1.1 billion through its initial public offering (IPO).\n\n📈 The company's market capitalization now stands at $6.9 billion.\n\nOriginally, Circle aimed to raise $896 million.\n\nSource: TU Crypto News",
+        "original_sender": "TU Crypto News",
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: AERGOUSDT ✅\n\n🎯 Target 1 (0.1290) HIT!",
+        "timestamp": "2025-06-05T05:26:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4818,
+        "coin_pair": "AERGOUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 0.129,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "AERGOUSDT 🆕\n\nVolume(24H) Ranked: 192th/466\n\nRisk Level: ⚠️ High\n - The volume rank outside the top 150. (成交量排名在150名外)\n\nEntry: 0.1275\n\nTarget 1: 0.1290\nTarget 2: 0.1305\nTarget 3: 0.1349\nTarget 4: 0.1424\n\nStop loss 1: 0.1240\nStop loss 2: 0.1156",
+        "timestamp": "2025-06-05T04:34:28+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4817,
+        "content": "AERGOUSDT 🆕\n\nVolume(24H) Ranked: 192th/466\n\nRisk Level: ⚠️ High\n - The volume rank outside the top 150. (成交量排名在150名外)\n\nEntry: 0.1275\n\nTarget 1: 0.1290\nTarget 2: 0.1305\nTarget 3: 0.1349\nTarget 4: 0.1424\n\nStop loss 1: 0.1240\nStop loss 2: 0.1156",
+        "original_sender": null,
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: AGLDUSDT ✅\n\n🎯 Target 1 (0.8934) HIT!",
+        "timestamp": "2025-06-05T01:06:53+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4816,
+        "coin_pair": "AGLDUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 0.8934,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "JUST IN : 💰 Consensys-linked whale scooped $320M $ETH from Galaxy Digital and staked $120M with Liquid Collective at new address 0x0b2.\n\n@News_Crypto\n\nSource: Crypto News",
+        "timestamp": "2025-06-05T00:47:23+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4815,
+        "content": "JUST IN : 💰 Consensys-linked whale scooped $320M $ETH from Galaxy Digital and staked $120M with Liquid Collective at new address 0x0b2.\n\n@News_Crypto\n\nSource: Crypto News",
+        "original_sender": "Crypto News",
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: AGLDUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 148th/466\nRisk Level: 🟢 Normal\n\nEntry: 0.8783\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.8934      +1.72%\nTarget 2         0.9085      +3.44%\nTarget 3         0.9537      +8.58%\nTarget 4         1.029      +17.16%\nStop Loss 1    0.8460      -3.68%\nStop Loss 2    0.7576      -13.74%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $AGLD\n📊 Analisis Data Coinglass untuk AGLD",
+        "timestamp": "2025-06-05T00:20:03+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4814,
+        "coin_pair": "AGLDUSDT",
+        "risk_rank": "148th/466",
+        "risk_level": "Normal",
+        "entry_price": 0.8783,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.8934,
+                "percentage_change": 1.72,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.9085,
+                "percentage_change": 3.44,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.9537,
+                "percentage_change": 8.58,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 1.029,
+                "percentage_change": 17.16,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.846,
+                "percentage_change": -3.68,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.7576,
+                "percentage_change": -13.74,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: RPLUSDT ✅\n\n🎯 Target 1 (6.557) HIT!\n🎯 Target 2 (6.720) HIT!",
+        "timestamp": "2025-06-05T00:11:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4813,
+        "coin_pair": "RPLUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 6.557,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 2,
+                "price": 6.72,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "JUST IN: 💰 Locate Technologies has become first publicly traded Aussie company to adopt a #Bitcoin treasury strategy.\n\n@News_Crypto\n\nSource: Crypto News",
+        "timestamp": "2025-06-04T23:34:49+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4812,
+        "content": "JUST IN: 💰 Locate Technologies has become first publicly traded Aussie company to adopt a #Bitcoin treasury strategy.\n\n@News_Crypto\n\nSource: Crypto News",
+        "original_sender": "Crypto News",
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: ZKJUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 397th/466\nRisk Level: ⚠️ High\n\nEntry: 2.006\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         2.009      +0.15%\nTarget 2         2.011      +0.25%\nTarget 3         2.019      +0.65%\nTarget 4         2.032      +1.30%\nStop Loss 1    2.000      -0.30%\nStop Loss 2    1.985      -1.05%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $ZKJ\n📊 Analisis Data Coinglass untuk ZKJ",
+        "timestamp": "2025-06-04T22:55:03+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4811,
+        "coin_pair": "ZKJUSDT",
+        "risk_rank": "397th/466",
+        "risk_level": "High",
+        "entry_price": 2.006,
+        "targets": [
+            {
+                "level": 1,
+                "price": 2.009,
+                "percentage_change": 0.15,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 2.011,
+                "percentage_change": 0.25,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 2.019,
+                "percentage_change": 0.65,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 2.032,
+                "percentage_change": 1.3,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 2.0,
+                "percentage_change": -0.3,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 1.985,
+                "percentage_change": -1.05,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: B2USDT ✅\n\n🎯 Target 1 (0.4889) HIT!\n🎯 Target 2 (0.4916) HIT!\n🎯 Target 3 (0.4998) HIT!",
+        "timestamp": "2025-06-04T22:46:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4810,
+        "coin_pair": "B2USDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 0.4889,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 2,
+                "price": 0.4916,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 3,
+                "price": 0.4998,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "⁉️ Are Crypto Foundations obsolete?\n\n🤔 Miles Jennings, Head of Policy and Chief Legal Counsel at a16z crypto, has declared the end of crypto foundations, stating that organizations like Ethereum, Solana, and Sui have outlived their usefulness.\n\n✅ In his view, these foundations often slow down the progress of the crypto industry and \"create more friction than decentralization.\"\n\nJennings also believes that traditional development companies are better suited for growth and real impact, as opposed to relying on charitable funding or vague mandates.\n\nSource: TU Crypto News",
+        "timestamp": "2025-06-04T22:04:48+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4809,
+        "content": "⁉️ Are Crypto Foundations obsolete?\n\n🤔 Miles Jennings, Head of Policy and Chief Legal Counsel at a16z crypto, has declared the end of crypto foundations, stating that organizations like Ethereum, Solana, and Sui have outlived their usefulness.\n\n✅ In his view, these foundations often slow down the progress of the crypto industry and \"create more friction than decentralization.\"\n\nJennings also believes that traditional development companies are better suited for growth and real impact, as opposed to relying on charitable funding or vague mandates.\n\nSource: TU Crypto News",
+        "original_sender": "TU Crypto News",
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "🟠 K Wave Media aims to become the Korean Metaplanet\n\n🇰🇷 Korean entertainment company K Wave Media is raising $500 million to create a digital treasury.\n\n\"By incorporating BTC into our core strategy, we reinforce our commitment to decentralization, flexibility, and future-focused value creation,\" said Ted Kim.\n\n✅ The company will also use the funds to acquire promising K-POP projects in its bid to become a key player in Asia's digital and media ecosystem.\n\nSource: TU Crypto News",
+        "timestamp": "2025-06-04T20:49:47+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4808,
+        "content": "🟠 K Wave Media aims to become the Korean Metaplanet\n\n🇰🇷 Korean entertainment company K Wave Media is raising $500 million to create a digital treasury.\n\n\"By incorporating BTC into our core strategy, we reinforce our commitment to decentralization, flexibility, and future-focused value creation,\" said Ted Kim.\n\n✅ The company will also use the funds to acquire promising K-POP projects in its bid to become a key player in Asia's digital and media ecosystem.\n\nSource: TU Crypto News",
+        "original_sender": "TU Crypto News",
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "🔴 SIGNAL UPDATE: B3USDT 🔴\n\n⚠️ Stop Loss 1 (0.00311) TRIGGERED!",
+        "timestamp": "2025-06-04T20:01:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4807,
+        "coin_pair": "B3USDT",
+        "targets_hit": [],
+        "stop_losses_triggered": [
+            {
+                "level": 1,
+                "price": 0.00311,
+                "percentage_change": null,
+                "status": "TRIGGERED"
+            }
+        ],
+        "update_type": "STOP_LOSS_TRIGGERED",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: OGNUSDT ✅\n\n🎯 Target 1 (0.0620) HIT!",
+        "timestamp": "2025-06-04T19:56:53+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4806,
+        "coin_pair": "OGNUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 0.062,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: OGNUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 313th/466\nRisk Level: ⚠️ High\n\nEntry: 0.0613\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.0620      +1.14%\nTarget 2         0.0627      +2.28%\nTarget 3         0.0648      +5.71%\nTarget 4         0.0682      +11.26%\nStop Loss 1    0.0599      -2.28%\nStop Loss 2    0.0558      -8.97%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $OGN\n📊 Analisis Data Coinglass untuk OGN",
+        "timestamp": "2025-06-04T19:50:03+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4805,
+        "coin_pair": "OGNUSDT",
+        "risk_rank": "313th/466",
+        "risk_level": "High",
+        "entry_price": 0.0613,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.062,
+                "percentage_change": 1.14,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0627,
+                "percentage_change": 2.28,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.0648,
+                "percentage_change": 5.71,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.0682,
+                "percentage_change": 11.26,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.0599,
+                "percentage_change": -2.28,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0558,
+                "percentage_change": -8.97,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: CAKEUSDT ✅\n\n🎯 Target 1 (2.512) HIT!",
+        "timestamp": "2025-06-04T19:26:53+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4804,
+        "coin_pair": "CAKEUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 2.512,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: CAKEUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 92th/466\nRisk Level: 🟢 Normal\n\nEntry: 2.481\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         2.512      +1.25%\nTarget 2         2.542      +2.46%\nTarget 3         2.633      +6.13%\nTarget 4         2.785      +12.25%\nStop Loss 1    2.418      -2.54%\nStop Loss 2    2.239      -9.75%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $CAKE\n📊 Analisis Data Coinglass untuk CAKE",
+        "timestamp": "2025-06-04T19:25:03+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4803,
+        "coin_pair": "CAKEUSDT",
+        "risk_rank": "92th/466",
+        "risk_level": "Normal",
+        "entry_price": 2.481,
+        "targets": [
+            {
+                "level": 1,
+                "price": 2.512,
+                "percentage_change": 1.25,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 2.542,
+                "percentage_change": 2.46,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 2.633,
+                "percentage_change": 6.13,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 2.785,
+                "percentage_change": 12.25,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 2.418,
+                "percentage_change": -2.54,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 2.239,
+                "percentage_change": -9.75,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "⚠️🚯↪️🔂⬅️\n\nCalifornia approves bill to seize Bitcoin idle on exchanges for 3 years under ‘Unclaimed Property’ laws ❗️\n\nNot your keys, not your coins.\n\n\n🥫 t.me/FinancialWorldUpdates\n\nSource: Financial World Updates",
+        "timestamp": "2025-06-04T19:05:45+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4802,
+        "content": "⚠️🚯↪️🔂⬅️\n\nCalifornia approves bill to seize Bitcoin idle on exchanges for 3 years under ‘Unclaimed Property’ laws ❗️\n\nNot your keys, not your coins.\n\n\n🥫 t.me/FinancialWorldUpdates\n\nSource: Financial World Updates",
+        "original_sender": "Financial World Updates",
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "🟠 Binance offers discounts to market makers\n\n🚀 The crypto exchange is launching a new program called Altcoin LiquidityBoost, targeting small and medium-sized liquidity providers.\n\nThe program includes 18 altcoins, including EOS, HYPE, ICP, W, TON, FIL, and will be regularly reviewed.\n\nEligibility requirements will take effect on June 6, while maker fee discounts will begin on June 17.\n\nSource: TU Crypto News",
+        "timestamp": "2025-06-04T18:50:45+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4801,
+        "content": "🟠 Binance offers discounts to market makers\n\n🚀 The crypto exchange is launching a new program called Altcoin LiquidityBoost, targeting small and medium-sized liquidity providers.\n\nThe program includes 18 altcoins, including EOS, HYPE, ICP, W, TON, FIL, and will be regularly reviewed.\n\nEligibility requirements will take effect on June 6, while maker fee discounts will begin on June 17.\n\nSource: TU Crypto News",
+        "original_sender": "TU Crypto News",
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: LRCUSDT ✅\n\n🎯 Target 1 (0.0890) HIT!\n🎯 Target 2 (0.0902) HIT!\n🎯 Target 3 (0.0938) HIT!",
+        "timestamp": "2025-06-04T18:16:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4800,
+        "coin_pair": "LRCUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 0.089,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 2,
+                "price": 0.0902,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 3,
+                "price": 0.0938,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "🔴 SIGNAL UPDATE: KERNELUSDT 🔴\n\n⚠️ Stop Loss 1 (0.1550) TRIGGERED!",
+        "timestamp": "2025-06-04T18:01:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4799,
+        "coin_pair": "KERNELUSDT",
+        "targets_hit": [],
+        "stop_losses_triggered": [
+            {
+                "level": 1,
+                "price": 0.155,
+                "percentage_change": null,
+                "status": "TRIGGERED"
+            }
+        ],
+        "update_type": "STOP_LOSS_TRIGGERED",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: LPTUSDT ✅\n\n🎯 Target 1 (8.742) HIT!\n🎯 Target 2 (8.888) HIT!\n🎯 Target 3 (9.325) HIT!\n🎯 Target 4 (10.05) HIT!",
+        "timestamp": "2025-06-04T17:51:57+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4798,
+        "coin_pair": "LPTUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 8.742,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 2,
+                "price": 8.888,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 3,
+                "price": 9.325,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 4,
+                "price": 10.05,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: NMRUSDT ✅\n\n🎯 Target 1 (8.530) HIT!\n🎯 Target 2 (8.630) HIT!\n🎯 Target 3 (8.929) HIT!",
+        "timestamp": "2025-06-04T17:51:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4797,
+        "coin_pair": "NMRUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 8.53,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 2,
+                "price": 8.63,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 3,
+                "price": 8.929,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: NMRUSDT ✅\n\n🎯 Target 1 (8.530) HIT!\n🎯 Target 2 (8.630) HIT!",
+        "timestamp": "2025-06-04T17:41:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4796,
+        "coin_pair": "NMRUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 8.53,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 2,
+                "price": 8.63,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "📰 CRYPTO NEWS UPDATE 📰\n\nSource: Financial World Updates",
+        "timestamp": "2025-06-04T17:35:44+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4795,
+        "content": "📰 CRYPTO NEWS UPDATE 📰\n\nSource: Financial World Updates",
+        "original_sender": "Financial World Updates",
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "🙂🙃🫠😉\n\n🇺🇸🇷🇺 US President Trump says Vladimir Putin told him Russia will respond to Ukraine's recent attacks.\n\n@PoliticFinance 🐄\n\nSource: Financial World Updates",
+        "timestamp": "2025-06-04T17:35:44+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4794,
+        "content": "🙂🙃🫠😉\n\n🇺🇸🇷🇺 US President Trump says Vladimir Putin told him Russia will respond to Ukraine's recent attacks.\n\n@PoliticFinance 🐄\n\nSource: Financial World Updates",
+        "original_sender": "Financial World Updates",
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "📰 CRYPTO NEWS UPDATE 📰\n\nSource: Financial World Updates",
+        "timestamp": "2025-06-04T17:35:44+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4793,
+        "content": "📰 CRYPTO NEWS UPDATE 📰\n\nSource: Financial World Updates",
+        "original_sender": "Financial World Updates",
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "🏧 Arbitrum developers to receive $1M in grants\n\n📈 The Arbitrum Foundation has announced the launch of the $1 million Trailblazer 2.0 grant program.\n\nThe program targets developers building DeFi agents — especially those using the Vibekit toolkit — as well as mini-apps for the Farcaster social network.\n\n✅ Individual projects may receive up to $10,000 in funding.\n\nSource: TU Crypto News",
+        "timestamp": "2025-06-04T17:35:44+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4792,
+        "content": "🏧 Arbitrum developers to receive $1M in grants\n\n📈 The Arbitrum Foundation has announced the launch of the $1 million Trailblazer 2.0 grant program.\n\nThe program targets developers building DeFi agents — especially those using the Vibekit toolkit — as well as mini-apps for the Farcaster social network.\n\n✅ Individual projects may receive up to $10,000 in funding.\n\nSource: TU Crypto News",
+        "original_sender": "TU Crypto News",
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: LPTUSDT ✅\n\n🎯 Target 1 (8.742) HIT!\n🎯 Target 2 (8.888) HIT!\n🎯 Target 3 (9.325) HIT!",
+        "timestamp": "2025-06-04T17:21:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4791,
+        "coin_pair": "LPTUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 8.742,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 2,
+                "price": 8.888,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 3,
+                "price": 9.325,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "🔴 SIGNAL UPDATE: BMTUSDT 🔴\n\n⚠️ Stop Loss 1 (0.1129) TRIGGERED!",
+        "timestamp": "2025-06-04T17:01:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4790,
+        "coin_pair": "BMTUSDT",
+        "targets_hit": [],
+        "stop_losses_triggered": [
+            {
+                "level": 1,
+                "price": 0.1129,
+                "percentage_change": null,
+                "status": "TRIGGERED"
+            }
+        ],
+        "update_type": "STOP_LOSS_TRIGGERED",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: B3USDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 291th/466\nRisk Level: ⚠️ High\n\nEntry: 0.00323\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.00328      +1.55%\nTarget 2         0.00333      +3.10%\nTarget 3         0.00348      +7.74%\nTarget 4         0.00373      +15.48%\nStop Loss 1    0.00311      -3.72%\nStop Loss 2    0.00283      -12.38%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $B3\n📊 Analisis Data Coinglass untuk B3",
+        "timestamp": "2025-06-04T16:39:37+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4789,
+        "coin_pair": "B3USDT",
+        "risk_rank": "291th/466",
+        "risk_level": "High",
+        "entry_price": 0.00323,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.00328,
+                "percentage_change": 1.55,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.00333,
+                "percentage_change": 3.1,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.00348,
+                "percentage_change": 7.74,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.00373,
+                "percentage_change": 15.48,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.00311,
+                "percentage_change": -3.72,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.00283,
+                "percentage_change": -12.38,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: ZKUSDT ✅\n\n🎯 Target 1 (0.0609) HIT!",
+        "timestamp": "2025-06-04T16:36:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4788,
+        "coin_pair": "ZKUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 0.0609,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "🦺👓🕶🥽🥼\n\nSaudis use AI, drones and thousands of cameras to keep hajj pilgrims safe\n\n🥫 t.me/FinancialWorldUpdates\n\nSource: Financial World Updates",
+        "timestamp": "2025-06-04T16:20:43+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4787,
+        "content": "🦺👓🕶🥽🥼\n\nSaudis use AI, drones and thousands of cameras to keep hajj pilgrims safe\n\n🥫 t.me/FinancialWorldUpdates\n\nSource: Financial World Updates",
+        "original_sender": "Financial World Updates",
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "🙂🙃🫠😉\n\n🇵🇱🤝🇰🇷 Poland has received another 9 South Korean K2 tanks\n\n🔺️In August 2022, Poland ordered a total of 180 K2 tanks, with deliveries scheduled through 2025. Poland so far has received 130 so far.\n\n@PoliticFinance 🐄\n\nSource: Financial World Updates",
+        "timestamp": "2025-06-04T16:20:43+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4786,
+        "content": "🙂🙃🫠😉\n\n🇵🇱🤝🇰🇷 Poland has received another 9 South Korean K2 tanks\n\n🔺️In August 2022, Poland ordered a total of 180 K2 tanks, with deliveries scheduled through 2025. Poland so far has received 130 so far.\n\n@PoliticFinance 🐄\n\nSource: Financial World Updates",
+        "original_sender": "Financial World Updates",
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: LPTUSDT ✅\n\n🎯 Target 1 (8.742) HIT!\n🎯 Target 2 (8.888) HIT!",
+        "timestamp": "2025-06-04T16:16:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4785,
+        "coin_pair": "LPTUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 8.742,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 2,
+                "price": 8.888,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: NMRUSDT ✅\n\n🎯 Target 1 (8.530) HIT!",
+        "timestamp": "2025-06-04T16:11:55+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4784,
+        "coin_pair": "NMRUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 8.53,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: LPTUSDT ✅\n\n🎯 Target 1 (8.742) HIT!",
+        "timestamp": "2025-06-04T16:11:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4783,
+        "coin_pair": "LPTUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 8.742,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: ENAUSDT ✅\n\n🎯 Target 1 (0.3285) HIT!\n🎯 Target 2 (0.3343) HIT!\n🎯 Target 3 (0.3516) HIT!",
+        "timestamp": "2025-06-04T16:06:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4782,
+        "coin_pair": "ENAUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 0.3285,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 2,
+                "price": 0.3343,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 3,
+                "price": 0.3516,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "‼️ Video Overview of the Top News for June 4\n\n✅ Binance strengthens its dominance in the stablecoin market\n\n✅ Ethereum Foundation announces restructuring and team downsizing\n\n✅ Trump’s company Truth Social files for a Bitcoin ETF launch\n\n✅ Pump fun aims for unicorn status\n\n▶️ Watch on YouTube\n\nSource: TU Crypto News",
+        "timestamp": "2025-06-04T16:05:42+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4781,
+        "content": "‼️ Video Overview of the Top News for June 4\n\n✅ Binance strengthens its dominance in the stablecoin market\n\n✅ Ethereum Foundation announces restructuring and team downsizing\n\n✅ Trump’s company Truth Social files for a Bitcoin ETF launch\n\n✅ Pump fun aims for unicorn status\n\n▶️ Watch on YouTube\n\nSource: TU Crypto News",
+        "original_sender": "TU Crypto News",
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: NMRUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 218th/466\nRisk Level: ⚠️ High\n\nEntry: 8.430\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         8.530      +1.19%\nTarget 2         8.630      +2.37%\nTarget 3         8.929      +5.92%\nTarget 4         9.428      +11.84%\nStop Loss 1    8.205      -2.67%\nStop Loss 2    7.632      -9.47%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $NMR\n📊 Analisis Data Coinglass untuk NMR",
+        "timestamp": "2025-06-04T16:04:37+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4780,
+        "coin_pair": "NMRUSDT",
+        "risk_rank": "218th/466",
+        "risk_level": "High",
+        "entry_price": 8.43,
+        "targets": [
+            {
+                "level": 1,
+                "price": 8.53,
+                "percentage_change": 1.19,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 8.63,
+                "percentage_change": 2.37,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 8.929,
+                "percentage_change": 5.92,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 9.428,
+                "percentage_change": 11.84,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 8.205,
+                "percentage_change": -2.67,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 7.632,
+                "percentage_change": -9.47,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "📅 DAILY RECAP: 06/03-06/04 📅\n\n📅 06/03-06/04 Daily Results 每日結算統計\n\n✅ Hitted target 1: RPL, CETUS, TRUMP, EPIC\n———————————————————\n✅ Hitted target 2: DOLO, B2, BIGTIME, SIGN, TRX, GRASS, MILK, VANA, RLC, KAVA, PERP, ZETA, SONIC, ICX, SIREN, LDO\n———————————————————\n✅ Hitted target 3: JTO,NXPC,TRB,XCN,BAND,T,ETH,WAXP,QNT,SPX,MOVE,G,OBOL,AIOT\n———————————————————\n✅ Hitted target 4: COMP, ME, ICX, MELANIA, 1000WHY\n———————————————————\n➡️ Running: MASK, KERNEL, ZK, BMT, LPT\n———————————————————\n🛑 Hitted stop loss: STO, CVC, PUNDIX, AR, EPT\n———————————————————\n\nTotal Signals: 48\n\nHitted Take-Profits: 39\n\nHitted Stop-Losses: 5\n\n📊 Trading Performance Analysis 📊\n\nMetric                  Value       Percentage\n--------------------------------------------\nWin Rate               39/48     81.25%\nProfit/Loss Ratio      39/5     88.64%\nRunning Signals        5         10.42%",
+        "timestamp": "2025-06-04T16:04:35+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4779,
+        "date_range": "06/03-06/04",
+        "targets_hit": {
+            "target_1": [
+                "RPL",
+                "CETUS",
+                "TRUMP",
+                "EPIC"
+            ],
+            "target_2": [
+                "DOLO",
+                "B2",
+                "BIGTIME",
+                "SIGN",
+                "TRX",
+                "GRASS",
+                "MILK",
+                "VANA",
+                "RLC",
+                "KAVA",
+                "PERP",
+                "ZETA",
+                "SONIC",
+                "ICX",
+                "SIREN",
+                "LDO"
+            ],
+            "target_3": [
+                "JTO",
+                "NXPC",
+                "TRB",
+                "XCN",
+                "BAND",
+                "T",
+                "ETH",
+                "WAXP",
+                "QNT",
+                "SPX",
+                "MOVE",
+                "G",
+                "OBOL",
+                "AIOT"
+            ],
+            "target_4": [
+                "COMP",
+                "ME",
+                "ICX",
+                "MELANIA",
+                "1000WHY"
+            ]
+        },
+        "running_signals": [
+            "MASK",
+            "KERNEL",
+            "ZK",
+            "BMT",
+            "LPT"
+        ],
+        "stop_losses_hit": [
+            "STO",
+            "CVC",
+            "PUNDIX",
+            "AR",
+            "EPT"
+        ],
+        "total_signals": 48,
+        "total_take_profits": 39,
+        "total_stop_losses": 5,
+        "message_type": "DailyRecap"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: LDOUSDT ✅\n\n🎯 Target 1 (0.9111) HIT!\n🎯 Target 2 (0.9253) HIT!",
+        "timestamp": "2025-06-04T16:01:53+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4778,
+        "coin_pair": "LDOUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 0.9111,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 2,
+                "price": 0.9253,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: LDOUSDT ✅\n\n🎯 Target 1 (0.9111) HIT!",
+        "timestamp": "2025-06-04T15:56:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4777,
+        "coin_pair": "LDOUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 0.9111,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: LPTUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 31th/466\nRisk Level: 🟢 Normal\n\nEntry: 8.596\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         8.742      +1.70%\nTarget 2         8.888      +3.40%\nTarget 3         9.325      +8.48%\nTarget 4         10.05      +16.91%\nStop Loss 1    8.266      -3.84%\nStop Loss 2    7.430      -13.56%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $LPT\n📊 Analisis Data Coinglass untuk LPT",
+        "timestamp": "2025-06-04T15:54:38+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4776,
+        "coin_pair": "LPTUSDT",
+        "risk_rank": "31th/466",
+        "risk_level": "Normal",
+        "entry_price": 8.596,
+        "targets": [
+            {
+                "level": 1,
+                "price": 8.742,
+                "percentage_change": 1.7,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 8.888,
+                "percentage_change": 3.4,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 9.325,
+                "percentage_change": 8.48,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 10.05,
+                "percentage_change": 16.91,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 8.266,
+                "percentage_change": -3.84,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 7.43,
+                "percentage_change": -13.56,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: LDOUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 62th/466\nRisk Level: 🟢 Normal\n\nEntry: 0.8969\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.9111      +1.58%\nTarget 2         0.9253      +3.17%\nTarget 3         0.9679      +7.92%\nTarget 4         1.039      +15.84%\nStop Loss 1    0.8636      -3.71%\nStop Loss 2    0.7834      -12.65%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $LDO\n📊 Analisis Data Coinglass untuk LDO",
+        "timestamp": "2025-06-04T15:54:37+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4775,
+        "coin_pair": "LDOUSDT",
+        "risk_rank": "62th/466",
+        "risk_level": "Normal",
+        "entry_price": 0.8969,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.9111,
+                "percentage_change": 1.58,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.9253,
+                "percentage_change": 3.17,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.9679,
+                "percentage_change": 7.92,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 1.039,
+                "percentage_change": 15.84,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.8636,
+                "percentage_change": -3.71,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.7834,
+                "percentage_change": -12.65,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: ETHUSDT ✅\n\n🎯 Target 1 (2580.98) HIT!\n🎯 Target 2 (2603.06) HIT!\n🎯 Target 3 (2669.32) HIT!",
+        "timestamp": "2025-06-04T15:46:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4774,
+        "coin_pair": "ETHUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 2580.98,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 2,
+                "price": 2603.06,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 3,
+                "price": 2669.32,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: RPLUSDT ✅\n\n🎯 Target 1 (6.557) HIT!",
+        "timestamp": "2025-06-04T15:36:53+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4773,
+        "coin_pair": "RPLUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 6.557,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "⚠️🚯↪️🔂⬅️\n\n🇧🇬🇪🇺 Bulgaria will officially join the eurozone at the start of 2026 after receiving approval from the European Central Bank and the European Commission today.\n\nPolitical unrest and inflation have delayed the process, with the current inflation rate close to the 3% target set by Frankfurt. The accession now awaits approval from Eurozone finance ministers, with final confirmation expected on July 8.\n\n\n🥫 t.me/FinancialWorldUpdates\n\nSource: Financial World Updates",
+        "timestamp": "2025-06-04T15:35:41+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4772,
+        "content": "⚠️🚯↪️🔂⬅️\n\n🇧🇬🇪🇺 Bulgaria will officially join the eurozone at the start of 2026 after receiving approval from the European Central Bank and the European Commission today.\n\nPolitical unrest and inflation have delayed the process, with the current inflation rate close to the 3% target set by Frankfurt. The accession now awaits approval from Eurozone finance ministers, with final confirmation expected on July 8.\n\n\n🥫 t.me/FinancialWorldUpdates\n\nSource: Financial World Updates",
+        "original_sender": "Financial World Updates",
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: RPLUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 53th/466\nRisk Level: 🟢 Normal\n\nEntry: 6.393\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         6.557      +2.57%\nTarget 2         6.720      +5.11%\nTarget 3         7.211      +12.80%\nTarget 4         8.029      +25.59%\nStop Loss 1    6.045      -5.44%\nStop Loss 2    5.084      -20.48%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $RPL\n📊 Analisis Data Coinglass untuk RPL",
+        "timestamp": "2025-06-04T15:29:37+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4771,
+        "coin_pair": "RPLUSDT",
+        "risk_rank": "53th/466",
+        "risk_level": "Normal",
+        "entry_price": 6.393,
+        "targets": [
+            {
+                "level": 1,
+                "price": 6.557,
+                "percentage_change": 2.57,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 6.72,
+                "percentage_change": 5.11,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 7.211,
+                "percentage_change": 12.8,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 8.029,
+                "percentage_change": 25.59,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 6.045,
+                "percentage_change": -5.44,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 5.084,
+                "percentage_change": -20.48,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: GRASSUSDT ✅\n\n🎯 Target 1 (1.882) HIT!\n🎯 Target 2 (1.914) HIT!",
+        "timestamp": "2025-06-04T15:26:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4770,
+        "coin_pair": "GRASSUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 1.882,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 2,
+                "price": 1.914,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: GRASSUSDT ✅\n\n🎯 Target 1 (1.882) HIT!",
+        "timestamp": "2025-06-04T15:21:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4769,
+        "coin_pair": "GRASSUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 1.882,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: BMTUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 67th/466\nRisk Level: 🟢 Normal\n\nEntry: 0.1203\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.1237      +2.83%\nTarget 2         0.1272      +5.74%\nTarget 3         0.1375      +14.30%\nTarget 4         0.1547      +28.60%\nStop Loss 1    0.1129      -6.15%\nStop Loss 2    0.0928      -22.86%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $BMT\n📊 Analisis Data Coinglass untuk BMT",
+        "timestamp": "2025-06-04T15:04:39+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4768,
+        "coin_pair": "BMTUSDT",
+        "risk_rank": "67th/466",
+        "risk_level": "Normal",
+        "entry_price": 0.1203,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.1237,
+                "percentage_change": 2.83,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.1272,
+                "percentage_change": 5.74,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.1375,
+                "percentage_change": 14.3,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.1547,
+                "percentage_change": 28.6,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.1129,
+                "percentage_change": -6.15,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0928,
+                "percentage_change": -22.86,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "📊 Ethereum gears up for bullish rally\n\nETH is gaining momentum as institutions shift capital from Bitcoin to Ethereum.\n\n💵 BlackRock and Galaxy Digital have significantly increased their ETH investments while reducing BTC holdings.\n\nThis shift in institutional focus lowers Ethereum’s entry points and strengthens its long-term growth outlook.\n\nSource: TU Crypto News",
+        "timestamp": "2025-06-04T14:35:41+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4767,
+        "content": "📊 Ethereum gears up for bullish rally\n\nETH is gaining momentum as institutions shift capital from Bitcoin to Ethereum.\n\n💵 BlackRock and Galaxy Digital have significantly increased their ETH investments while reducing BTC holdings.\n\nThis shift in institutional focus lowers Ethereum’s entry points and strengthens its long-term growth outlook.\n\nSource: TU Crypto News",
+        "original_sender": "TU Crypto News",
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "⚠️🚯↪️🔂⬅️\n\nSugar hits 4-year low\n\nSugar prices have dropped to their lowest level since 2020, reflecting shifting global supply and demand dynamics.\n\n\n🥫 t.me/FinancialWorldUpdates\n\nSource: Financial World Updates",
+        "timestamp": "2025-06-04T14:20:16+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4766,
+        "content": "⚠️🚯↪️🔂⬅️\n\nSugar hits 4-year low\n\nSugar prices have dropped to their lowest level since 2020, reflecting shifting global supply and demand dynamics.\n\n\n🥫 t.me/FinancialWorldUpdates\n\nSource: Financial World Updates",
+        "original_sender": "Financial World Updates",
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "🇺🇸 Paul Atkins reiterates promise of transparent crypto regulation\n\nThe SEC Chairman stated that the commission will soon lay the groundwork for changes to the regulatory framework in the U.S. crypto space.\n\nHe also once again criticized the previous administration for its lack of clear regulation.\n\nSource: TU Crypto News",
+        "timestamp": "2025-06-04T13:20:39+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4765,
+        "content": "🇺🇸 Paul Atkins reiterates promise of transparent crypto regulation\n\nThe SEC Chairman stated that the commission will soon lay the groundwork for changes to the regulatory framework in the U.S. crypto space.\n\nHe also once again criticized the previous administration for its lack of clear regulation.\n\nSource: TU Crypto News",
+        "original_sender": "TU Crypto News",
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "⚠️🚯↪️🔂⬅️\n\nChinese firm Webus files to raise $300 million for #XRP treasury plan.\n\n\n🥫 t.me/FinancialWorldUpdates\n\nSource: Financial World Updates",
+        "timestamp": "2025-06-04T12:50:15+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4764,
+        "content": "⚠️🚯↪️🔂⬅️\n\nChinese firm Webus files to raise $300 million for #XRP treasury plan.\n\n\n🥫 t.me/FinancialWorldUpdates\n\nSource: Financial World Updates",
+        "original_sender": "Financial World Updates",
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "⚠️🚯↪️🔂⬅️\n\nAllianz SE warns that if Congress passes the foreign tax provision, Section 899, stocks could drop 10% and the U.S. Dollar could decline 5%.\n\n\n🥫 t.me/FinancialWorldUpdates\n\nSource: Financial World Updates",
+        "timestamp": "2025-06-04T12:05:14+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4763,
+        "content": "⚠️🚯↪️🔂⬅️\n\nAllianz SE warns that if Congress passes the foreign tax provision, Section 899, stocks could drop 10% and the U.S. Dollar could decline 5%.\n\n\n🥫 t.me/FinancialWorldUpdates\n\nSource: Financial World Updates",
+        "original_sender": "Financial World Updates",
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "🔴 SIGNAL UPDATE: STOUSDT 🔴\n\n⚠️ Stop Loss 1 (0.1013) TRIGGERED!",
+        "timestamp": "2025-06-04T12:01:57+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4762,
+        "coin_pair": "STOUSDT",
+        "targets_hit": [],
+        "stop_losses_triggered": [
+            {
+                "level": 1,
+                "price": 0.1013,
+                "percentage_change": null,
+                "status": "TRIGGERED"
+            }
+        ],
+        "update_type": "STOP_LOSS_TRIGGERED",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "🔴 SIGNAL UPDATE: ARUSDT 🔴\n\n⚠️ Stop Loss 1 (6.668) TRIGGERED!",
+        "timestamp": "2025-06-04T12:01:55+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4761,
+        "coin_pair": "ARUSDT",
+        "targets_hit": [],
+        "stop_losses_triggered": [
+            {
+                "level": 1,
+                "price": 6.668,
+                "percentage_change": null,
+                "status": "TRIGGERED"
+            }
+        ],
+        "update_type": "STOP_LOSS_TRIGGERED",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "🔴 SIGNAL UPDATE: EPTUSDT 🔴\n\n⚠️ Stop Loss 1 (0.00851) TRIGGERED!",
+        "timestamp": "2025-06-04T12:01:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4760,
+        "coin_pair": "EPTUSDT",
+        "targets_hit": [],
+        "stop_losses_triggered": [
+            {
+                "level": 1,
+                "price": 0.00851,
+                "percentage_change": null,
+                "status": "TRIGGERED"
+            }
+        ],
+        "update_type": "STOP_LOSS_TRIGGERED",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "@Bitcoin_Crypto_Memes\n\nSource: Financial World Updates",
+        "timestamp": "2025-06-04T11:35:13+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4759,
+        "content": "@Bitcoin_Crypto_Memes\n\nSource: Financial World Updates",
+        "original_sender": "Financial World Updates",
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: TRXUSDT ✅\n\n🎯 Target 1 (0.2718) HIT!\n🎯 Target 2 (0.2729) HIT!",
+        "timestamp": "2025-06-04T11:16:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4758,
+        "coin_pair": "TRXUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 0.2718,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 2,
+                "price": 0.2729,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: DOLOUSDT ✅\n\n🎯 Target 1 (0.0382) HIT!\n🎯 Target 2 (0.0387) HIT!",
+        "timestamp": "2025-06-04T11:11:53+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4757,
+        "coin_pair": "DOLOUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 0.0382,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 2,
+                "price": 0.0387,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: STOUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 257th/466\nRisk Level: ⚠️ High\n\nEntry: 0.1044\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.1059      +1.44%\nTarget 2         0.1074      +2.87%\nTarget 3         0.1120      +7.28%\nTarget 4         0.1196      +14.56%\nStop Loss 1    0.1013      -2.97%\nStop Loss 2    0.0922      -11.69%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $STO\n📊 Analisis Data Coinglass untuk STO",
+        "timestamp": "2025-06-04T11:09:39+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4756,
+        "coin_pair": "STOUSDT",
+        "risk_rank": "257th/466",
+        "risk_level": "High",
+        "entry_price": 0.1044,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.1059,
+                "percentage_change": 1.44,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.1074,
+                "percentage_change": 2.87,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.112,
+                "percentage_change": 7.28,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.1196,
+                "percentage_change": 14.56,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.1013,
+                "percentage_change": -2.97,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0922,
+                "percentage_change": -11.69,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: DOLOUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 391th/466\nRisk Level: ⚠️ High\n\nEntry: 0.0377\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.0382      +1.33%\nTarget 2         0.0387      +2.65%\nTarget 3         0.0402      +6.63%\nTarget 4         0.0427      +13.26%\nStop Loss 1    0.0367      -2.65%\nStop Loss 2    0.0338      -10.34%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $DOLO\n📊 Analisis Data Coinglass untuk DOLO",
+        "timestamp": "2025-06-04T11:09:38+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4755,
+        "coin_pair": "DOLOUSDT",
+        "risk_rank": "391th/466",
+        "risk_level": "High",
+        "entry_price": 0.0377,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.0382,
+                "percentage_change": 1.33,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0387,
+                "percentage_change": 2.65,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.0402,
+                "percentage_change": 6.63,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.0427,
+                "percentage_change": 13.26,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.0367,
+                "percentage_change": -2.65,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0338,
+                "percentage_change": -10.34,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: KERNELUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 123th/466\nRisk Level: 🟢 Normal\n\nEntry: 0.1618\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.1650      +1.98%\nTarget 2         0.1681      +3.89%\nTarget 3         0.1777      +9.83%\nTarget 4         0.1935      +19.59%\nStop Loss 1    0.1550      -4.20%\nStop Loss 2    0.1364      -15.70%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $KERNEL\n📊 Analisis Data Coinglass untuk KERNEL",
+        "timestamp": "2025-06-04T11:04:37+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4754,
+        "coin_pair": "KERNELUSDT",
+        "risk_rank": "123th/466",
+        "risk_level": "Normal",
+        "entry_price": 0.1618,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.165,
+                "percentage_change": 1.98,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.1681,
+                "percentage_change": 3.89,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.1777,
+                "percentage_change": 9.83,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.1935,
+                "percentage_change": 19.59,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.155,
+                "percentage_change": -4.2,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.1364,
+                "percentage_change": -15.7,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: GRASSUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 157th/466\nRisk Level: ⚠️ High\n\nEntry: 1.850\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         1.882      +1.73%\nTarget 2         1.914      +3.46%\nTarget 3         2.009      +8.59%\nTarget 4         2.169      +17.24%\nStop Loss 1    1.777      -3.95%\nStop Loss 2    1.595      -13.78%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $GRASS\n📊 Analisis Data Coinglass untuk GRASS",
+        "timestamp": "2025-06-04T10:19:36+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4753,
+        "coin_pair": "GRASSUSDT",
+        "risk_rank": "157th/466",
+        "risk_level": "High",
+        "entry_price": 1.85,
+        "targets": [
+            {
+                "level": 1,
+                "price": 1.882,
+                "percentage_change": 1.73,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 1.914,
+                "percentage_change": 3.46,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 2.009,
+                "percentage_change": 8.59,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 2.169,
+                "percentage_change": 17.24,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 1.777,
+                "percentage_change": -3.95,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 1.595,
+                "percentage_change": -13.78,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: GUSDT ✅\n\n🎯 Target 1 (0.0134) HIT!\n🎯 Target 2 (0.0135) HIT!\n🎯 Target 3 (0.0139) HIT!",
+        "timestamp": "2025-06-04T10:16:58+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4752,
+        "coin_pair": "GUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 0.0134,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 2,
+                "price": 0.0135,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 3,
+                "price": 0.0139,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: WAXPUSDT ✅\n\n🎯 Target 1 (0.0226) HIT!\n🎯 Target 2 (0.0228) HIT!\n🎯 Target 3 (0.0234) HIT!",
+        "timestamp": "2025-06-04T10:16:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4751,
+        "coin_pair": "WAXPUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 0.0226,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 2,
+                "price": 0.0228,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 3,
+                "price": 0.0234,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: AIOTUSDT ✅\n\n🎯 Target 1 (0.1467) HIT!\n🎯 Target 2 (0.1494) HIT!\n🎯 Target 3 (0.1574) HIT!",
+        "timestamp": "2025-06-04T10:06:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4750,
+        "coin_pair": "AIOTUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 0.1467,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 2,
+                "price": 0.1494,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 3,
+                "price": 0.1574,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: 1000WHYUSDT ✅\n\n🎯 Target 1 (0.0000383) HIT!\n🎯 Target 2 (0.0000390) HIT!\n🎯 Target 3 (0.0000408) HIT!\n🎯 Target 4 (0.0000440) HIT!",
+        "timestamp": "2025-06-04T10:01:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4749,
+        "coin_pair": "1000WHYUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 3.83e-05,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 2,
+                "price": 3.9e-05,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 3,
+                "price": 4.08e-05,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 4,
+                "price": 4.4e-05,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: COMPUSDT ✅\n\n🎯 Target 1 (44.23) HIT!\n🎯 Target 2 (44.62) HIT!\n🎯 Target 3 (45.81) HIT!\n🎯 Target 4 (47.79) HIT!",
+        "timestamp": "2025-06-04T09:56:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4748,
+        "coin_pair": "COMPUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 44.23,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 2,
+                "price": 44.62,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 3,
+                "price": 45.81,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 4,
+                "price": 47.79,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: AIOTUSDT ✅\n\n🎯 Target 1 (0.1467) HIT!\n🎯 Target 2 (0.1494) HIT!",
+        "timestamp": "2025-06-04T09:21:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4747,
+        "coin_pair": "AIOTUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 0.1467,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 2,
+                "price": 0.1494,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: AIOTUSDT ✅\n\n🎯 Target 1 (0.1467) HIT!",
+        "timestamp": "2025-06-04T09:16:54+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4746,
+        "coin_pair": "AIOTUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 0.1467,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: AIOTUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 211th/466\nRisk Level: ⚠️ High\n\nEntry: 0.1440\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.1467      +1.88%\nTarget 2         0.1494      +3.75%\nTarget 3         0.1574      +9.31%\nTarget 4         0.1709      +18.68%\nStop Loss 1    0.1386      -3.75%\nStop Loss 2    0.1225      -14.93%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $AIOT\n📊 Analisis Data Coinglass untuk AIOT",
+        "timestamp": "2025-06-04T09:14:36+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4745,
+        "coin_pair": "AIOTUSDT",
+        "risk_rank": "211th/466",
+        "risk_level": "High",
+        "entry_price": 0.144,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.1467,
+                "percentage_change": 1.88,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.1494,
+                "percentage_change": 3.75,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.1574,
+                "percentage_change": 9.31,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.1709,
+                "percentage_change": 18.68,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.1386,
+                "percentage_change": -3.75,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.1225,
+                "percentage_change": -14.93,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "[Pesan Media atau Aksi: Tanpa konten teks]",
+        "timestamp": "2025-06-04T09:08:45+00:00",
+        "sender_id": 1407749753,
+        "message_id": 4744,
+        "content": "[Pesan Media atau Aksi: Tanpa konten teks]",
+        "original_sender": null,
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "KAVAUSDT\n\nTarget 1: 0.4394 ✅\nTarget 2: 0.4436 ✅",
+        "timestamp": "2025-06-04T09:05:13+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4743,
+        "content": "KAVAUSDT\n\nTarget 1: 0.4394 ✅\nTarget 2: 0.4436 ✅",
+        "original_sender": null,
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "CETUSUSDT 🆕\n\nVolume(24H) Ranked: 124th/466\n\nRisk Level: 🟢 Normal\n\nEntry: 0.1387\n\nTarget 1: 0.1412\nTarget 2: 0.1437\nTarget 3: 0.1511\nTarget 4: 0.1634\n\nStop loss 1: 0.1337\nStop loss 2: 0.1190",
+        "timestamp": "2025-06-04T08:26:36+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4742,
+        "content": "CETUSUSDT 🆕\n\nVolume(24H) Ranked: 124th/466\n\nRisk Level: 🟢 Normal\n\nEntry: 0.1387\n\nTarget 1: 0.1412\nTarget 2: 0.1437\nTarget 3: 0.1511\nTarget 4: 0.1634\n\nStop loss 1: 0.1337\nStop loss 2: 0.1190",
+        "original_sender": null,
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "🥇 Binance strengthens its dominance in the stablecoin market\n\n💰 As of today, crypto exchange Binance holds nearly 59% of all stablecoins on trading platforms, according to CryptoQuant analysts. That’s approximately $31 billion in USDT and USDC.\n\nFor comparison, OKX holds 15% of reserves ($8.2 billion), while Coinbase controls around 10% ($5.3 billion).\n\nSource: TU Crypto News",
+        "timestamp": "2025-06-04T06:07:31+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4741,
+        "content": "🥇 Binance strengthens its dominance in the stablecoin market\n\n💰 As of today, crypto exchange Binance holds nearly 59% of all stablecoins on trading platforms, according to CryptoQuant analysts. That’s approximately $31 billion in USDT and USDC.\n\nFor comparison, OKX holds 15% of reserves ($8.2 billion), while Coinbase controls around 10% ($5.3 billion).\n\nSource: TU Crypto News",
+        "original_sender": "TU Crypto News",
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: WAXPUSDT ✅\n\n🎯 Target 1 (0.0226) HIT!",
+        "timestamp": "2025-06-04T05:40:21+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4740,
+        "coin_pair": "WAXPUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 0.0226,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: MILKUSDT ✅\n\n🎯 Target 1 (0.0650) HIT!\n🎯 Target 2 (0.0660) HIT!",
+        "timestamp": "2025-06-04T05:35:22+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4739,
+        "coin_pair": "MILKUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 0.065,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 2,
+                "price": 0.066,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "⚠️🚯↪️🔂⬅️\n\nHedge Funds Cut Exposure to the Magnificent 7 to 5-Year Lows\n\nInstitutional investors are pulling back from the biggest tech names — Apple, Microsoft, Nvidia, Amazon, Meta, Google, and Tesla — reducing their positions to the lowest levels in at least five years.\n\nA major rotation underway or just hedging before the next move?\n\n🥫 t.me/FinancialWorldUpdates\n\nSource: Financial World Updates",
+        "timestamp": "2025-06-04T05:34:57+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4738,
+        "content": "⚠️🚯↪️🔂⬅️\n\nHedge Funds Cut Exposure to the Magnificent 7 to 5-Year Lows\n\nInstitutional investors are pulling back from the biggest tech names — Apple, Microsoft, Nvidia, Amazon, Meta, Google, and Tesla — reducing their positions to the lowest levels in at least five years.\n\nA major rotation underway or just hedging before the next move?\n\n🥫 t.me/FinancialWorldUpdates\n\nSource: Financial World Updates",
+        "original_sender": "Financial World Updates",
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: EPICUSDT ✅\n\n🎯 Target 1 (1.238) HIT!",
+        "timestamp": "2025-06-04T05:10:21+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4737,
+        "coin_pair": "EPICUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 1.238,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: WAXPUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 392th/464\nRisk Level: ⚠️ High\n\nEntry: 0.0224\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         0.0226      +0.89%\nTarget 2         0.0228      +1.79%\nTarget 3         0.0234      +4.46%\nTarget 4         0.0244      +8.93%\nStop Loss 1    0.0219      -2.23%\nStop Loss 2    0.0208      -7.14%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $WAXP\n📊 Analisis Data Coinglass untuk WAXP",
+        "timestamp": "2025-06-04T05:05:03+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4736,
+        "coin_pair": "WAXPUSDT",
+        "risk_rank": "392th/464",
+        "risk_level": "High",
+        "entry_price": 0.0224,
+        "targets": [
+            {
+                "level": 1,
+                "price": 0.0226,
+                "percentage_change": 0.89,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0228,
+                "percentage_change": 1.79,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 0.0234,
+                "percentage_change": 4.46,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 0.0244,
+                "percentage_change": 8.93,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 0.0219,
+                "percentage_change": -2.23,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 0.0208,
+                "percentage_change": -7.14,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "🔴 SIGNAL UPDATE: PUNDIXUSDT 🔴\n\n⚠️ Stop Loss 1 (0.3344) TRIGGERED!",
+        "timestamp": "2025-06-04T05:00:21+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4735,
+        "coin_pair": "PUNDIXUSDT",
+        "targets_hit": [],
+        "stop_losses_triggered": [
+            {
+                "level": 1,
+                "price": 0.3344,
+                "percentage_change": null,
+                "status": "TRIGGERED"
+            }
+        ],
+        "update_type": "STOP_LOSS_TRIGGERED",
+        "message_type": "SignalUpdate"
+    },
+    {
+        "raw_text": "🆕 NEW SIGNAL: EPICUSDT 🆕\n\n📊 Risk Analysis 📊\nVolume(24H) Ranked: 384th/464\nRisk Level: ⚠️ High\n\nEntry: 1.225\n\n📝 Targets & Stop Loss\n----------------------------------------------\nLevel         Price       % Change from Entry\n----------------------------------------------\nTarget 1         1.238      +1.06%\nTarget 2         1.252      +2.20%\nTarget 3         1.291      +5.39%\nTarget 4         1.357      +10.78%\nStop Loss 1    1.194      -2.53%\nStop Loss 2    1.119      -8.65%\n----------------------------------------------\n\n🔍 Cek Sentimen Sosial Media untuk $EPIC\n📊 Analisis Data Coinglass untuk EPIC",
+        "timestamp": "2025-06-04T04:55:04+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4734,
+        "coin_pair": "EPICUSDT",
+        "risk_rank": "384th/464",
+        "risk_level": "High",
+        "entry_price": 1.225,
+        "targets": [
+            {
+                "level": 1,
+                "price": 1.238,
+                "percentage_change": 1.06,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 1.252,
+                "percentage_change": 2.2,
+                "status": null
+            },
+            {
+                "level": 3,
+                "price": 1.291,
+                "percentage_change": 5.39,
+                "status": null
+            },
+            {
+                "level": 4,
+                "price": 1.357,
+                "percentage_change": 10.78,
+                "status": null
+            }
+        ],
+        "stop_losses": [
+            {
+                "level": 1,
+                "price": 1.194,
+                "percentage_change": -2.53,
+                "status": null
+            },
+            {
+                "level": 2,
+                "price": 1.119,
+                "percentage_change": -8.65,
+                "status": null
+            }
+        ],
+        "social_media_link": null,
+        "data_analysis_link": null,
+        "message_type": "NewSignal"
+    },
+    {
+        "raw_text": "💥 Trump family rejects new cryptocurrency wallet\n\nThe launch of the “Official $TRUMP Wallet” has sparked controversy, as it was introduced without the Trump family’s approval.\n\n👉 The project was developed by NFT marketplace Magic Eden in partnership with GetTrumpMemes, the creators of the TRUMP memecoin.\n\n‼️ Donald Trump Jr., Eric Trump, and Barron Trump have publicly stated they have no connection to the product.\n\nDespite objections, Magic Eden continues promoting the wallet, raising concerns over brand rights and potential conflicts of interest.\n\nSource: TU Crypto News",
+        "timestamp": "2025-06-04T04:54:22+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4733,
+        "content": "💥 Trump family rejects new cryptocurrency wallet\n\nThe launch of the “Official $TRUMP Wallet” has sparked controversy, as it was introduced without the Trump family’s approval.\n\n👉 The project was developed by NFT marketplace Magic Eden in partnership with GetTrumpMemes, the creators of the TRUMP memecoin.\n\n‼️ Donald Trump Jr., Eric Trump, and Barron Trump have publicly stated they have no connection to the product.\n\nDespite objections, Magic Eden continues promoting the wallet, raising concerns over brand rights and potential conflicts of interest.\n\nSource: TU Crypto News",
+        "original_sender": "TU Crypto News",
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "JUST IN : 🇺🇸 Trump-backed World Liberty Financial has airdropped 47 $USD1 tokens to every wallet that potentially participated in $WLFI token sale.\n\n@News_Crypto\n\nSource: Crypto News",
+        "timestamp": "2025-06-04T04:39:22+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4732,
+        "content": "JUST IN : 🇺🇸 Trump-backed World Liberty Financial has airdropped 47 $USD1 tokens to every wallet that potentially participated in $WLFI token sale.\n\n@News_Crypto\n\nSource: Crypto News",
+        "original_sender": "Crypto News",
+        "message_type": "UnstructuredMessage"
+    },
+    {
+        "raw_text": "✅ SIGNAL UPDATE: SIRENUSDT ✅\n\n🎯 Target 1 (0.1578) HIT!\n🎯 Target 2 (0.1596) HIT!",
+        "timestamp": "2025-06-04T04:25:25+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4731,
+        "coin_pair": "SIRENUSDT",
+        "targets_hit": [
+            {
+                "level": 1,
+                "price": 0.1578,
+                "percentage_change": null,
+                "status": "HIT"
+            },
+            {
+                "level": 2,
+                "price": 0.1596,
+                "percentage_change": null,
+                "status": "HIT"
+            }
+        ],
+        "stop_losses_triggered": [],
+        "update_type": "TARGET_HIT",
+        "message_type": "SignalUpdate"
     }
 ]
