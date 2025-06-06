@@ -78,7 +78,7 @@ Telegram-Trading-Bot/
 
 Semua perintah dijalankan melalui `main.py`.
 
--   **Mengambil Pesan dari Telegram**
+-   **Mengambil Pesan dari Telegram**  
     (Akan mengambil 50 pesan terakhir secara default)
     ```bash
     python main.py fetch
@@ -88,13 +88,13 @@ Semua perintah dijalankan melalui `main.py`.
     python main.py fetch --limit 100
     ```
 
--   **Membuat Keputusan Trading**
+-   **Membuat Keputusan Trading**  
     (Membaca `new_signals.json` dan membuat `trade_decisions.json`)
     ```bash
     python main.py decide
     ```
 
--   **Mengeksekusi Trade**
+-   **Mengeksekusi Trade**  
     (Membaca `trade_decisions.json` dan mengeksekusi sinyal `BUY`)
     ```bash
     python main.py execute
@@ -105,7 +105,7 @@ Semua perintah dijalankan melalui `main.py`.
     python main.py status
     ```
 
--   **Menjalankan Mode Otomatis (Autoloop)**
+-   **Menjalankan Mode Otomatis (Autoloop)**  
     (Berjalan selamanya, jeda 5 menit antar siklus, mengambil 50 pesan)
     ```bash
     python main.py autoloop
@@ -115,7 +115,7 @@ Semua perintah dijalankan melalui `main.py`.
     python main.py autoloop --duration 120 --delay 600 --limit 20
     ```
 
--   **Menjalankan Seluruh Alur Sekali Jalan**
+-   **Menjalankan Seluruh Alur Sekali Jalan**  
     (Fetch -> Decide -> Execute)
     ```bash
     python main.py run-all
