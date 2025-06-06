@@ -1,18 +1,18 @@
+# telegram/models.py
 from dataclasses import dataclass, field, asdict
 from typing import List, Optional, Any, Dict
 from datetime import datetime
-import json
 
 @dataclass
 class BaseMessage:
-    """Base class for all message types."""
+    """Kelas dasar untuk semua tipe pesan."""
     raw_text: str
     timestamp: datetime
     sender_id: Optional[int] = None
     message_id: Optional[int] = None
 
     def to_dict(self):
-        """Converts the dataclass to a dictionary, handling datetime."""
+        """Mengonversi dataclass menjadi dictionary."""
         d = asdict(self)
         d['timestamp'] = self.timestamp.isoformat()
         return d
@@ -33,7 +33,7 @@ class StopLossInfo:
 
 @dataclass
 class SignalUpdate(BaseMessage):
-    """Represents an update to an existing signal."""
+    """Mewakili pembaruan pada sinyal yang ada."""
     coin_pair: str = ""
     targets_hit: List[TargetInfo] = field(default_factory=list)
     stop_losses_triggered: List[StopLossInfo] = field(default_factory=list)
@@ -42,7 +42,7 @@ class SignalUpdate(BaseMessage):
 
 @dataclass
 class NewSignal(BaseMessage):
-    """Represents a new trading signal."""
+    """Mewakili sinyal trading baru."""
     coin_pair: str = ""
     risk_rank: Optional[str] = None
     risk_level: Optional[str] = None
@@ -55,7 +55,7 @@ class NewSignal(BaseMessage):
 
 @dataclass
 class MarketAlert(BaseMessage):
-    """Represents a market alert message."""
+    """Mewakili pesan peringatan pasar."""
     coin: str = ""
     price_change_percentage: float = 0.0
     timeframe_minutes: int = 0
@@ -63,19 +63,8 @@ class MarketAlert(BaseMessage):
     message_type: str = "MarketAlert"
 
 @dataclass
-class UnstructuredMessage(BaseMessage):
-    """Represents a message that does not fit other models."""
-    content: str = ""
-    original_sender: Optional[str] = None
-    message_type: str = "UnstructuredMessage"
-
-    def __post_init__(self):
-        if not self.content:
-            self.content = self.raw_text
-
-@dataclass
 class DailyRecap(BaseMessage):
-    """Represents a daily summary of trading signals."""
+    """Mewakili rangkuman harian sinyal trading."""
     date_range: Optional[str] = None
     targets_hit: Dict[str, List[str]] = field(default_factory=dict)
     running_signals: List[str] = field(default_factory=list)
@@ -84,3 +73,14 @@ class DailyRecap(BaseMessage):
     total_take_profits: Optional[int] = None
     total_stop_losses: Optional[int] = None
     message_type: str = "DailyRecap"
+
+@dataclass
+class UnstructuredMessage(BaseMessage):
+    """Mewakili pesan yang tidak cocok dengan model lain."""
+    content: str = ""
+    original_sender: Optional[str] = None
+    message_type: str = "UnstructuredMessage"
+
+    def __post_init__(self):
+        if not self.content:
+            self.content = self.raw_text

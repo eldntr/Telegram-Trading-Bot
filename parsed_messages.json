@@ -1,5 +1,14 @@
 [
     {
+        "raw_text": "📈 Circle ends NYSE debut up 167% from IPO price\n\nThe company’s stock opened around $69 — more than double the upsized IPO price of $31 per share. \n\n🚀 CRCL shares peaked at $103.75 before settling at $82 when the market closed, up 167% from the IPO price and about 20% from the opening price.\n\nSource: TU Crypto News",
+        "timestamp": "2025-06-06T06:04:45+00:00",
+        "sender_id": 1218062484,
+        "message_id": 4931,
+        "content": "📈 Circle ends NYSE debut up 167% from IPO price\n\nThe company’s stock opened around $69 — more than double the upsized IPO price of $31 per share. \n\n🚀 CRCL shares peaked at $103.75 before settling at $82 when the market closed, up 167% from the IPO price and about 20% from the opening price.\n\nSource: TU Crypto News",
+        "original_sender": "TU Crypto News",
+        "message_type": "UnstructuredMessage"
+    },
+    {
         "raw_text": "The end\n\nSource: Crypto Insider",
         "timestamp": "2025-06-06T05:12:52+00:00",
         "sender_id": 1218062484,
@@ -268,8 +277,8 @@
                 "status": null
             }
         ],
-        "social_media_link": "Cek Sentimen Sosial Media untuk $FARTCOIN",
-        "data_analysis_link": "Analisis Data Coinglass untuk FARTCOIN",
+        "social_media_link": null,
+        "data_analysis_link": null,
         "message_type": "NewSignal"
     },
     {
@@ -390,8 +399,8 @@
                 "status": null
             }
         ],
-        "social_media_link": "Cek Sentimen Sosial Media untuk $BTCDOM",
-        "data_analysis_link": "Analisis Data Coinglass untuk BTCDOM",
+        "social_media_link": null,
+        "data_analysis_link": null,
         "message_type": "NewSignal"
     },
     {
@@ -575,8 +584,8 @@
                 "status": null
             }
         ],
-        "social_media_link": "Cek Sentimen Sosial Media untuk $1000X",
-        "data_analysis_link": "Analisis Data Coinglass untuk 1000X",
+        "social_media_link": null,
+        "data_analysis_link": null,
         "message_type": "NewSignal"
     },
     {
@@ -797,8 +806,8 @@
                 "status": null
             }
         ],
-        "social_media_link": "Cek Sentimen Sosial Media untuk $DF",
-        "data_analysis_link": "Analisis Data Coinglass untuk DF",
+        "social_media_link": null,
+        "data_analysis_link": null,
         "message_type": "NewSignal"
     },
     {
@@ -868,8 +877,8 @@
                 "status": null
             }
         ],
-        "social_media_link": "Cek Sentimen Sosial Media untuk $HIGH",
-        "data_analysis_link": "Analisis Data Coinglass untuk HIGH",
+        "social_media_link": null,
+        "data_analysis_link": null,
         "message_type": "NewSignal"
     },
     {
@@ -966,8 +975,8 @@
                 "status": null
             }
         ],
-        "social_media_link": "Cek Sentimen Sosial Media untuk $HIFI",
-        "data_analysis_link": "Analisis Data Coinglass untuk HIFI",
+        "social_media_link": null,
+        "data_analysis_link": null,
         "message_type": "NewSignal"
     },
     {
@@ -978,29 +987,5 @@
         "content": "🏆 Binance becomes leader among CEXs in stablecoin reserves\n\nAs of May, Binance holds $31 billion in USDT/USDC reserves and $180 billion in total reserves.\n\n📊 Coinbase and Binance also recorded the largest capital inflows in 2025—$344 billion and $335 billion, respectively—far ahead of other exchanges.\n\nSource: TU Crypto News",
         "original_sender": "TU Crypto News",
         "message_type": "UnstructuredMessage"
-    },
-    {
-        "raw_text": "✅ SIGNAL UPDATE: OGNUSDT ✅\n\n🎯 Target 1 (0.0620) HIT!\n🎯 Target 2 (0.0627) HIT!",
-        "timestamp": "2025-06-05T13:21:54+00:00",
-        "sender_id": 1218062484,
-        "message_id": 4878,
-        "coin_pair": "OGNUSDT",
-        "targets_hit": [
-            {
-                "level": 1,
-                "price": 0.062,
-                "percentage_change": null,
-                "status": "HIT"
-            },
-            {
-                "level": 2,
-                "price": 0.0627,
-                "percentage_change": null,
-                "status": "HIT"
-            }
-        ],
-        "stop_losses_triggered": [],
-        "update_type": "TARGET_HIT",
-        "message_type": "SignalUpdate"
     }
 ]

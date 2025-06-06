@@ -48,8 +48,8 @@
                 "status": null
             }
         ],
-        "social_media_link": "Cek Sentimen Sosial Media untuk $FARTCOIN",
-        "data_analysis_link": "Analisis Data Coinglass untuk FARTCOIN",
+        "social_media_link": null,
+        "data_analysis_link": null,
         "message_type": "NewSignal"
     },
     {
@@ -101,8 +101,8 @@
                 "status": null
             }
         ],
-        "social_media_link": "Cek Sentimen Sosial Media untuk $BTCDOM",
-        "data_analysis_link": "Analisis Data Coinglass untuk BTCDOM",
+        "social_media_link": null,
+        "data_analysis_link": null,
         "message_type": "NewSignal"
     },
     {
@@ -154,8 +154,8 @@
                 "status": null
             }
         ],
-        "social_media_link": "Cek Sentimen Sosial Media untuk $1000X",
-        "data_analysis_link": "Analisis Data Coinglass untuk 1000X",
+        "social_media_link": null,
+        "data_analysis_link": null,
         "message_type": "NewSignal"
     },
     {
@@ -207,8 +207,8 @@
                 "status": null
             }
         ],
-        "social_media_link": "Cek Sentimen Sosial Media untuk $DF",
-        "data_analysis_link": "Analisis Data Coinglass untuk DF",
+        "social_media_link": null,
+        "data_analysis_link": null,
         "message_type": "NewSignal"
     },
     {
@@ -260,8 +260,8 @@
                 "status": null
             }
         ],
-        "social_media_link": "Cek Sentimen Sosial Media untuk $HIGH",
-        "data_analysis_link": "Analisis Data Coinglass untuk HIGH",
+        "social_media_link": null,
+        "data_analysis_link": null,
         "message_type": "NewSignal"
     },
     {
@@ -313,8 +313,8 @@
                 "status": null
             }
         ],
-        "social_media_link": "Cek Sentimen Sosial Media untuk $HIFI",
-        "data_analysis_link": "Analisis Data Coinglass untuk HIFI",
+        "social_media_link": null,
+        "data_analysis_link": null,
         "message_type": "NewSignal"
     }
 ]

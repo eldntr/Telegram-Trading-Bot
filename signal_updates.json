@@ -352,29 +352,5 @@
         "stop_losses_triggered": [],
         "update_type": "TARGET_HIT",
         "message_type": "SignalUpdate"
-    },
-    {
-        "raw_text": "✅ SIGNAL UPDATE: OGNUSDT ✅\n\n🎯 Target 1 (0.0620) HIT!\n🎯 Target 2 (0.0627) HIT!",
-        "timestamp": "2025-06-05T13:21:54+00:00",
-        "sender_id": 1218062484,
-        "message_id": 4878,
-        "coin_pair": "OGNUSDT",
-        "targets_hit": [
-            {
-                "level": 1,
-                "price": 0.062,
-                "percentage_change": null,
-                "status": "HIT"
-            },
-            {
-                "level": 2,
-                "price": 0.0627,
-                "percentage_change": null,
-                "status": "HIT"
-            }
-        ],
-        "stop_losses_triggered": [],
-        "update_type": "TARGET_HIT",
-        "message_type": "SignalUpdate"
     }
 ]
