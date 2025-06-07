@@ -47,13 +47,18 @@ class BinanceClient:
             query_string += f"&signature={signature}"
             
             try:
-                if method.upper() == 'GET':
+                # Perbaikan: Menggunakan method.upper() untuk konsistensi
+                req_method = method.upper()
+                if req_method == 'GET':
                     response = self.session.get(f"{url}?{query_string}")
-                elif method.upper() == 'POST':
+                elif req_method == 'POST':
                     headers = {'Content-Type': 'application/x-www-form-urlencoded'}
                     response = self.session.post(url, data=query_string, headers=headers)
-                elif method.upper() == 'DELETE':
+                elif req_method == 'DELETE':
                     response = self.session.delete(f"{url}?{query_string}")
+                else:
+                    print(f"Metode HTTP tidak didukung: {req_method}")
+                    return None
 
                 response.raise_for_status()
                 return response.json()
@@ -101,6 +106,23 @@ class BinanceClient:
     def place_market_buy_order(self, symbol: str, quote_order_qty: float) -> Optional[Dict[str, Any]]:
         params = {"symbol": symbol, "side": "BUY", "type": "MARKET", "quoteOrderQty": quote_order_qty}
         return self._send_request("POST", "/order", params, signed=True)
+        
+    # --- BARU: Fungsi untuk menjual pada harga pasar ---
+    def place_market_sell_order(self, symbol: str, quantity: float) -> Optional[Dict[str, Any]]:
+        """Menempatkan order MARKET SELL untuk sejumlah kuantitas tertentu."""
+        symbol_info = self.get_symbol_info(symbol)
+        if not symbol_info:
+            print(f"Gagal menempatkan Market Sell: tidak ditemukan info untuk {symbol}")
+            return None
+        
+        lot_size_filter = next((f for f in symbol_info['filters'] if f['filterType'] == 'LOT_SIZE'), None)
+        if not lot_size_filter:
+            print(f"Filter LOT_SIZE tidak ditemukan untuk {symbol}")
+            return None
+
+        formatted_quantity = self._format_value(quantity, lot_size_filter['stepSize'])
+        params = {"symbol": symbol, "side": "SELL", "type": "MARKET", "quantity": formatted_quantity}
+        return self._send_request("POST", "/order", params, signed=True)
 
     def place_oco_sell_order(self, symbol: str, quantity: float, take_profit_price: float, stop_loss_price: float) -> Optional[Dict[str, Any]]:
         symbol_info = self.get_symbol_info(symbol)
@@ -110,7 +132,6 @@ class BinanceClient:
             
         filters = {f['filterType']: f for f in symbol_info['filters']}
         
-        # Menggunakan float() untuk memastikan quantity adalah numerik sebelum pemformatan
         formatted_quantity = self._format_value(float(quantity), filters['LOT_SIZE']['stepSize'])
         formatted_tp_price = self._format_value(take_profit_price, filters['PRICE_FILTER']['tickSize'])
         formatted_sl_price = self._format_value(stop_loss_price, filters['PRICE_FILTER']['tickSize'])
@@ -120,9 +141,7 @@ class BinanceClient:
         params = {"symbol": symbol, "side": "SELL", "quantity": formatted_quantity, "price": formatted_tp_price, "stopPrice": formatted_sl_price, "stopLimitPrice": formatted_sl_limit_price, "stopLimitTimeInForce": "GTC"}
         return self._send_request("POST", "/order/oco", params, signed=True)
     
-    # --- BARU: Fungsi untuk membatalkan OCO Order ---
     def cancel_oco_order(self, symbol: str, order_list_id: int) -> Optional[Dict[str, Any]]:
-        """Membatalkan seluruh OCO order list (TP dan SL)."""
         print(f"Membatalkan OCO orderListId: {order_list_id} untuk {symbol}...")
         params = {"symbol": symbol, "orderListId": order_list_id}
         return self._send_request("DELETE", "/orderList", params, signed=True)
@@ -133,14 +152,12 @@ class BinanceClient:
         return float(data['price']) if data and 'price' in data else None
         
     def get_all_tickers(self) -> Optional[List[Dict[str, Any]]]:
-        """Diubah untuk mengembalikan list dict, bukan dict."""
         return self._send_request("GET", "/ticker/price")
 
     def get_account_info(self) -> Optional[Dict[str, Any]]:
         return self._send_request("GET", "/account", signed=True)
 
     def get_open_orders(self, symbol: str = None) -> Optional[list]:
-        """Mengambil semua order yang sedang terbuka untuk simbol tertentu."""
         params = {}
         if symbol:
             params['symbol'] = symbol
