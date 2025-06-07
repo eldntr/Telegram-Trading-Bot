@@ -1,6 +1,25 @@
 version: '3.8'
 
 services:
+  # --- BARU: Layanan MongoDB ---
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      # Port 27017 di host akan terhubung ke port 27017 di kontainer
+      # Ini berguna untuk mengakses DB dari luar, misal dengan MongoDB Compass
+      - "27017:27017"
+    volumes:
+      # Menyimpan data MongoDB secara persisten di volume 'mongo-data'
+      - mongo-data:/data/db
+    # Healthcheck untuk memastikan bot baru berjalan setelah DB benar-benar siap
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.runCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
   bot:
     build:
       context: .
@@ -9,6 +28,11 @@ services:
       - ./.env
     volumes:
       - .:/app
+    # --- BARU: Depends_on dengan healthcheck ---
+    # Bot tidak akan dimulai sampai layanan 'mongodb' dalam status 'healthy'
+    depends_on:
+      mongodb:
+        condition: service_healthy
 
   dashboard:
     build:
@@ -18,13 +42,17 @@ services:
       - "8501:8501"
     volumes:
       - .:/app
-    # Menambahkan perintah untuk menunggu sebelum menjalankan streamlit
     command: >
       sh -c "
-        echo 'Dashboard is waiting for 120 seconds for the bot to process data...' &&
+        echo 'Dashboard is waiting for the bot to process data...' &&
         sleep 120 &&
         echo 'Starting Streamlit dashboard...' &&
         streamlit run dashboard.py
       "
+    # Dashboard juga bergantung pada bot, secara tidak langsung juga pada mongodb
     depends_on:
       - bot
+
+# --- BARU: Definisi Volume ---
+volumes:
+  mongo-data:

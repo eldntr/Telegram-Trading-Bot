@@ -5,7 +5,7 @@ import hashlib
 import requests
 import math
 import json
-from typing import Optional, Dict, Any
+from typing import Optional, Dict, Any, List
 
 class BinanceClient:
     """
@@ -49,10 +49,12 @@ class BinanceClient:
             try:
                 if method.upper() == 'GET':
                     response = self.session.get(f"{url}?{query_string}")
-                else:
+                elif method.upper() == 'POST':
                     headers = {'Content-Type': 'application/x-www-form-urlencoded'}
                     response = self.session.post(url, data=query_string, headers=headers)
-                
+                elif method.upper() == 'DELETE':
+                    response = self.session.delete(f"{url}?{query_string}")
+
                 response.raise_for_status()
                 return response.json()
             except requests.exceptions.RequestException as e:
@@ -108,7 +110,8 @@ class BinanceClient:
             
         filters = {f['filterType']: f for f in symbol_info['filters']}
         
-        formatted_quantity = self._format_value(quantity, filters['LOT_SIZE']['stepSize'])
+        # Menggunakan float() untuk memastikan quantity adalah numerik sebelum pemformatan
+        formatted_quantity = self._format_value(float(quantity), filters['LOT_SIZE']['stepSize'])
         formatted_tp_price = self._format_value(take_profit_price, filters['PRICE_FILTER']['tickSize'])
         formatted_sl_price = self._format_value(stop_loss_price, filters['PRICE_FILTER']['tickSize'])
         stop_limit_price_val = stop_loss_price * 0.995 
@@ -117,12 +120,20 @@ class BinanceClient:
         params = {"symbol": symbol, "side": "SELL", "quantity": formatted_quantity, "price": formatted_tp_price, "stopPrice": formatted_sl_price, "stopLimitPrice": formatted_sl_limit_price, "stopLimitTimeInForce": "GTC"}
         return self._send_request("POST", "/order/oco", params, signed=True)
     
+    # --- BARU: Fungsi untuk membatalkan OCO Order ---
+    def cancel_oco_order(self, symbol: str, order_list_id: int) -> Optional[Dict[str, Any]]:
+        """Membatalkan seluruh OCO order list (TP dan SL)."""
+        print(f"Membatalkan OCO orderListId: {order_list_id} untuk {symbol}...")
+        params = {"symbol": symbol, "orderListId": order_list_id}
+        return self._send_request("DELETE", "/orderList", params, signed=True)
+
     def get_current_price(self, symbol: str) -> Optional[float]:
         params = {"symbol": symbol}
         data = self._send_request("GET", "/ticker/price", params)
         return float(data['price']) if data and 'price' in data else None
         
-    def get_all_tickers(self) -> Optional[Dict[str, float]]:
+    def get_all_tickers(self) -> Optional[List[Dict[str, Any]]]:
+        """Diubah untuk mengembalikan list dict, bukan dict."""
         return self._send_request("GET", "/ticker/price")
 
     def get_account_info(self) -> Optional[Dict[str, Any]]:

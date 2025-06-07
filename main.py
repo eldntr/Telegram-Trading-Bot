@@ -7,7 +7,8 @@ from core.routines import (
     run_decide_routine,
     run_execute_routine,
     run_status_routine,
-    run_autoloop_routine
+    run_autoloop_routine,
+    run_manage_positions_routine # --- BARU: import fungsi manage
 )
 
 async def main():
@@ -16,15 +17,16 @@ async def main():
         description="Auto Trade Bot for Telegram Signals.",
         formatter_class=argparse.RawTextHelpFormatter
     )
-    # Argumen Aksi Utama
+
     parser.add_argument(
         'action',
-        choices=['fetch', 'decide', 'execute', 'status', 'run-all', 'autoloop'],
+        choices=['fetch', 'decide', 'execute', 'status', 'run-all', 'autoloop', 'manage'],
         help="""Pilih aksi yang ingin dijalankan:
 'fetch'    : Mengambil pesan baru dari Telegram.
 'decide'   : Membuat keputusan trading dari sinyal yang ada.
 'execute'  : Mengeksekusi keputusan 'BUY'.
 'status'   : Memeriksa status akun Binance dan transaksi berjalan.
+'manage'   : Menjalankan rutinitas manajemen posisi (trailing SL) satu kali.
 'run-all'  : Menjalankan 'fetch' > 'decide' > 'execute' satu kali.
 'autoloop' : Menjalankan bot secara otomatis dalam siklus berulang.
 """
@@ -46,13 +48,13 @@ async def main():
         run_execute_routine()
     elif args.action == 'status':
         run_status_routine()
+    elif args.action == 'manage':
+        await run_manage_positions_routine()
     elif args.action == 'run-all':
         print("=== Memulai Alur Kerja Lengkap (run-all) ===")
         parsed_data = await run_fetch_routine(message_limit=args.limit)
-        if parsed_data:
-            decisions = run_decide_routine(parsed_data=parsed_data)
-            if decisions:
-                run_execute_routine(decisions_data=decisions)
+        decisions = run_decide_routine(parsed_data=parsed_data)
+        run_execute_routine(decisions_data=decisions)
         print("\n=== Alur Kerja Lengkap Selesai ===")
     elif args.action == 'autoloop':
         await run_autoloop_routine(
