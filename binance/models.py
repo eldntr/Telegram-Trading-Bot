@@ -29,6 +29,7 @@ class TradeDecision:
     reason: str
     current_price: Optional[float] = None
     entry_price: Optional[float] = None
+    risk_level: Optional[str] = None # --- BARU: Menambahkan level risiko
     targets: List[TargetInfo] = field(default_factory=list)
     stop_losses: List[StopLossInfo] = field(default_factory=list)
 

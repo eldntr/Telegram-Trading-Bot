@@ -27,6 +27,9 @@ TRAILING_ENABLED = os.getenv("TRAILING_ENABLED", "False").lower() in ('true', '1
 MIN_TRAILING_TP_LEVEL = int(os.getenv("MIN_TRAILING_TP_LEVEL", 1))
 TRAILING_TRIGGER_PERCENTAGE = float(os.getenv("TRAILING_TRIGGER_PERCENTAGE", 0.005))
 
-# --- BARU: Konfigurasi Posisi Macet ---
+# Konfigurasi Posisi Macet
 STUCK_TRADE_ENABLED = os.getenv("STUCK_TRADE_ENABLED", "False").lower() in ('true', '1', 't')
 STUCK_TRADE_DURATION_HOURS = int(os.getenv("STUCK_TRADE_DURATION_HOURS", 6))
+
+# --- BARU: Konfigurasi Prioritas Risiko ---
+PRIORITIZE_NORMAL_RISK = os.getenv("PRIORITIZE_NORMAL_RISK", "False").lower() in ('true', '1', 't')

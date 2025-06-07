@@ -1,6 +1,6 @@
 # Auto Trade Bot/binance/trader.py
 import time
-from typing import Dict, Any
+from typing import Dict, Any, Tuple
 from .client import BinanceClient
 
 class Trader:
@@ -11,38 +11,55 @@ class Trader:
         self.client = client
         self.usdt_per_trade = usdt_per_trade
 
-    def execute_trade(self, decision: Dict[str, Any], account_summary: Dict[str, Any]) -> Dict[str, Any]:
+    def can_execute_trade(self, decision: Dict[str, Any], account_summary: Dict[str, Any]) -> Tuple[bool, str]:
         """
-        Mengeksekusi satu trade, mulai dari pengecekan hingga penempatan order OCO.
+        --- FUNGSI BARU ---
+        Melakukan semua pemeriksaan pra-pembelian tanpa mengeksekusi order.
+        Mengembalikan (True, "Alasan") jika bisa dieksekusi, atau (False, "Alasan") jika tidak.
         """
         coin_pair = decision["coin_pair"]
         base_asset = coin_pair.replace("USDT", "")
 
-        # --- PENGECEKAN PRIORITAS 1: ORDER AKTIF ---
-        # Cek apakah sudah ada order yang aktif untuk koin ini (termasuk OCO)
-        print(f"Memeriksa order aktif untuk {coin_pair}...")
+        # Pengecekan 1: Order Aktif
         open_orders = self.client.get_open_orders(symbol=coin_pair)
-        if open_orders: # Jika list tidak kosong, berarti ada order aktif
-            return {"status": "SKIP", "reason": f"Ditemukan {len(open_orders)} order aktif untuk {coin_pair}. Pembelian dilewati untuk mencegah duplikasi."}
+        if open_orders:
+            return (False, f"Ditemukan {len(open_orders)} order aktif untuk {coin_pair}.")
 
-        # --- PENGECEKAN PRIORITAS 2: SALDO & ATURAN ---
+        # Pengecekan 2: Saldo USDT
         usdt_balance = next((asset['free_balance'] for asset in account_summary.get('held_assets', []) if asset['asset'] == 'USDT'), 0)
         if usdt_balance < self.usdt_per_trade:
-            return {"status": "FAIL", "reason": f"Saldo USDT tidak cukup. Tersedia: ${usdt_balance:.2f}, Dibutuhkan: ${self.usdt_per_trade:.2f}"}
+            return (False, f"Saldo USDT tidak cukup. Tersedia: ${usdt_balance:.2f}, Dibutuhkan: ${self.usdt_per_trade:.2f}")
 
+        # Pengecekan 3: Aset Sudah Dimiliki
         held_asset_value = next((asset['value_in_usdt'] for asset in account_summary.get('held_assets', []) if asset['asset'] == base_asset), 0)
         if held_asset_value >= (self.usdt_per_trade * 0.5):
-             return {"status": "SKIP", "reason": f"Aset {base_asset} sudah dimiliki dengan nilai signifikan (${held_asset_value:.2f})."}
+             return (False, f"Aset {base_asset} sudah dimiliki dengan nilai signifikan (${held_asset_value:.2f}).")
 
+        # Pengecekan 4: Aturan Trading (Minimum Notional)
         symbol_info = self.client.get_symbol_info(coin_pair)
         if not symbol_info:
-            return {"status": "FAIL", "reason": f"Tidak dapat menemukan aturan trading untuk {coin_pair}."}
+            return (False, f"Tidak dapat menemukan aturan trading untuk {coin_pair}.")
         
         min_notional_filter = next((f for f in symbol_info['filters'] if f['filterType'] == 'MIN_NOTIONAL'), None)
         if min_notional_filter and self.usdt_per_trade < float(min_notional_filter['minNotional']):
             reason = f"Jumlah trade (${self.usdt_per_trade}) di bawah minimum (${float(min_notional_filter['minNotional'])}) untuk {coin_pair}."
-            return {"status": "FAIL", "reason": reason}
+            return (False, reason)
 
+        return (True, "Semua pengecekan lolos, siap untuk dieksekusi.")
+
+
+    def execute_trade(self, decision: Dict[str, Any], account_summary: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        Mengeksekusi satu trade, dengan memanggil can_execute_trade terlebih dahulu.
+        """
+        # --- PERUBAHAN: Panggil fungsi pengecekan terlebih dahulu ---
+        is_buyable, reason = self.can_execute_trade(decision, account_summary)
+        if not is_buyable:
+            return {"status": "SKIP", "reason": reason}
+
+        coin_pair = decision["coin_pair"]
+        base_asset = coin_pair.replace("USDT", "")
+        
         print(f"Memulai proses pembelian untuk {coin_pair}...")
         
         buy_order = self.client.place_market_buy_order(symbol=coin_pair, quote_order_qty=self.usdt_per_trade)
