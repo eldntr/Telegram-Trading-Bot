@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  bot:
+    build:
+      context: .
+      dockerfile: bot.Dockerfile
+    env_file:
+      - ./.env
+    volumes:
+      - .:/app
+
+  dashboard:
+    build:
+      context: .
+      dockerfile: dashboard.Dockerfile
+    ports:
+      - "8501:8501"
+    volumes:
+      - .:/app
+    # Menambahkan perintah untuk menunggu sebelum menjalankan streamlit
+    command: >
+      sh -c "
+        echo 'Dashboard is waiting for 120 seconds for the bot to process data...' &&
+        sleep 120 &&
+        echo 'Starting Streamlit dashboard...' &&
+        streamlit run dashboard.py
+      "
+    depends_on:
+      - bot
