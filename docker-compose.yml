@@ -1,18 +1,18 @@
 version: '3.8'
 
 services:
-  # --- BARU: Layanan MongoDB ---
   mongodb:
     image: mongo:latest
     container_name: mongodb
     ports:
-      # Port 27017 di host akan terhubung ke port 27017 di kontainer
-      # Ini berguna untuk mengakses DB dari luar, misal dengan MongoDB Compass
-      - "27017:27017"
+      # Port 27017 di host (VPS) akan terhubung ke port 27017 di kontainer
+      - "127.0.0.1:27017:27017" # <-- DIUBAH: Hanya bisa diakses dari dalam VPS itu sendiri
     volumes:
-      # Menyimpan data MongoDB secara persisten di volume 'mongo-data'
       - mongo-data:/data/db
-    # Healthcheck untuk memastikan bot baru berjalan setelah DB benar-benar siap
+    # --- BARU: Tambahkan environment untuk username dan password ---
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: "root"
+      MONGO_INITDB_ROOT_PASSWORD: "07092004"
     healthcheck:
       test: ["CMD", "mongosh", "--eval", "db.runCommand('ping')"]
       interval: 10s
@@ -28,8 +28,6 @@ services:
       - ./.env
     volumes:
       - .:/app
-    # --- BARU: Depends_on dengan healthcheck ---
-    # Bot tidak akan dimulai sampai layanan 'mongodb' dalam status 'healthy'
     depends_on:
       mongodb:
         condition: service_healthy
