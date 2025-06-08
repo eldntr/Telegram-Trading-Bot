@@ -227,8 +227,14 @@ def run_status_routine():
             elif order['type'] == 'STOP_LOSS_LIMIT': print(f"  - STOP LOSS   | {order['symbol']:<12} | Pemicu: {order['stopPrice']}")
     print("\n--- Rutinitas Pengecekan Status Selesai ---")
 
+# ==============================================================================
+# === FUNGSI YANG DIPERBAIKI ===
+# ==============================================================================
 async def run_manage_positions_routine():
-    """Memeriksa semua posisi OCO yang terbuka dan menerapkan strategi manajemen."""
+    """
+    Memeriksa semua posisi OCO yang terbuka dan menerapkan strategi manajemen.
+    Versi ini lebih tangguh terhadap error data.
+    """
     print("\n--- [4] Memulai Rutinitas Manajemen Posisi ---")
     
     if not config.BINANCE_API_KEY or not config.BINANCE_API_SECRET:
@@ -258,108 +264,127 @@ async def run_manage_positions_routine():
     print(f"Ditemukan {len(oco_orders)} OCO order aktif. Memeriksa setiap posisi...")
 
     for order_list_id, order_sample in oco_orders.items():
-        symbol = order_sample['symbol']
-        print(f"\n- Memeriksa {symbol} (OrderListId: {order_list_id})")
+        symbol = order_sample.get('symbol', 'UNKNOWN_SYMBOL')
+        try:
+            print(f"\n- Memeriksa {symbol} (OrderListId: {order_list_id})")
 
-        signal_data = mongo.get_signal_by_pair(symbol)
-        if not signal_data:
-            print(f"  Peringatan: Tidak ditemukan data sinyal untuk {symbol} di DB. Melewatkan.")
-            continue
-            
-        current_price = client.get_current_price(symbol)
-        if current_price is None:
-            print(f"  Gagal mendapatkan harga terkini untuk {symbol}. Melewatkan.")
-            continue
-
-        all_orders_in_oco = [o for o in open_orders if o.get('orderListId') == order_list_id]
-        sl_order = next((o for o in all_orders_in_oco if o['type'] == 'STOP_LOSS_LIMIT'), None)
-
-        if not sl_order:
-            print(f"  Tidak dapat menemukan order STOP_LOSS_LIMIT untuk {symbol}. Melewatkan.")
-            continue
-        
-        current_sl_price = float(sl_order['stopPrice'])
-        quantity = sl_order['origQty']
-        
-        if config.STUCK_TRADE_ENABLED:
-            order_time_ms = order_sample.get('time', 0)
-            order_datetime = datetime.fromtimestamp(order_time_ms / 1000, tz=timezone.utc)
-            now_utc = datetime.now(timezone.utc)
-            elapsed_hours = (now_utc - order_datetime).total_seconds() / 3600
-
-            print(f"  Usia order: {elapsed_hours:.2f} jam.")
-
-            if elapsed_hours >= config.STUCK_TRADE_DURATION_HOURS:
-                tp1_price = signal_data.get('targets', [{}])[0].get('price')
-                if tp1_price and current_price < tp1_price:
-                    print(f"  >> TINDAKAN: Posisi {symbol} dianggap macet (terbuka > {config.STUCK_TRADE_DURATION_HOURS} jam & di bawah TP1). Menutup posisi...")
-                    
-                    cancel_result = client.cancel_oco_order(symbol, order_list_id)
-                    if not cancel_result:
-                        print(f"  >> KRITIS: Gagal membatalkan OCO untuk posisi macet {symbol}. Intervensi manual diperlukan.")
-                        continue
-                    
-                    print("  Sukses membatalkan OCO. Menunggu 2 detik...")
-                    await asyncio.sleep(2)
-                    
-                    sell_result = client.place_market_sell_order(symbol, float(quantity))
-                    if not sell_result:
-                        print(f"  >> SANGAT KRITIS: Gagal menjual {symbol} setelah OCO dibatalkan. Aset tidak terproteksi!")
-                    else:
-                        print(f"  >> SUKSES: Posisi macet {symbol} berhasil ditutup.")
-                    
-                    continue
-                else:
-                    print(f"  Posisi sudah berjalan lama, namun harga saat ini ({current_price}) sudah di atas TP1 ({tp1_price or 'N/A'}). Tidak dianggap macet.")
-
-        if config.TRAILING_ENABLED:
-            print(f"  Memeriksa trailing SL. Harga: ${current_price:.4f}, SL: ${current_sl_price:.4f}")
-            new_sl_price = 0
-            try:
-                for target in signal_data.get('targets', []):
-                    if target['level'] < config.MIN_TRAILING_TP_LEVEL:
-                        continue
-                    
-                    tp_price = target['price']
-                    trigger_price = tp_price * (1 + config.TRAILING_TRIGGER_PERCENTAGE)
-                    
-                    if current_price >= trigger_price and tp_price > current_sl_price:
-                        print(f"  Kondisi trailing TERPENUHI pada TP{target['level']} (Harga: ${tp_price:.4f})")
-                        new_sl_price = max(new_sl_price, tp_price)
-            except Exception as e:
-                print(f"  Error saat memproses target untuk {symbol}: {e}")
+            signal_data = mongo.get_signal_by_pair(symbol)
+            if not signal_data:
+                print(f"  Peringatan: Tidak ditemukan data sinyal untuk {symbol} di DB. Melewatkan.")
+                continue
+                
+            current_price = client.get_current_price(symbol)
+            if current_price is None:
+                print(f"  Gagal mendapatkan harga terkini untuk {symbol}. Melewatkan.")
                 continue
 
-            if new_sl_price > current_sl_price:
-                print(f"  >> TINDAKAN: Memindahkan SL untuk {symbol} dari ${current_sl_price:.4f} ke ${new_sl_price:.4f}")
-                final_tp_price = signal_data['targets'][-1]['price']
+            all_orders_in_oco = [o for o in open_orders if o.get('orderListId') == order_list_id]
+            sl_order = next((o for o in all_orders_in_oco if o['type'] == 'STOP_LOSS_LIMIT'), None)
 
-                cancel_result = client.cancel_oco_order(symbol, order_list_id)
-                if not cancel_result:
-                    print(f"  >> KRITIS: Gagal membatalkan OCO lama untuk {symbol} saat trailing.")
-                    continue
+            if not sl_order:
+                print(f"  Tidak dapat menemukan order STOP_LOSS_LIMIT untuk {symbol}. Melewatkan.")
+                continue
+            
+            current_sl_price = float(sl_order['stopPrice'])
+            quantity = sl_order['origQty']
+            
+            # --- Pengecekan Posisi Macet (Stuck Trade) ---
+            if config.STUCK_TRADE_ENABLED:
+                order_time_ms = order_sample.get('time', 0)
+                order_datetime = datetime.fromtimestamp(order_time_ms / 1000, tz=timezone.utc)
+                now_utc = datetime.now(timezone.utc)
+                elapsed_hours = (now_utc - order_datetime).total_seconds() / 3600
+
+                print(f"  Usia order: {elapsed_hours:.2f} jam.")
+
+                if elapsed_hours >= config.STUCK_TRADE_DURATION_HOURS:
+                    targets = signal_data.get('targets', [])
+                    if not targets:
+                        print(f"  Info: Sinyal {symbol} tidak memiliki data target untuk cek posisi macet.")
+                    else:
+                        tp1_price = targets[0].get('price')
+                        if tp1_price and current_price < tp1_price:
+                            print(f"  >> TINDAKAN: Posisi {symbol} dianggap macet (terbuka > {config.STUCK_TRADE_DURATION_HOURS} jam & di bawah TP1). Menutup posisi...")
+                            
+                            cancel_result = client.cancel_oco_order(symbol, order_list_id)
+                            if not cancel_result:
+                                print(f"  >> KRITIS: Gagal membatalkan OCO untuk posisi macet {symbol}. Intervensi manual diperlukan.")
+                                continue
+                            
+                            print("  Sukses membatalkan OCO. Menunggu 2 detik...")
+                            await asyncio.sleep(2)
+                            
+                            sell_result = client.place_market_sell_order(symbol, float(quantity))
+                            if not sell_result:
+                                print(f"  >> SANGAT KRITIS: Gagal menjual {symbol} setelah OCO dibatalkan. Aset tidak terproteksi!")
+                            else:
+                                print(f"  >> SUKSES: Posisi macet {symbol} berhasil ditutup.")
+                            
+                            continue # Lanjut ke order berikutnya setelah menutup posisi
+                        else:
+                            print(f"  Posisi sudah berjalan lama, namun tidak memenuhi kriteria macet.")
+
+            # --- Pengecekan Trailing Stop Loss ---
+            if config.TRAILING_ENABLED:
+                print(f"  Memeriksa trailing SL. Harga: ${current_price:.4f}, SL: ${current_sl_price:.4f}")
+                new_sl_price = 0
                 
-                print("  Sukses membatalkan OCO lama. Menunggu 2 detik...")
-                await asyncio.sleep(2)
+                # Gunakan try-except di sini juga untuk keamanan ekstra saat looping target
+                try:
+                    for target in signal_data.get('targets', []):
+                        if target.get('level', 0) < config.MIN_TRAILING_TP_LEVEL:
+                            continue
+                        
+                        tp_price = target.get('price')
+                        if not tp_price: continue
 
-                print(f"  Menempatkan OCO baru: TP=${final_tp_price:.4f}, SL=${new_sl_price:.4f}")
-                new_oco_result = client.place_oco_sell_order(
-                    symbol=symbol,
-                    quantity=quantity,
-                    take_profit_price=final_tp_price,
-                    stop_loss_price=new_sl_price
-                )
-                if not new_oco_result:
-                    print(f"  >> SANGAT KRITIS: Aset {symbol} tidak terproteksi setelah trailing!")
+                        trigger_price = tp_price * (1 + config.TRAILING_TRIGGER_PERCENTAGE)
+                        
+                        if current_price >= trigger_price and tp_price > current_sl_price:
+                            print(f"  Kondisi trailing TERPENUHI pada TP{target.get('level')} (Harga: ${tp_price:.4f})")
+                            new_sl_price = max(new_sl_price, tp_price)
+                except Exception as e_loop:
+                    print(f"  Error saat memproses target untuk trailing {symbol}: {e_loop}")
+
+                if new_sl_price > current_sl_price:
+                    print(f"  >> TINDAKAN: Memindahkan SL untuk {symbol} dari ${current_sl_price:.4f} ke ${new_sl_price:.4f}")
+                    final_tp_price = signal_data.get('targets', [{}])[-1].get('price')
+                    
+                    if not final_tp_price:
+                         print(f"  >> KRITIS: Tidak dapat menemukan harga TP final untuk {symbol}. Pembatalan trailing.")
+                         continue
+
+                    cancel_result = client.cancel_oco_order(symbol, order_list_id)
+                    if not cancel_result:
+                        print(f"  >> KRITIS: Gagal membatalkan OCO lama untuk {symbol} saat trailing.")
+                        continue
+                    
+                    print("  Sukses membatalkan OCO lama. Menunggu 2 detik...")
+                    await asyncio.sleep(2)
+
+                    print(f"  Menempatkan OCO baru: TP=${final_tp_price:.4f}, SL=${new_sl_price:.4f}")
+                    new_oco_result = client.place_oco_sell_order(
+                        symbol=symbol,
+                        quantity=quantity,
+                        take_profit_price=final_tp_price,
+                        stop_loss_price=new_sl_price
+                    )
+                    if not new_oco_result:
+                        print(f"  >> SANGAT KRITIS: Aset {symbol} tidak terproteksi setelah trailing!")
+                    else:
+                        print(f"  >> SUKSES: Trailing SL untuk {symbol} berhasil diterapkan.")
                 else:
-                    print(f"  >> SUKSES: Trailing SL untuk {symbol} berhasil diterapkan.")
-            else:
-                print("  Tidak ada tindakan trailing yang diperlukan.")
+                    print("  Tidak ada tindakan trailing yang diperlukan.")
+
+        except Exception as e:
+            # Ini akan menangkap semua error tak terduga (termasuk yg sebelumnya) saat memproses satu order
+            print(f"  LOG ERROR: Terjadi kesalahan tak terduga saat memproses order {symbol} (ID: {order_list_id}). Error: {e}. Melanjutkan ke order berikutnya.")
+            continue # Lanjutkan loop ke order berikutnya
         
     mongo.close_connection()
     print("\n--- Rutinitas Manajemen Posisi Selesai ---")
 
-async def run_autoloop_routine(duration_minutes: int, message_limit: int, cycle_delay_seconds: int):
+async def run_autoloop_routine(duration_minutes: int, message_limit: int, cycle_delay_seconds: int, initial_fetch_limit: int): # <-- Tambah argumen baru
     end_time = None
     if duration_minutes > 0:
         print(f"--- Memulai Mode Autoloop selama {duration_minutes} menit ---")
@@ -367,7 +392,7 @@ async def run_autoloop_routine(duration_minutes: int, message_limit: int, cycle_
     else:
         print("--- Memulai Mode Autoloop (Berjalan Selamanya, tekan CTRL+C untuk berhenti) ---")
     
-    print(f"(Setiap siklus akan mengambil {message_limit} pesan, dengan jeda {cycle_delay_seconds} detik)")
+    print(f"(Fetch awal: {initial_fetch_limit} pesan, per siklus: {message_limit} pesan, jeda: {cycle_delay_seconds} detik)") # <-- Log diperjelas
 
     cycle_count = 0
     while True:
@@ -379,7 +404,10 @@ async def run_autoloop_routine(duration_minutes: int, message_limit: int, cycle_
         print(f"\n{'='*15} Memulai Siklus #{cycle_count} (Sisa waktu: {sisa_waktu_str}) {'='*15}")
         
         try:
-            parsed_data = await run_fetch_routine(message_limit=message_limit)
+            # --- LOGIKA BARU UNTUK FETCH AWAL ---
+            current_fetch_limit = initial_fetch_limit if cycle_count == 1 else message_limit
+            
+            parsed_data = await run_fetch_routine(message_limit=current_fetch_limit)
             decisions = run_decide_routine(parsed_data=parsed_data)
             run_execute_routine(decisions_data=decisions)
             
