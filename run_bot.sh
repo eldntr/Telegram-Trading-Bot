@@ -4,4 +4,4 @@ set -e
 
 echo "--- Starting Bot Cycle ---"
 
-python main.py autoloop --duration 0 --delay 600 --limit 20
+python main.py autoloop --duration 0 --delay 300 --limit 20

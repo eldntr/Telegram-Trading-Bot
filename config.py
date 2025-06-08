@@ -33,3 +33,7 @@ STUCK_TRADE_DURATION_HOURS = int(os.getenv("STUCK_TRADE_DURATION_HOURS", 6))
 
 # --- BARU: Konfigurasi Prioritas Risiko ---
 PRIORITIZE_NORMAL_RISK = os.getenv("PRIORITIZE_NORMAL_RISK", "False").lower() in ('true', '1', 't')
+
+# --- BARU: Konfigurasi Validitas Waktu Sinyal ---
+FILTER_OLD_SIGNALS_ENABLED = os.getenv("FILTER_OLD_SIGNALS_ENABLED", "True").lower() in ('true', '1', 't')
+SIGNAL_VALIDITY_MINUTES = int(os.getenv("SIGNAL_VALIDITY_MINUTES", 30))
