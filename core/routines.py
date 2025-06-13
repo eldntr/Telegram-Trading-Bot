@@ -1,4 +1,5 @@
 # Auto Trade Bot/core/routines.py
+
 import sys
 import time
 import json
@@ -70,9 +71,6 @@ def run_decide_routine(parsed_data=None):
     return all_decisions
 
 def run_execute_routine(decisions_data=None):
-    """
-    Fungsi eksekusi dengan logika pengecekan pra-swap.
-    """
     print("\n--- [3] Memulai Rutinitas Eksekusi Trading ---")
     if not config.BINANCE_API_KEY or not config.BINANCE_API_SECRET:
         print("Kunci API Binance tidak dikonfigurasi. Melewatkan eksekusi.")
@@ -96,112 +94,40 @@ def run_execute_routine(decisions_data=None):
         return
     
     trade_logs = []
-    account_summary = manager.get_account_summary()
-    if not account_summary: 
-        mongo.close_connection()
-        return
+    for decision in buy_decisions:
+        account_summary = manager.get_account_summary() # Selalu ambil summary terbaru
+        if not account_summary: 
+            print("Gagal mengambil summary akun, eksekusi dihentikan.")
+            break
+        
+        result = trader.execute_trade(decision, account_summary)
+        trade_logs.append({"decision_details": decision, "execution_result": result})
+        
+        # --- BARU: Simpan data trade ke DB untuk manajemen posisi ---
+        if result.get('status') == 'SUCCESS':
+            buy_order = result.get('buy_order', {})
+            oco_order = result.get('oco_order', {})
+            
+            if buy_order and oco_order:
+                coin_pair = buy_order.get('symbol')
+                avg_price = float(buy_order.get('cummulativeQuoteQty', 0)) / float(buy_order.get('executedQty', 1))
+                actual_balance = float(buy_order.get('executedQty', 0))
 
-    if not config.PRIORITIZE_NORMAL_RISK:
-        print("Mode Prioritas Risiko NON-AKTIF. Mengeksekusi semua sinyal 'BUY'.")
-        for decision in buy_decisions:
-            result = trader.execute_trade(decision, account_summary)
-            trade_logs.append({"decision_details": decision, "execution_result": result})
-            if result.get('status') == 'SUCCESS':
-                time.sleep(2)
-                refreshed_summary = manager.get_account_summary()
-                if refreshed_summary: account_summary = refreshed_summary
-    else:
-        # --- LOGIKA PRIORITAS DENGAN PENGECEKAN PRA-SWAP ---
-        print("Mode Prioritas Risiko AKTIF. Mengkategorikan sinyal...")
-        normal_risk_buys = [d for d in buy_decisions if d.get('risk_level', '').lower() == 'normal']
-        high_risk_buys = [d for d in buy_decisions if d.get('risk_level', '').lower() == 'high']
-        print(f"Ditemukan {len(normal_risk_buys)} sinyal 'Normal' dan {len(high_risk_buys)} sinyal 'High'.")
-
-        swapped_out_symbols = set()
-
-        stuck_high_risk_to_swap = []
-        processed_symbols = set()
-        print("\n[PRIO] Mencari kandidat posisi High Risk yang macet untuk ditukar...")
-        open_orders = client.get_open_orders()
-        if open_orders:
-            for order in open_orders:
-                symbol = order['symbol']
-                if symbol in processed_symbols: continue
-                signal_data = mongo.get_signal_by_pair(symbol)
-                if signal_data and signal_data.get('risk_level', '').lower() == 'high':
-                    processed_symbols.add(symbol)
-                    try:
-                        current_price = client.get_current_price(symbol)
-                        sl_price = signal_data['stop_losses'][0]['price']
-                        tp1_price = signal_data['targets'][0]['price']
-                        if current_price and sl_price < current_price < tp1_price:
-                            stuck_high_risk_to_swap.append(symbol)
-                    except (IndexError, KeyError, TypeError): continue
-        print(f"[PRIO] Ditemukan {len(stuck_high_risk_to_swap)} kandidat posisi macet: {stuck_high_risk_to_swap}")
-
-        if normal_risk_buys:
-            print("\n[PRIO] Memproses sinyal Normal Risk...")
-            for decision in normal_risk_buys:
-                # --- LOGIKA BARU: Pengecekan pra-swap ---
-                is_buyable, reason = trader.can_execute_trade(decision, account_summary)
-                
-                if not is_buyable:
-                    print(f"  -> Melewatkan sinyal Normal {decision['coin_pair']}: {reason}")
-                    trade_logs.append({"decision_details": decision, "execution_result": {"status": "SKIP", "reason": reason}})
-                    continue
-
-                # Jika sinyal Normal BISA dibeli, baru kita pertimbangkan untuk swap
-                if stuck_high_risk_to_swap:
-                    symbol_to_cancel = stuck_high_risk_to_swap.pop(0)
-                    print(f"\n[SWAP] Sinyal Normal {decision['coin_pair']} bisa dibeli. Mengganti posisi macet {symbol_to_cancel}...")
-                    
-                    cancel_res = client.cancel_all_open_orders_for_symbol(symbol_to_cancel)
-                    if not cancel_res:
-                        print(f"  - KRITIS: Gagal membatalkan order untuk {symbol_to_cancel}.")
-                        trade_logs.append({"action": "CANCEL_FOR_SWAP_FAILED", "symbol": symbol_to_cancel})
-                    else:
-                        print(f"  - Sukses membatalkan order untuk {symbol_to_cancel}. Menunggu untuk likuidasi...")
-                        swapped_out_symbols.add(symbol_to_cancel)
-                        time.sleep(2)
-                        acc_info = client.get_account_info()
-                        base_asset = symbol_to_cancel.replace("USDT", "")
-                        asset_balance = next((float(b['free']) for b in acc_info.get('balances', []) if b['asset'] == base_asset), 0.0)
-
-                        if asset_balance > 0:
-                            sell_res = client.place_market_sell_order(symbol_to_cancel, asset_balance)
-                            if sell_res:
-                                print(f"  - SUKSES: Berhasil menjual {asset_balance:.4f} {base_asset}.")
-                                trade_logs.append({"action": "LIQUIDATE_FOR_SWAP_SUCCESS", "symbol": symbol_to_cancel, "result": sell_res})
-                            else:
-                                print(f"  - SANGAT KRITIS: Gagal menjual {base_asset} setelah order dibatalkan.")
-                                trade_logs.append({"action": "LIQUIDATE_FOR_SWAP_FAILED", "symbol": symbol_to_cancel})
-                        
-                        account_summary = manager.get_account_summary() # Refresh summary
-
-                # Eksekusi sinyal Normal yang sudah kita pastikan bisa dibeli
-                result = trader.execute_trade(decision, account_summary)
-                trade_logs.append({"decision_details": decision, "execution_result": result})
-                if result.get('status') == 'SUCCESS':
-                    time.sleep(2)
-                    account_summary = manager.get_account_summary()
-
-        if high_risk_buys:
-            print("\n[PRIO] Memproses sinyal High Risk...")
-            for decision in high_risk_buys:
-                if decision['coin_pair'] in swapped_out_symbols:
-                    print(f"  -> Melewatkan {decision['coin_pair']} karena baru saja dijual dalam proses swap.")
-                    trade_logs.append({"action": "SKIP_REBUY_AFTER_SWAP", "symbol": decision['coin_pair']})
-                    continue
-
-                result = trader.execute_trade(decision, account_summary)
-                trade_logs.append({"decision_details": decision, "execution_result": result})
-                if result.get('status') == 'SUCCESS':
-                    time.sleep(2)
-                    account_summary = manager.get_account_summary()
+                position_doc = {
+                    "coin_pair": coin_pair,
+                    "buy_price": avg_price,
+                    "quantity": actual_balance,
+                    "order_list_id": oco_order.get('orderListId'),
+                    "signal_data": decision,
+                    "timestamp": datetime.now(timezone.utc).isoformat()
+                }
+                mongo.save_open_position(position_doc)
+            
+            time.sleep(2) # Beri jeda setelah trade sukses
                     
     if trade_logs: JsonWriter("trade_log.json").write(trade_logs)
     mongo.close_connection()
-    print("\n--- Rutinitas Eksekusi Trading (Mode Prioritas) Selesai ---")
+    print("\n--- Rutinitas Eksekusi Trading Selesai ---")
 
 def run_status_routine():
     print("\n--- Memulai Rutinitas Pengecekan Status ---")
@@ -227,164 +153,131 @@ def run_status_routine():
             elif order['type'] == 'STOP_LOSS_LIMIT': print(f"  - STOP LOSS   | {order['symbol']:<12} | Pemicu: {order['stopPrice']}")
     print("\n--- Rutinitas Pengecekan Status Selesai ---")
 
-# ==============================================================================
-# === FUNGSI YANG DIPERBAIKI ===
-# ==============================================================================
 async def run_manage_positions_routine():
     """
-    Memeriksa semua posisi OCO yang terbuka dan menerapkan strategi manajemen.
-    Versi ini lebih tangguh terhadap error data.
+    Memeriksa semua posisi yang dilacak, menerapkan strategi trailing SL dinamis
+    dan menangani posisi yang macet.
     """
-    print("\n--- [4] Memulai Rutinitas Manajemen Posisi ---")
-    
-    if not config.BINANCE_API_KEY or not config.BINANCE_API_SECRET:
-        print("API Key/Secret Binance tidak ditemukan.")
+    print("\n--- [4] Memulai Rutinitas Manajemen Posisi (Trailing & Macet) ---")
+    if not all([config.BINANCE_API_KEY, config.BINANCE_API_SECRET]):
+        print("Manajemen posisi dilewati: Kunci API tidak ditemukan.")
         return
 
     client = BinanceClient(config.BINANCE_API_KEY, config.BINANCE_API_SECRET)
     mongo = MongoManager(config.MONGO_URI, config.MONGO_DB_NAME)
-    
-    open_orders = client.get_open_orders()
-    if not open_orders:
-        print("Tidak ada order terbuka yang ditemukan untuk dikelola.")
+
+    # 1. Ambil semua posisi yang seharusnya aktif dari database kita
+    db_positions = mongo.get_all_open_positions()
+    if not db_positions:
+        print("Tidak ada posisi aktif yang dilacak di database untuk dikelola.")
         mongo.close_connection()
         return
 
-    oco_orders = {}
-    for order in open_orders:
-        if order.get('orderListId', -1) != -1:
-            if order['orderListId'] not in oco_orders:
-                 oco_orders[order['orderListId']] = order
-    
-    if not oco_orders:
-        print("Tidak ada order OCO aktif yang ditemukan.")
-        mongo.close_connection()
-        return
+    # 2. Ambil semua order yang aktif di Binance untuk sinkronisasi
+    active_binance_orders = client.get_open_orders()
+    active_symbols_on_binance = {o['symbol'] for o in active_binance_orders} if active_binance_orders else set()
+
+    # 3. Proses setiap posisi yang dilacak
+    print(f"Memeriksa {len(db_positions)} posisi yang dilacak di DB...")
+    for position in db_positions:
+        symbol = position['coin_pair']
         
-    print(f"Ditemukan {len(oco_orders)} OCO order aktif. Memeriksa setiap posisi...")
+        # 3.1. Sinkronisasi: Hapus dari DB jika sudah tidak aktif di Binance
+        if symbol not in active_symbols_on_binance:
+            print(f"  - Posisi {symbol} sudah tertutup di Binance. Menghapus dari pelacakan DB.")
+            mongo.delete_open_position(symbol)
+            continue
 
-    for order_list_id, order_sample in oco_orders.items():
-        symbol = order_sample.get('symbol', 'UNKNOWN_SYMBOL')
+        print(f"\n- Memeriksa posisi aktif: {symbol}...")
         try:
-            print(f"\n- Memeriksa {symbol} (OrderListId: {order_list_id})")
+            # Dapatkan data penting dari dokumen posisi DB
+            buy_price = position['buy_price']
+            quantity = position['quantity']
+            order_list_id = position['order_list_id']
+            signal_targets = position.get('signal_data', {}).get('targets', [])
 
-            signal_data = mongo.get_signal_by_pair(symbol)
-            if not signal_data:
-                print(f"  Peringatan: Tidak ditemukan data sinyal untuk {symbol} di DB. Melewatkan.")
-                continue
-                
+            # Dapatkan harga pasar saat ini
             current_price = client.get_current_price(symbol)
-            if current_price is None:
-                print(f"  Gagal mendapatkan harga terkini untuk {symbol}. Melewatkan.")
+            if not current_price:
+                print(f"  Gagal mendapatkan harga untuk {symbol}. Melewatkan.")
                 continue
 
-            all_orders_in_oco = [o for o in open_orders if o.get('orderListId') == order_list_id]
-            sl_order = next((o for o in all_orders_in_oco if o['type'] == 'STOP_LOSS_LIMIT'), None)
-
+            # Dapatkan order SL aktif dari daftar order Binance
+            all_orders_for_symbol = [o for o in active_binance_orders if o.get('symbol') == symbol]
+            sl_order = next((o for o in all_orders_for_symbol if o['type'] == 'STOP_LOSS_LIMIT'), None)
             if not sl_order:
-                print(f"  Tidak dapat menemukan order STOP_LOSS_LIMIT untuk {symbol}. Melewatkan.")
+                print(f"  Peringatan: Tidak ditemukan order SL untuk {symbol}. Akan disinkronkan pada siklus berikutnya.")
                 continue
-            
             current_sl_price = float(sl_order['stopPrice'])
-            quantity = sl_order['origQty']
             
-            # --- Pengecekan Posisi Macet (Stuck Trade) ---
+            print(f"  Info: Harga Beli: ${buy_price:.4f}, Harga Saat Ini: ${current_price:.4f}, SL Saat Ini: ${current_sl_price:.4f}")
+
+            # 3.2. Pengecekan Posisi Macet (Stuck Trade)
             if config.STUCK_TRADE_ENABLED:
-                order_time_ms = order_sample.get('time', 0)
-                order_datetime = datetime.fromtimestamp(order_time_ms / 1000, tz=timezone.utc)
+                pos_timestamp_str = position.get('timestamp')
+                order_datetime = datetime.fromisoformat(pos_timestamp_str)
                 now_utc = datetime.now(timezone.utc)
                 elapsed_hours = (now_utc - order_datetime).total_seconds() / 3600
-
-                print(f"  Usia order: {elapsed_hours:.2f} jam.")
+                print(f"  Info: Usia posisi: {elapsed_hours:.2f} jam.")
 
                 if elapsed_hours >= config.STUCK_TRADE_DURATION_HOURS:
-                    targets = signal_data.get('targets', [])
-                    if not targets:
-                        print(f"  Info: Sinyal {symbol} tidak memiliki data target untuk cek posisi macet.")
-                    else:
-                        tp1_price = targets[0].get('price')
-                        if tp1_price and current_price < tp1_price:
-                            print(f"  >> TINDAKAN: Posisi {symbol} dianggap macet (terbuka > {config.STUCK_TRADE_DURATION_HOURS} jam & di bawah TP1). Menutup posisi...")
-                            
-                            cancel_result = client.cancel_oco_order(symbol, order_list_id)
-                            if not cancel_result:
-                                print(f"  >> KRITIS: Gagal membatalkan OCO untuk posisi macet {symbol}. Intervensi manual diperlukan.")
-                                continue
-                            
-                            print("  Sukses membatalkan OCO. Menunggu 2 detik...")
+                    tp1_price = next((t['price'] for t in signal_targets if t.get('level') == 1), None)
+                    if tp1_price and current_price < tp1_price:
+                        print(f"  >> TINDAKAN [MACET]: Posisi {symbol} dianggap macet (> {config.STUCK_TRADE_DURATION_HOURS} jam & di bawah TP1). Menutup posisi...")
+                        if client.cancel_oco_order(symbol, order_list_id):
                             await asyncio.sleep(2)
-                            
-                            sell_result = client.place_market_sell_order(symbol, float(quantity))
-                            if not sell_result:
-                                print(f"  >> SANGAT KRITIS: Gagal menjual {symbol} setelah OCO dibatalkan. Aset tidak terproteksi!")
-                            else:
+                            if client.place_market_sell_order(symbol, float(quantity)):
                                 print(f"  >> SUKSES: Posisi macet {symbol} berhasil ditutup.")
-                            
-                            continue # Lanjut ke order berikutnya setelah menutup posisi
+                                mongo.delete_open_position(symbol)
+                            else:
+                                print(f"  >> SANGAT KRITIS: Gagal menjual {symbol} setelah OCO dibatalkan!")
                         else:
-                            print(f"  Posisi sudah berjalan lama, namun tidak memenuhi kriteria macet.")
-
-            # --- Pengecekan Trailing Stop Loss ---
-            if config.TRAILING_ENABLED:
-                print(f"  Memeriksa trailing SL. Harga: ${current_price:.4f}, SL: ${current_sl_price:.4f}")
-                new_sl_price = 0
-                
-                # Gunakan try-except di sini juga untuk keamanan ekstra saat looping target
-                try:
-                    for target in signal_data.get('targets', []):
-                        if target.get('level', 0) < config.MIN_TRAILING_TP_LEVEL:
-                            continue
-                        
-                        tp_price = target.get('price')
-                        if not tp_price: continue
-
-                        trigger_price = tp_price * (1 + config.TRAILING_TRIGGER_PERCENTAGE)
-                        
-                        if current_price >= trigger_price and tp_price > current_sl_price:
-                            print(f"  Kondisi trailing TERPENUHI pada TP{target.get('level')} (Harga: ${tp_price:.4f})")
-                            new_sl_price = max(new_sl_price, tp_price)
-                except Exception as e_loop:
-                    print(f"  Error saat memproses target untuk trailing {symbol}: {e_loop}")
-
-                if new_sl_price > current_sl_price:
-                    print(f"  >> TINDAKAN: Memindahkan SL untuk {symbol} dari ${current_sl_price:.4f} ke ${new_sl_price:.4f}")
-                    final_tp_price = signal_data.get('targets', [{}])[-1].get('price')
-                    
-                    if not final_tp_price:
-                         print(f"  >> KRITIS: Tidak dapat menemukan harga TP final untuk {symbol}. Pembatalan trailing.")
-                         continue
-
-                    cancel_result = client.cancel_oco_order(symbol, order_list_id)
-                    if not cancel_result:
-                        print(f"  >> KRITIS: Gagal membatalkan OCO lama untuk {symbol} saat trailing.")
+                            print(f"  >> KRITIS: Gagal membatalkan OCO untuk posisi macet {symbol}.")
                         continue
-                    
-                    print("  Sukses membatalkan OCO lama. Menunggu 2 detik...")
-                    await asyncio.sleep(2)
 
-                    print(f"  Menempatkan OCO baru: TP=${final_tp_price:.4f}, SL=${new_sl_price:.4f}")
-                    new_oco_result = client.place_oco_sell_order(
-                        symbol=symbol,
-                        quantity=quantity,
-                        take_profit_price=final_tp_price,
-                        stop_loss_price=new_sl_price
-                    )
-                    if not new_oco_result:
-                        print(f"  >> SANGAT KRITIS: Aset {symbol} tidak terproteksi setelah trailing!")
+            # 3.3. Pengecekan Trailing Stop Loss
+            if config.TRAILING_ENABLED:
+                sl_target_levels = {0: {'price': buy_price}} # TP0 adalah harga beli
+                for t in signal_targets: sl_target_levels[t['level']] = {'price': t['price']}
+                
+                new_sl_price_candidate = 0
+                for trigger_level_str, new_sl_level in config.TRAILING_CONFIG.items():
+                    trigger_level = int(trigger_level_str)
+                    if trigger_level not in sl_target_levels: continue
+                    
+                    trigger_price = sl_target_levels[trigger_level]['price']
+                    if current_price >= trigger_price and new_sl_level in sl_target_levels:
+                        potential_sl = sl_target_levels[new_sl_level]['price']
+                        if potential_sl > new_sl_price_candidate:
+                            print(f"  Kondisi trailing terpenuhi: Harga lewati TP{trigger_level} (${trigger_price:.4f}). Kandidat SL baru: TP{new_sl_level} (${potential_sl:.4f})")
+                            new_sl_price_candidate = potential_sl
+
+                if new_sl_price_candidate > current_sl_price:
+                    print(f"  >> TINDAKAN [TRAILING]: Memindahkan SL untuk {symbol} dari ${current_sl_price:.4f} ke ${new_sl_price_candidate:.4f}")
+                    final_tp_price = max(t['price'] for t in signal_targets) if signal_targets else buy_price * 1.5
+                    
+                    if client.cancel_oco_order(symbol, order_list_id):
+                        await asyncio.sleep(2)
+                        new_oco = client.place_oco_sell_order(symbol, quantity, final_tp_price, new_sl_price_candidate)
+                        if new_oco:
+                            print(f"  >> SUKSES: Trailing SL untuk {symbol} berhasil diterapkan.")
+                            position['order_list_id'] = new_oco.get('orderListId')
+                            mongo.save_open_position(position)
+                        else:
+                             print(f"  >> SANGAT KRITIS: Aset {symbol} tidak terproteksi setelah gagal menempatkan OCO baru!")
                     else:
-                        print(f"  >> SUKSES: Trailing SL untuk {symbol} berhasil diterapkan.")
+                        print(f"  >> KRITIS: Gagal membatalkan OCO lama untuk trailing.")
                 else:
-                    print("  Tidak ada tindakan trailing yang diperlukan.")
+                    print("  Info: Tidak ada kondisi trailing yang memicu pembaruan SL.")
 
         except Exception as e:
-            # Ini akan menangkap semua error tak terduga (termasuk yg sebelumnya) saat memproses satu order
-            print(f"  LOG ERROR: Terjadi kesalahan tak terduga saat memproses order {symbol} (ID: {order_list_id}). Error: {e}. Melanjutkan ke order berikutnya.")
-            continue # Lanjutkan loop ke order berikutnya
+            print(f"  LOG ERROR: Terjadi kesalahan tak terduga saat memproses {symbol}. Error: {e}. Melanjutkan...")
+            continue
         
     mongo.close_connection()
     print("\n--- Rutinitas Manajemen Posisi Selesai ---")
 
-async def run_autoloop_routine(duration_minutes: int, message_limit: int, cycle_delay_seconds: int, initial_fetch_limit: int): # <-- Tambah argumen baru
+async def run_autoloop_routine(duration_minutes: int, message_limit: int, cycle_delay_seconds: int, initial_fetch_limit: int):
     end_time = None
     if duration_minutes > 0:
         print(f"--- Memulai Mode Autoloop selama {duration_minutes} menit ---")
@@ -392,7 +285,7 @@ async def run_autoloop_routine(duration_minutes: int, message_limit: int, cycle_
     else:
         print("--- Memulai Mode Autoloop (Berjalan Selamanya, tekan CTRL+C untuk berhenti) ---")
     
-    print(f"(Fetch awal: {initial_fetch_limit} pesan, per siklus: {message_limit} pesan, jeda: {cycle_delay_seconds} detik)") # <-- Log diperjelas
+    print(f"(Fetch awal: {initial_fetch_limit} pesan, per siklus: {message_limit} pesan, jeda: {cycle_delay_seconds} detik)")
 
     cycle_count = 0
     while True:
@@ -404,7 +297,6 @@ async def run_autoloop_routine(duration_minutes: int, message_limit: int, cycle_
         print(f"\n{'='*15} Memulai Siklus #{cycle_count} (Sisa waktu: {sisa_waktu_str}) {'='*15}")
         
         try:
-            # --- LOGIKA BARU UNTUK FETCH AWAL ---
             current_fetch_limit = initial_fetch_limit if cycle_count == 1 else message_limit
             
             parsed_data = await run_fetch_routine(message_limit=current_fetch_limit)
@@ -421,9 +313,14 @@ async def run_autoloop_routine(duration_minutes: int, message_limit: int, cycle_
         
         print(f"\nSiklus selesai. Menunggu {cycle_delay_seconds} detik sebelum siklus berikutnya...")
         try:
-            time.sleep(cycle_delay_seconds)
-        except KeyboardInterrupt:
+            await asyncio.sleep(cycle_delay_seconds)
+        except (KeyboardInterrupt, asyncio.CancelledError):
             print("\nCTRL+C terdeteksi. Menghentikan autoloop...")
             break
     
     print("\n--- Mode Autoloop Dihentikan ---")
+
+if __name__ == "__main__":
+    # This part is in main.py, so it's not needed here.
+    # But for context, this is how the main loop would be called.
+    pass

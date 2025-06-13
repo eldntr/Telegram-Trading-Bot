@@ -3,7 +3,7 @@ version: '3.8'
 services:
   mongodb:
     image: mongo:latest
-    container_name: mongodb
+    container_name: mongodb1
     ports:
       # Port 27017 di host (VPS) akan terhubung ke port 27017 di kontainer
       - "127.0.0.1:27017:27017" # <-- DIUBAH: Hanya bisa diakses dari dalam VPS itu sendiri
