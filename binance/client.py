@@ -47,7 +47,6 @@ class BinanceClient:
             query_string += f"&signature={signature}"
             
             try:
-                # Perbaikan: Menggunakan method.upper() untuk konsistensi
                 req_method = method.upper()
                 if req_method == 'GET':
                     response = self.session.get(f"{url}?{query_string}")
@@ -108,7 +107,6 @@ class BinanceClient:
         return self._send_request("POST", "/order", params, signed=True)
         
     def place_market_sell_order(self, symbol: str, quantity: float) -> Optional[Dict[str, Any]]:
-        """Menempatkan order MARKET SELL untuk sejumlah kuantitas tertentu."""
         symbol_info = self.get_symbol_info(symbol)
         if not symbol_info:
             print(f"Gagal menempatkan Market Sell: tidak ditemukan info untuk {symbol}")
@@ -145,12 +143,9 @@ class BinanceClient:
         params = {"symbol": symbol, "orderListId": order_list_id}
         return self._send_request("DELETE", "/orderList", params, signed=True)
 
-    # --- BARU: Fungsi untuk membatalkan SEMUA order untuk sebuah simbol ---
     def cancel_all_open_orders_for_symbol(self, symbol: str) -> Optional[Dict[str, Any]]:
-        """Membatalkan semua open order untuk simbol tertentu."""
         print(f"Membatalkan SEMUA order terbuka untuk {symbol}...")
         params = {"symbol": symbol}
-        # Menggunakan endpoint DELETE /openOrders yang didesain untuk ini
         return self._send_request("DELETE", "/openOrders", params, signed=True)
 
     def get_current_price(self, symbol: str) -> Optional[float]:
@@ -169,3 +164,10 @@ class BinanceClient:
         if symbol:
             params['symbol'] = symbol
         return self._send_request("GET", "/openOrders", params, signed=True)
+
+    ### BARU ###
+    # Fungsi yang dibutuhkan untuk analisis teknikal
+    def get_klines(self, symbol: str, interval: str, limit: int = 100) -> Optional[List[Any]]:
+        """Mengambil data K-lines (candlestick) untuk sebuah simbol."""
+        params = {"symbol": symbol, "interval": interval, "limit": limit}
+        return self._send_request("GET", "/klines", params)

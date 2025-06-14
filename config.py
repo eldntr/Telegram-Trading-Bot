@@ -47,3 +47,8 @@ PRIORITIZE_NORMAL_RISK = os.getenv("PRIORITIZE_NORMAL_RISK", "False").lower() in
 # --- Konfigurasi Validitas Waktu Sinyal ---
 FILTER_OLD_SIGNALS_ENABLED = os.getenv("FILTER_OLD_SIGNALS_ENABLED", "True").lower() in ('true', '1', 't')
 SIGNAL_VALIDITY_MINUTES = int(os.getenv("SIGNAL_VALIDITY_MINUTES", 30))
+
+# --- Konfigurasi Filter Tren Makro (BTC) ---
+BTC_TREND_FILTER_ENABLED = os.getenv("BTC_TREND_FILTER_ENABLED", "True").lower() in ('true', '1', 't')
+BTC_FILTER_TIMEFRAME = os.getenv("BTC_FILTER_TIMEFRAME", "4h")  # Timeframe untuk analisis (e.g., '1h', '4h', '1d')
+BTC_FILTER_SMA_PERIOD = int(os.getenv("BTC_FILTER_SMA_PERIOD", 50)) # Periode SMA (e.g., 50, 100, 200)
