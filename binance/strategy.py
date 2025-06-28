@@ -26,7 +26,6 @@ class TradingStrategy:
         rs = avg_gain / avg_loss
         return 100.0 - (100.0 / (1.0 + rs))
 
-    ### DIPERBARUI dengan Logika Dinamis ###
     def _analyze_asset_condition(self, symbol: str, interval: str, sma_period: int) -> Dict[str, Any]:
         """
         Menganalisis kondisi sebuah aset. Jika data terbatas (untuk koin baru),
@@ -36,19 +35,17 @@ class TradingStrategy:
         klines = self.client.get_klines(symbol=symbol, interval=interval, limit=data_to_request)
         
         candles_received = len(klines) if klines else 0
-        MINIMUM_CANDLES_FOR_ANALYSIS = 15  # Batas minimum data untuk bisa dianalisis
+        MINIMUM_CANDLES_FOR_ANALYSIS = 15
 
         if candles_received < MINIMUM_CANDLES_FOR_ANALYSIS:
             return {"error": f"Data sangat minim ({candles_received} lilin), analisis dibatalkan."}
 
-        # Jika data terbatas, gunakan parameter dinamis. Jika tidak, gunakan parameter standar.
         effective_sma_period = min(sma_period, candles_received)
         warning_message = None
         if candles_received < data_to_request:
             warning_message = f"Data terbatas ({candles_received} lilin), SMA dihitung menggunakan periode {effective_sma_period}."
 
         close_prices = [float(k[4]) for k in klines]
-        # Gunakan periode efektif untuk kalkulasi
         is_above_sma = close_prices[-1] >= np.mean(close_prices[-effective_sma_period:])
 
         return {"is_above_sma": is_above_sma, "warning": warning_message, "error": None}
@@ -89,7 +86,6 @@ class TradingStrategy:
         """
         Mengevaluasi sinyal baru dengan alur yang lebih efisien dan bersih.
         """
-        ### LANGKAH 1: Validasi Awal Sinyal (Fail-Fast) ###
         coin_pair = signal.get("coin_pair")
         if not coin_pair:
             return TradeDecision(decision="FAIL", reason="Sinyal tidak memiliki 'coin_pair'.")
@@ -103,7 +99,6 @@ class TradingStrategy:
             except (TypeError, ValueError):
                 return TradeDecision(decision="FAIL", coin_pair=coin_pair, reason="Timestamp sinyal tidak valid.")
 
-        ### LANGKAH 2: Gerbang Utama - Analisis Kondisi Pasar ###
         print(f"\n✅ Sinyal {coin_pair} valid & tidak kedaluwarsa. Melanjutkan ke analisis pasar...")
         print("--- Menganalisis Kondisi Pasar Global (BTC)... ---")
         
@@ -120,33 +115,41 @@ class TradingStrategy:
         if btc_condition.get("warning"):
             print(f"⚠️  Peringatan (BTC): {btc_condition['warning']}")
 
-
         market_status = "🟢 HIJAU (Aman)" if btc_condition["is_above_sma"] else "🟡 KUNING (Waspada/Netral)"
         print(f"Status Pasar Global: {market_status}")
 
-        ### LANGKAH 3: Pengecekan Detail Berdasarkan Status Pasar ###
         if market_status == "🟢 HIJAU (Aman)":
             print("Pasar AMAN. Menjalankan validasi kondisi harga...")
             return self._validate_price_conditions(signal)
 
+        ### DIPERBARUI ###
         elif market_status == "🟡 KUNING (Waspada/Netral)":
-            print(f"Pasar NETRAL. Melakukan pengecekan kedua pada {coin_pair}...")
-            
-            alt_condition = self._analyze_asset_condition(coin_pair, btc_tf, btc_sma)
+            if config.ALTCOIN_TREND_FILTER_ENABLED:
+                print(f"Pasar NETRAL. Melakukan pengecekan kedua pada {coin_pair} (filter altcoin aktif)...")
+                
+                alt_condition = self._analyze_asset_condition(coin_pair, btc_tf, btc_sma)
 
-            if alt_condition["error"]:
-                reason = alt_condition["error"]
-                print(f"❌ Gagal Analisis Lokal untuk {coin_pair}: {reason}")
-                return TradeDecision(decision="FAIL", coin_pair=coin_pair, reason=reason)
+                if alt_condition["error"]:
+                    reason = alt_condition["error"]
+                    print(f"❌ Gagal Analisis Lokal untuk {coin_pair}: {reason}")
+                    return TradeDecision(decision="FAIL", coin_pair=coin_pair, reason=reason)
 
-            ### BARU: Menampilkan Peringatan Jika Ada ###
-            if alt_condition.get("warning"):
-                print(f"⚠️  Peringatan ({coin_pair}): {alt_condition['warning']}")
+                if alt_condition.get("warning"):
+                    print(f"⚠️  Peringatan ({coin_pair}): {alt_condition['warning']}")
 
-            if alt_condition["is_above_sma"]:
-                print(f"Tren lokal {coin_pair} KUAT (berdasarkan data yang tersedia). Menjalankan validasi kondisi harga...")
-                return self._validate_price_conditions(signal)
+                if alt_condition["is_above_sma"]:
+                    print(f"Tren lokal {coin_pair} KUAT. Menjalankan validasi kondisi harga...")
+                    return self._validate_price_conditions(signal)
+                else:
+                    return TradeDecision(decision="FAIL", coin_pair=coin_pair, reason="Pasar netral & tren lokal juga LEMAH.")
             else:
-                return TradeDecision(decision="FAIL", coin_pair=coin_pair, reason="Pasar netral & tren lokal juga LEMAH.")
+                # Logika BARU jika filter altcoin dimatikan: GAGALKAN TRADE
+                reason = "Pasar netral & filter tren altcoin dimatikan. Trade tidak dilanjutkan."
+                print(f"❌ {reason}")
+                return TradeDecision(
+                    decision="FAIL",
+                    coin_pair=coin_pair,
+                    reason=reason
+                )
         
         return TradeDecision(decision="FAIL", coin_pair=coin_pair, reason="Kondisi pasar tidak terdefinisi.")

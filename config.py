@@ -52,3 +52,6 @@ SIGNAL_VALIDITY_MINUTES = int(os.getenv("SIGNAL_VALIDITY_MINUTES", 30))
 BTC_TREND_FILTER_ENABLED = os.getenv("BTC_TREND_FILTER_ENABLED", "True").lower() in ('true', '1', 't')
 BTC_FILTER_TIMEFRAME = os.getenv("BTC_FILTER_TIMEFRAME", "4h")  # Timeframe untuk analisis (e.g., '1h', '4h', '1d')
 BTC_FILTER_SMA_PERIOD = int(os.getenv("BTC_FILTER_SMA_PERIOD", 50)) # Periode SMA (e.g., 50, 100, 200)
+
+# --- DIPERBARUI: Konfigurasi Filter Tren Altcoin (Lokal) ---
+ALTCOIN_TREND_FILTER_ENABLED = os.getenv("ALTCOIN_TREND_FILTER_ENABLED", "True").lower() in ('true', '1', 't')
