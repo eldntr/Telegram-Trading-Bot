@@ -90,16 +90,34 @@ class TradingStrategy:
         if not coin_pair:
             return TradeDecision(decision="FAIL", reason="Sinyal tidak memiliki 'coin_pair'.")
 
+        # --- PERBAIKAN: Filter berdasarkan Risk Level jika diaktifkan di config ---
+        if config.PRIORITIZE_NORMAL_RISK:
+            risk_level = signal.get("risk_level")
+            print(f"Filter Risiko diaktifkan. Memeriksa Risk Level untuk {coin_pair}: '{risk_level}'")
+            # Memastikan risk_level ada dan nilainya bukan 'Normal' (case-insensitive)
+            if not risk_level or risk_level.strip().lower() != 'normal':
+                reason = f"Sinyal dilewati karena Risk Level bukan 'Normal' (Ditemukan: {risk_level})."
+                print(f"❌ {reason}")
+                return TradeDecision(
+                    decision="FAIL",
+                    coin_pair=coin_pair,
+                    reason=reason,
+                    risk_level=risk_level
+                )
+        # --- AKHIR DARI PERBAIKAN ---
+
         if config.FILTER_OLD_SIGNALS_ENABLED:
             try:
-                signal_time = datetime.fromisoformat(signal.get("timestamp"))
+                signal_time_str = signal.get("timestamp")
+                # Menggunakan fromisoformat karena data dari parser sudah dalam format ISO
+                signal_time = datetime.fromisoformat(signal_time_str)
                 age_minutes = (datetime.now(timezone.utc) - signal_time).total_seconds() / 60
                 if age_minutes > config.SIGNAL_VALIDITY_MINUTES:
                     return TradeDecision(decision="FAIL", coin_pair=coin_pair, reason=f"Sinyal kedaluwarsa ({age_minutes:.1f} menit lalu).")
             except (TypeError, ValueError):
                 return TradeDecision(decision="FAIL", coin_pair=coin_pair, reason="Timestamp sinyal tidak valid.")
 
-        print(f"\n✅ Sinyal {coin_pair} valid & tidak kedaluwarsa. Melanjutkan ke analisis pasar...")
+        print(f"\n✅ Sinyal {coin_pair} (Risk: {signal.get('risk_level')}) valid & tidak kedaluwarsa. Melanjutkan ke analisis pasar...")
         print("--- Menganalisis Kondisi Pasar Global (BTC)... ---")
         
         btc_tf = getattr(config, 'BTC_FILTER_TIMEFRAME', '1h')
@@ -122,7 +140,6 @@ class TradingStrategy:
             print("Pasar AMAN. Menjalankan validasi kondisi harga...")
             return self._validate_price_conditions(signal)
 
-        ### DIPERBARUI ###
         elif market_status == "🟡 KUNING (Waspada/Netral)":
             if config.ALTCOIN_TREND_FILTER_ENABLED:
                 print(f"Pasar NETRAL. Melakukan pengecekan kedua pada {coin_pair} (filter altcoin aktif)...")
@@ -143,7 +160,6 @@ class TradingStrategy:
                 else:
                     return TradeDecision(decision="FAIL", coin_pair=coin_pair, reason="Pasar netral & tren lokal juga LEMAH.")
             else:
-                # Logika BARU jika filter altcoin dimatikan: GAGALKAN TRADE
                 reason = "Pasar netral & filter tren altcoin dimatikan. Trade tidak dilanjutkan."
                 print(f"❌ {reason}")
                 return TradeDecision(
