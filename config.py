@@ -23,18 +23,13 @@ USDT_AMOUNT_PER_TRADE = float(os.getenv("USDT_AMOUNT_PER_TRADE", 11.0))
 MONGO_URI = os.getenv("MONGO_URI", "mongodb://localhost:27017/")
 MONGO_DB_NAME = "trading_bot_db"
 
-# --- BARU: Konfigurasi Trailing Stop Loss Dinamis ---
+# --- Konfigurasi Trailing Stop Loss Dinamis ---
 TRAILING_ENABLED = os.getenv("TRAILING_ENABLED", "True").lower() in ('true', '1', 't')
-# Aturan: "Jika harga saat ini menyentuh level TP pemicu (key),
-# maka pindahkan Stop Loss ke harga pada level TP tujuan (value)."
-# Level '0' secara khusus berarti harga beli (breakeven).
-# Contoh: "1": 0 berarti "Saat harga menyentuh TP1, pindahkan SL ke harga beli".
-#         "2": 1 berarti "Saat harga menyentuh TP2, pindahkan SL ke harga TP1".
 TRAILING_CONFIG = {
-    "1": 0,  # Pindah SL ke Breakeven (harga beli) saat TP1 tercapai
-    "2": 1,  # Pindah SL ke harga TP1 saat TP2 tercapai
-    "3": 2,  # Pindah SL ke harga TP2 saat TP3 tercapai
-    "4": 3,  # Pindah SL ke harga TP3 saat TP4 tercapai
+    "1": 0,
+    "2": 1,
+    "3": 2,
+    "4": 3,
 }
 
 # Konfigurasi Posisi Macet
@@ -50,11 +45,16 @@ SIGNAL_VALIDITY_MINUTES = int(os.getenv("SIGNAL_VALIDITY_MINUTES", 45))
 
 # --- Konfigurasi Filter Tren Makro (BTC) ---
 BTC_TREND_FILTER_ENABLED = os.getenv("BTC_TREND_FILTER_ENABLED", "True").lower() in ('true', '1', 't')
-BTC_FILTER_TIMEFRAME = os.getenv("BTC_FILTER_TIMEFRAME", "4h")  # Timeframe untuk analisis (e.g., '1h', '4h', '1d')
-BTC_FILTER_SMA_PERIOD = int(os.getenv("BTC_FILTER_SMA_PERIOD", 50)) # Periode SMA (e.g., 50, 100, 200)
+BTC_FILTER_TIMEFRAME = os.getenv("BTC_FILTER_TIMEFRAME", "4h")
+BTC_FILTER_SMA_PERIOD = int(os.getenv("BTC_FILTER_SMA_PERIOD", 50))
 
-# --- DIPERBARUI: Konfigurasi Filter Tren Altcoin (Lokal) ---
+# --- Konfigurasi Filter Tren Altcoin (Lokal) ---
 ALTCOIN_TREND_FILTER_ENABLED = os.getenv("ALTCOIN_TREND_FILTER_ENABLED", "True").lower() in ('true', '1', 't')
 
-# --- BARU: Konfigurasi Filter Pembelian Setelah Stop Loss ---
+# --- Konfigurasi Filter Pembelian Setelah Stop Loss ---
 AVOID_BUYING_AFTER_SL = os.getenv("AVOID_BUYING_AFTER_SL", "True").lower() in ('true', '1', 't')
+
+# --- BARU: Konfigurasi Filter Batas Maksimal Stop Loss ---
+MAX_SL_PERCENTAGE_ENABLED = os.getenv("MAX_SL_PERCENTAGE_ENABLED", "True").lower() in ('true', '1', 't')
+# Ambil nilai absolut dan pastikan negatif untuk perbandingan
+MAX_SL_PERCENTAGE = -abs(float(os.getenv("MAX_SL_PERCENTAGE", "5.0")))
