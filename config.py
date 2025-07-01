@@ -1,4 +1,4 @@
-# Auto Trade Bot/config.py
+# eldntr/telegram-trading-bot/Telegram-Trading-Bot-prioritize-normal-risk/config.py
 
 import os
 from dotenv import load_dotenv
@@ -46,7 +46,7 @@ PRIORITIZE_NORMAL_RISK = os.getenv("PRIORITIZE_NORMAL_RISK", "False").lower() in
 
 # --- Konfigurasi Validitas Waktu Sinyal ---
 FILTER_OLD_SIGNALS_ENABLED = os.getenv("FILTER_OLD_SIGNALS_ENABLED", "True").lower() in ('true', '1', 't')
-SIGNAL_VALIDITY_MINUTES = int(os.getenv("SIGNAL_VALIDITY_MINUTES", 30))
+SIGNAL_VALIDITY_MINUTES = int(os.getenv("SIGNAL_VALIDITY_MINUTES", 45))
 
 # --- Konfigurasi Filter Tren Makro (BTC) ---
 BTC_TREND_FILTER_ENABLED = os.getenv("BTC_TREND_FILTER_ENABLED", "True").lower() in ('true', '1', 't')
@@ -55,3 +55,6 @@ BTC_FILTER_SMA_PERIOD = int(os.getenv("BTC_FILTER_SMA_PERIOD", 50)) # Periode SM
 
 # --- DIPERBARUI: Konfigurasi Filter Tren Altcoin (Lokal) ---
 ALTCOIN_TREND_FILTER_ENABLED = os.getenv("ALTCOIN_TREND_FILTER_ENABLED", "True").lower() in ('true', '1', 't')
+
+# --- BARU: Konfigurasi Filter Pembelian Setelah Stop Loss ---
+AVOID_BUYING_AFTER_SL = os.getenv("AVOID_BUYING_AFTER_SL", "True").lower() in ('true', '1', 't')

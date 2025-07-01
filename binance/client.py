@@ -1,4 +1,3 @@
-# Auto Trade Bot/binance/client.py
 import time
 import hmac
 import hashlib
@@ -153,8 +152,12 @@ class BinanceClient:
         data = self._send_request("GET", "/ticker/price", params)
         return float(data['price']) if data and 'price' in data else None
         
-    def get_all_tickers(self) -> Optional[List[Dict[str, Any]]]:
-        return self._send_request("GET", "/ticker/price")
+    def get_all_tickers(self) -> Optional[Dict[str, float]]:
+        """Mengambil harga ticker terbaru dan mengembalikannya sebagai dict."""
+        tickers_list = self._send_request("GET", "/ticker/price")
+        if tickers_list:
+            return {ticker['symbol']: float(ticker['price']) for ticker in tickers_list}
+        return None
 
     def get_account_info(self) -> Optional[Dict[str, Any]]:
         return self._send_request("GET", "/account", signed=True)
@@ -164,9 +167,15 @@ class BinanceClient:
         if symbol:
             params['symbol'] = symbol
         return self._send_request("GET", "/openOrders", params, signed=True)
+        
+    def get_all_orders(self, symbol: str, limit: int = 100) -> Optional[List[Dict[str, Any]]]:
+        """
+        --- FUNGSI BARU ---
+        Mengambil semua order (termasuk yang sudah terisi/dibatalkan) untuk sebuah simbol.
+        """
+        params = {"symbol": symbol, "limit": limit}
+        return self._send_request("GET", "/allOrders", params, signed=True)
 
-    ### BARU ###
-    # Fungsi yang dibutuhkan untuk analisis teknikal
     def get_klines(self, symbol: str, interval: str, limit: int = 100) -> Optional[List[Any]]:
         """Mengambil data K-lines (candlestick) untuk sebuah simbol."""
         params = {"symbol": symbol, "interval": interval, "limit": limit}

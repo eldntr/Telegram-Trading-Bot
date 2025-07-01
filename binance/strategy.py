@@ -1,6 +1,5 @@
-# Auto Trade Bot/binance/strategy.py
 from typing import Dict, Any, Optional
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 import config
 from .client import BinanceClient
 from .models import TradeDecision, TargetInfo, StopLossInfo
@@ -50,6 +49,48 @@ class TradingStrategy:
 
         return {"is_above_sma": is_above_sma, "warning": warning_message, "error": None}
 
+    def _check_for_recent_sl(self, coin_pair: str) -> bool:
+        """
+        --- FUNGSI BARU ---
+        Memeriksa riwayat order di Binance untuk menemukan apakah ada Stop Loss (SL)
+        yang terpicu untuk koin ini dalam jangka waktu 'SIGNAL_VALIDITY_MINUTES'.
+        """
+        print(f"🔍 Memeriksa riwayat SL untuk {coin_pair}...")
+        all_orders = self.client.get_all_orders(symbol=coin_pair, limit=50) # Ambil 50 order terakhir
+        if not all_orders:
+            print("Tidak ditemukan riwayat order.")
+            return False
+
+        # Cari order STOP_LOSS_LIMIT yang statusnya FILLED
+        filled_sl_orders = [
+            order for order in all_orders 
+            if order.get('type') == 'STOP_LOSS_LIMIT' and order.get('status') == 'FILLED'
+        ]
+
+        if not filled_sl_orders:
+            print("Tidak ditemukan order SL yang terisi (FILLED). Aman untuk melanjutkan.")
+            return False
+
+        # Cek timestamp dari SL terakhir yang terisi
+        latest_sl_order = max(filled_sl_orders, key=lambda o: o['updateTime'])
+        sl_timestamp_ms = latest_sl_order['updateTime']
+        sl_time = datetime.fromtimestamp(sl_timestamp_ms / 1000, tz=timezone.utc)
+        
+        now = datetime.now(timezone.utc)
+        time_since_sl = now - sl_time
+        
+        validity_minutes = timedelta(minutes=config.SIGNAL_VALIDITY_MINUTES)
+
+        print(f"SL terakhir terdeteksi pada {sl_time.strftime('%Y-%m-%d %H:%M:%S UTC')}. ({time_since_sl.total_seconds() / 60:.1f} menit lalu)")
+
+        if time_since_sl < validity_minutes:
+            print(f"🚨 PERINGATAN: SL terdeteksi dalam periode validitas ({config.SIGNAL_VALIDITY_MINUTES} menit). Pembelian akan dicegah.")
+            return True # Ada SL yang baru saja terjadi
+        
+        print("SL terakhir di luar periode validitas. Aman untuk melanjutkan.")
+        return False
+
+
     def _validate_price_conditions(self, signal: Dict[str, Any]) -> TradeDecision:
         """
         Menjalankan validasi spesifik terkait harga (dibandingkan SL dan entry).
@@ -88,34 +129,33 @@ class TradingStrategy:
         """
         coin_pair = signal.get("coin_pair")
         if not coin_pair:
-            return TradeDecision(decision="FAIL", reason="Sinyal tidak memiliki 'coin_pair'.")
+            return TradeDecision(decision="FAIL", coin_pair=coin_pair, reason="Sinyal tidak memiliki 'coin_pair'.")
 
-        # --- PERBAIKAN: Filter berdasarkan Risk Level jika diaktifkan di config ---
+        # --- Filter 1: Risk Level ---
         if config.PRIORITIZE_NORMAL_RISK:
             risk_level = signal.get("risk_level")
             print(f"Filter Risiko diaktifkan. Memeriksa Risk Level untuk {coin_pair}: '{risk_level}'")
-            # Memastikan risk_level ada dan nilainya bukan 'Normal' (case-insensitive)
             if not risk_level or risk_level.strip().lower() != 'normal':
                 reason = f"Sinyal dilewati karena Risk Level bukan 'Normal' (Ditemukan: {risk_level})."
                 print(f"❌ {reason}")
-                return TradeDecision(
-                    decision="FAIL",
-                    coin_pair=coin_pair,
-                    reason=reason,
-                    risk_level=risk_level
-                )
-        # --- AKHIR DARI PERBAIKAN ---
-
+                return TradeDecision(decision="FAIL", coin_pair=coin_pair, reason=reason, risk_level=risk_level)
+        
+        # --- Filter 2: Sinyal Kedaluwarsa ---
         if config.FILTER_OLD_SIGNALS_ENABLED:
             try:
-                signal_time_str = signal.get("timestamp")
-                # Menggunakan fromisoformat karena data dari parser sudah dalam format ISO
-                signal_time = datetime.fromisoformat(signal_time_str)
+                signal_time = datetime.fromisoformat(signal.get("timestamp"))
                 age_minutes = (datetime.now(timezone.utc) - signal_time).total_seconds() / 60
                 if age_minutes > config.SIGNAL_VALIDITY_MINUTES:
                     return TradeDecision(decision="FAIL", coin_pair=coin_pair, reason=f"Sinyal kedaluwarsa ({age_minutes:.1f} menit lalu).")
             except (TypeError, ValueError):
                 return TradeDecision(decision="FAIL", coin_pair=coin_pair, reason="Timestamp sinyal tidak valid.")
+
+        # --- Filter 3 (BARU): Cek Riwayat Stop Loss ---
+        if config.AVOID_BUYING_AFTER_SL:
+            if self._check_for_recent_sl(coin_pair):
+                reason = f"Pembelian dicegah karena Stop Loss terdeteksi dalam {config.SIGNAL_VALIDITY_MINUTES} menit terakhir."
+                return TradeDecision(decision="FAIL", coin_pair=coin_pair, reason=reason)
+        # --- AKHIR DARI FILTER BARU ---
 
         print(f"\n✅ Sinyal {coin_pair} (Risk: {signal.get('risk_level')}) valid & tidak kedaluwarsa. Melanjutkan ke analisis pasar...")
         print("--- Menganalisis Kondisi Pasar Global (BTC)... ---")
@@ -143,17 +183,13 @@ class TradingStrategy:
         elif market_status == "🟡 KUNING (Waspada/Netral)":
             if config.ALTCOIN_TREND_FILTER_ENABLED:
                 print(f"Pasar NETRAL. Melakukan pengecekan kedua pada {coin_pair} (filter altcoin aktif)...")
-                
                 alt_condition = self._analyze_asset_condition(coin_pair, btc_tf, btc_sma)
-
                 if alt_condition["error"]:
                     reason = alt_condition["error"]
                     print(f"❌ Gagal Analisis Lokal untuk {coin_pair}: {reason}")
                     return TradeDecision(decision="FAIL", coin_pair=coin_pair, reason=reason)
-
                 if alt_condition.get("warning"):
                     print(f"⚠️  Peringatan ({coin_pair}): {alt_condition['warning']}")
-
                 if alt_condition["is_above_sma"]:
                     print(f"Tren lokal {coin_pair} KUAT. Menjalankan validasi kondisi harga...")
                     return self._validate_price_conditions(signal)
@@ -162,10 +198,6 @@ class TradingStrategy:
             else:
                 reason = "Pasar netral & filter tren altcoin dimatikan. Trade tidak dilanjutkan."
                 print(f"❌ {reason}")
-                return TradeDecision(
-                    decision="FAIL",
-                    coin_pair=coin_pair,
-                    reason=reason
-                )
+                return TradeDecision(decision="FAIL", coin_pair=coin_pair, reason=reason)
         
         return TradeDecision(decision="FAIL", coin_pair=coin_pair, reason="Kondisi pasar tidak terdefinisi.")
