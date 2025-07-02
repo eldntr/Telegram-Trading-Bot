@@ -1,4 +1,4 @@
-# Auto Trade Bot/core/routines.py
+# Auto Trade Bot/core/routines.py (SUDAH DIPERBAIKI)
 
 import sys
 import time
@@ -48,7 +48,6 @@ async def run_fetch_routine(message_limit: int = 50):
         if new_signals:
             mongo_manager.save_new_signals(new_signals)
 
-        print("--- Rutinitas Fetch Telegram Selesai ---")
     finally:
         if client_wrapper.client.is_connected(): await client_wrapper.disconnect()
         mongo_manager.close_connection()
@@ -57,7 +56,16 @@ async def run_fetch_routine(message_limit: int = 50):
 
 def run_decide_routine(parsed_data=None):
     print("\n--- [2] Memulai Rutinitas Keputusan Trading ---")
-    client = BinanceClient()
+    
+    # --- PERBAIKAN DI SINI ---
+    # Pastikan client diinisialisasi dengan kunci API agar bisa mengakses endpoint privat
+    if not config.BINANCE_API_KEY or not config.BINANCE_API_SECRET:
+        print("Kunci API Binance tidak dikonfigurasi. Melewatkan rutinitas keputusan.")
+        return []
+    
+    client = BinanceClient(config.BINANCE_API_KEY, config.BINANCE_API_SECRET)
+    # --- AKHIR PERBAIKAN ---
+
     strategy = TradingStrategy(client)
     new_signals = _load_json_file("new_signals.json")
     if not new_signals:
@@ -95,7 +103,7 @@ def run_execute_routine(decisions_data=None):
     
     trade_logs = []
     for decision in buy_decisions:
-        account_summary = manager.get_account_summary() # Selalu ambil summary terbaru
+        account_summary = manager.get_account_summary()
         if not account_summary: 
             print("Gagal mengambil summary akun, eksekusi dihentikan.")
             break
@@ -103,7 +111,6 @@ def run_execute_routine(decisions_data=None):
         result = trader.execute_trade(decision, account_summary)
         trade_logs.append({"decision_details": decision, "execution_result": result})
         
-        # --- BARU: Simpan data trade ke DB untuk manajemen posisi ---
         if result.get('status') == 'SUCCESS':
             buy_order = result.get('buy_order', {})
             oco_order = result.get('oco_order', {})
@@ -123,7 +130,7 @@ def run_execute_routine(decisions_data=None):
                 }
                 mongo.save_open_position(position_doc)
             
-            time.sleep(2) # Beri jeda setelah trade sukses
+            time.sleep(2)
                     
     if trade_logs: JsonWriter("trade_log.json").write(trade_logs)
     mongo.close_connection()
@@ -154,10 +161,6 @@ def run_status_routine():
     print("\n--- Rutinitas Pengecekan Status Selesai ---")
 
 async def run_manage_positions_routine():
-    """
-    Memeriksa semua posisi yang dilacak, menerapkan strategi trailing SL dinamis
-    dan menangani posisi yang macet.
-    """
     print("\n--- [4] Memulai Rutinitas Manajemen Posisi (Trailing & Macet) ---")
     if not all([config.BINANCE_API_KEY, config.BINANCE_API_SECRET]):
         print("Manajemen posisi dilewati: Kunci API tidak ditemukan.")
@@ -166,23 +169,19 @@ async def run_manage_positions_routine():
     client = BinanceClient(config.BINANCE_API_KEY, config.BINANCE_API_SECRET)
     mongo = MongoManager(config.MONGO_URI, config.MONGO_DB_NAME)
 
-    # 1. Ambil semua posisi yang seharusnya aktif dari database kita
     db_positions = mongo.get_all_open_positions()
     if not db_positions:
         print("Tidak ada posisi aktif yang dilacak di database untuk dikelola.")
         mongo.close_connection()
         return
 
-    # 2. Ambil semua order yang aktif di Binance untuk sinkronisasi
     active_binance_orders = client.get_open_orders()
     active_symbols_on_binance = {o['symbol'] for o in active_binance_orders} if active_binance_orders else set()
 
-    # 3. Proses setiap posisi yang dilacak
     print(f"Memeriksa {len(db_positions)} posisi yang dilacak di DB...")
     for position in db_positions:
         symbol = position['coin_pair']
         
-        # 3.1. Sinkronisasi: Hapus dari DB jika sudah tidak aktif di Binance
         if symbol not in active_symbols_on_binance:
             print(f"  - Posisi {symbol} sudah tertutup di Binance. Menghapus dari pelacakan DB.")
             mongo.delete_open_position(symbol)
@@ -190,19 +189,15 @@ async def run_manage_positions_routine():
 
         print(f"\n- Memeriksa posisi aktif: {symbol}...")
         try:
-            # Dapatkan data penting dari dokumen posisi DB
             buy_price = position['buy_price']
             quantity = position['quantity']
             order_list_id = position['order_list_id']
             signal_targets = position.get('signal_data', {}).get('targets', [])
-
-            # Dapatkan harga pasar saat ini
             current_price = client.get_current_price(symbol)
             if not current_price:
                 print(f"  Gagal mendapatkan harga untuk {symbol}. Melewatkan.")
                 continue
 
-            # Dapatkan order SL aktif dari daftar order Binance
             all_orders_for_symbol = [o for o in active_binance_orders if o.get('symbol') == symbol]
             sl_order = next((o for o in all_orders_for_symbol if o['type'] == 'STOP_LOSS_LIMIT'), None)
             if not sl_order:
@@ -212,7 +207,6 @@ async def run_manage_positions_routine():
             
             print(f"  Info: Harga Beli: ${buy_price:.4f}, Harga Saat Ini: ${current_price:.4f}, SL Saat Ini: ${current_sl_price:.4f}")
 
-            # 3.2. Pengecekan Posisi Macet (Stuck Trade)
             if config.STUCK_TRADE_ENABLED:
                 pos_timestamp_str = position.get('timestamp')
                 order_datetime = datetime.fromisoformat(pos_timestamp_str)
@@ -235,9 +229,8 @@ async def run_manage_positions_routine():
                             print(f"  >> KRITIS: Gagal membatalkan OCO untuk posisi macet {symbol}.")
                         continue
 
-            # 3.3. Pengecekan Trailing Stop Loss
             if config.TRAILING_ENABLED:
-                sl_target_levels = {0: {'price': buy_price}} # TP0 adalah harga beli
+                sl_target_levels = {0: {'price': buy_price}}
                 for t in signal_targets: sl_target_levels[t['level']] = {'price': t['price']}
                 
                 new_sl_price_candidate = 0
@@ -264,7 +257,7 @@ async def run_manage_positions_routine():
                             position['order_list_id'] = new_oco.get('orderListId')
                             mongo.save_open_position(position)
                         else:
-                             print(f"  >> SANGAT KRITIS: Aset {symbol} tidak terproteksi setelah gagal menempatkan OCO baru!")
+                            print(f"  >> SANGAT KRITIS: Aset {symbol} tidak terproteksi setelah gagal menempatkan OCO baru!")
                     else:
                         print(f"  >> KRITIS: Gagal membatalkan OCO lama untuk trailing.")
                 else:
@@ -319,8 +312,3 @@ async def run_autoloop_routine(duration_minutes: int, message_limit: int, cycle_
             break
     
     print("\n--- Mode Autoloop Dihentikan ---")
-
-if __name__ == "__main__":
-    # This part is in main.py, so it's not needed here.
-    # But for context, this is how the main loop would be called.
-    pass
