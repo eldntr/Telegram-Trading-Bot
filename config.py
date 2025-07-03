@@ -32,6 +32,15 @@ TRAILING_CONFIG = {
     "4": 3,
 }
 
+# --- BARU: Konfigurasi untuk Strategi Hybrid Partial TP ---
+# Membaca persentase penjualan dari file .env. Nilai dalam desimal (misal: 25% -> 0.25)
+PARTIAL_TP_CONFIG = {
+    1: float(os.getenv("PARTIAL_TP1_PERCENT", "0")) / 100,
+    2: float(os.getenv("PARTIAL_TP2_PERCENT", "0")) / 100,
+    3: float(os.getenv("PARTIAL_TP3_PERCENT", "0")) / 100,
+    4: float(os.getenv("PARTIAL_TP4_PERCENT", "0")) / 100,
+}
+
 # Konfigurasi Posisi Macet
 STUCK_TRADE_ENABLED = os.getenv("STUCK_TRADE_ENABLED", "False").lower() in ('true', '1', 't')
 STUCK_TRADE_DURATION_HOURS = int(os.getenv("STUCK_TRADE_DURATION_HOURS", 6))
