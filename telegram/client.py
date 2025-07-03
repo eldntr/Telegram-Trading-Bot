@@ -9,6 +9,10 @@ class TelegramClientWrapper:
     def __init__(self, session_name: str, api_id: int, api_hash: str, phone_number: str):
         self.client = TelegramClient(session_name, api_id, api_hash, system_version="4.16.30-vxCUSTOM")
         self.phone_number = phone_number
+        
+    def is_connected(self) -> bool:
+        """Memeriksa apakah klien sedang terhubung."""
+        return self.client.is_connected()
 
     async def connect(self):
         """Menghubungkan ke Telegram dan menangani otorisasi."""
