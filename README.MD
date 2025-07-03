@@ -1,16 +1,26 @@
-# Auto Trade Bot dari Sinyal Telegram
+# Auto Trade Bot dari Sinyal Telegram 
 
-Bot ini dirancang untuk mengotomatiskan proses trading di Binance berdasarkan sinyal yang dikirim ke channel atau grup Telegram. Bot akan mengambil pesan, mem-parsingnya untuk menemukan sinyal trading, membuat keputusan berdasarkan kondisi pasar saat ini, dan mengeksekusi trade secara aman menggunakan order OCO (One-Cancels-the-Other).
+Bot ini dirancang untuk mengotomatiskan proses trading di Binance berdasarkan sinyal yang dikirim ke channel atau grup Telegram. Versi ini telah ditingkatkan dengan fitur-fitur canggih untuk manajemen risiko, analisis pasar, dan manajemen posisi yang lebih cerdas. Bot akan mengambil pesan, mem-parsingnya, membuat keputusan berdasarkan strategi filter berlapis, mengeksekusi trade, dan mengelola posisi terbuka secara aktif.
 
-## ✨ Fitur Utama
+## ✨ Fitur Unggulan Terbaru
 
--   **Parser Telegram Canggih**: Mampu membedakan berbagai jenis pesan seperti sinyal baru, pembaruan sinyal, rekap harian, dan peringatan pasar.
--   **Keputusan Trading Dinamis**: Bot akan memeriksa harga pasar saat ini dan aturan trading (seperti nilai order minimum) sebelum memutuskan untuk membeli.
--   **Manajemen Posisi Aman**: Secara otomatis memeriksa apakah sudah ada posisi atau order aktif untuk sebuah koin sebelum membuka posisi baru, mencegah *double-buy*.
--   **Eksekusi Order OCO**: Setelah berhasil membeli aset, bot akan langsung memasang order OCO untuk *Take Profit* (TP) dan *Stop Loss* (SL) secara bersamaan, memastikan setiap trade terproteksi.
--   **Struktur Modular & Clean Code**: Dibuat dengan prinsip PPL, memisahkan logika Telegram, Binance, dan *core* aplikasi agar mudah dikelola dan dikembangkan.
--   **Mode Otomatis (Autoloop)**: Dapat berjalan secara terus-menerus dalam siklus untuk memantau sinyal dan trading secara mandiri selama durasi yang ditentukan atau selamanya.
--   **Pusat Kendali Terpusat**: Semua aksi bot dikontrol melalui satu file `main.py`, membuatnya mudah dioperasikan.
+  - **Parser Telegram Canggih**: Mampu membedakan berbagai jenis pesan seperti sinyal baru, pembaruan sinyal, rekap harian, dan peringatan pasar.
+  - **Strategi Filter Berlapis (Multi-Layered Filter)**:
+      - **Filter Tren Global (BTC)**: Menganalisis kondisi pasar Bitcoin (di atas/di bawah SMA) sebelum memutuskan untuk masuk ke market.
+      - **Filter Tren Altcoin (Lokal)**: Jika pasar BTC netral, bot akan menganalisis tren koin sinyal itu sendiri sebagai konfirmasi kedua.
+      - **Filter Prioritas Risiko**: Bot dapat dikonfigurasi untuk hanya mengeksekusi sinyal dengan tingkat risiko "Normal", mengabaikan sinyal berisiko tinggi.
+      - **Filter Sinyal Kedaluwarsa**: Mengabaikan sinyal yang usianya sudah melebihi batas waktu validitas yang ditentukan.
+  - **Manajemen Posisi Aktif**:
+      - **Trailing Stop Loss Dinamis**: Secara otomatis menaikkan level Stop Loss ke titik breakeven atau level Take Profit sebelumnya ketika target harga tercapai untuk mengamankan keuntungan.
+      - **Penanganan Posisi Macet (Stuck Trade)**: Menutup posisi secara otomatis jika tidak mencapai TP1 setelah durasi waktu tertentu untuk mencegah modal terjebak.
+  - **Eksekusi Aman & Cerdas**:
+      - **Pemeriksaan Pra-Pembelian**: Melakukan validasi lengkap (saldo cukup, tidak ada order duplikat, aturan `min_notional` terpenuhi) sebelum membeli.
+      - **Eksekusi Order OCO**: Setelah membeli aset, bot langsung memasang order OCO (One-Cancels-the-Other) untuk *Take Profit* dan *Stop Loss*.
+  - **Dashboard Streamlit Interaktif**: Visualisasikan status akun, keputusan trade, sinyal terbaru, dan data mentah dari file JSON secara *real-time*.
+  - **Integrasi Database MongoDB**: Menyimpan sinyal yang ter-parse dan melacak posisi trading yang sedang aktif untuk manajemen yang persisten.
+  - **Mode Operasi Fleksibel**:
+      - **Autoloop**: Menjalankan bot secara terus-menerus dengan siklus fetch, decide, execute, dan manage.
+      - **Kontrol CLI**: Menjalankan setiap rutinitas (fetch, decide, execute, status, manage) secara terpisah melalui argumen baris perintah.
 
 ## 📂 Struktur Proyek
 
@@ -20,44 +30,58 @@ Telegram-Trading-Bot/
 │   └── routines.py          # Logika utama untuk setiap alur kerja (fetch, decide, dll.)
 ├── binance/
 │   ├── client.py            # Klien untuk interaksi dengan API Binance
+│   ├── strategy.py          # Logika strategi trading dan filter keputusan
 │   ├── trader.py            # Logika untuk eksekusi trade (buy, oco)
-│   └── account.py           # Logika untuk manajemen akun (cek saldo, dll)
+│   ├── account.py           # Logika untuk manajemen akun (cek saldo)
+│   └── models.py            # Dataclass untuk struktur data trading
 ├── telegram/
 │   ├── client.py            # Klien untuk koneksi dan mengambil pesan Telegram
 │   ├── parser.py            # Logika untuk mem-parsing berbagai jenis pesan
-│   └── __init__.py
-├── data/                    # Direktori untuk semua output file .json
-│   ├── new_signals.json     # Hasil parsing sinyal baru
-│   ├── trade_decisions.json # Keputusan trading yang dibuat
-│   └── trade_results.json   # Hasil eksekusi trading
+│   ├── models.py            # Dataclass untuk berbagai tipe pesan Telegram
+│   └── utils.py             # Utilitas, seperti penulis file JSON
+├── db/
+│   └── mongo_client.py      # Pengelola koneksi dan operasi MongoDB
+├── data/                    # Direktori output untuk file .json (diabaikan oleh git)
 ├── main.py                  # File utama sebagai pusat kendali (entry point)
+├── dashboard.py             # Aplikasi dashboard Streamlit
 ├── config.py                # Memuat konfigurasi dari file .env
 ├── requirements.txt         # Daftar library yang dibutuhkan
 ├── .env                     # File konfigurasi environment (tidak di-commit)
-└── README.md                # File dokumentasi ini
+├── .env.sample              # Contoh file .env
+├── docker-compose.yml       # Konfigurasi untuk menjalankan bot dan DB dengan Docker
+└── README.MD                # File dokumentasi ini
 ```
 
 ## 🚀 Pengaturan & Instalasi
 
 1.  **Clone Proyek**
+
     ```bash
     git clone <url_repository_anda>
-    cd Telegram-Trading-Bot
+    cd Telegram-Trading-Bot-prioritize-normal-risk
     ```
 
 2.  **Buat Virtual Environment** (Sangat disarankan)
+
     ```bash
     python -m venv venv
     source venv/bin/activate  # Di Windows: venv\Scripts\activate
     ```
 
 3.  **Install Dependensi**
+
     ```bash
     pip install -r requirements.txt
     ```
 
 4.  **Konfigurasi Environment**
-    Buat file baru bernama `.env` di *root folder* dan isi dengan format berikut. Ganti nilainya dengan data Anda.
+    Salin file `.env.sample` menjadi `.env` dan isi semua variabel yang diperlukan.
+
+    ```bash
+    cp .env.sample .env
+    ```
+
+    Buka file `.env` dan sesuaikan nilainya:
 
     ```env
     # Konfigurasi Telegram
@@ -70,79 +94,99 @@ Telegram-Trading-Bot/
     BINANCE_API_KEY="YOUR_BINANCE_API_KEY"
     BINANCE_API_SECRET="YOUR_BINANCE_SECRET_KEY"
 
-    # Konfigurasi Trading
+    # Konfigurasi Trading & Risiko
     USDT_AMOUNT_PER_TRADE="11"
+    PRIORITIZE_NORMAL_RISK="True"
+    FILTER_OLD_SIGNALS_ENABLED="True"
+    SIGNAL_VALIDITY_MINUTES="45"
+
+    # Konfigurasi Filter Pasar
+    BTC_TREND_FILTER_ENABLED="True"
+    BTC_FILTER_TIMEFRAME="1h"
+    BTC_FILTER_SMA_PERIOD="50"
+    ALTCOIN_TREND_FILTER_ENABLED="True"
+
+    # Konfigurasi Manajemen Posisi
+    TRAILING_ENABLED="True"
+    STUCK_TRADE_ENABLED="True"
+    STUCK_TRADE_DURATION_HOURS="6"
+
+    # Konfigurasi Database (jika menggunakan Docker, sesuaikan dengan docker-compose.yml)
+    MONGO_URI="mongodb://root:07092004@localhost:27017/"
     ```
 
 ## 🛠️ Cara Penggunaan
 
 Semua perintah dijalankan melalui `main.py`.
 
--   **Mengambil Pesan dari Telegram**  
-    (Akan mengambil 50 pesan terakhir secara default)
-    ```bash
-    python main.py fetch
-    ```
-    (Mengambil 100 pesan terakhir)
+  - **Mengambil Pesan & Menyimpan ke DB**
+
     ```bash
     python main.py fetch --limit 100
     ```
 
--   **Membuat Keputusan Trading**  
-    (Membaca `new_signals.json` dan membuat `trade_decisions.json`)
+  - **Membuat Keputusan Trading dari Sinyal di DB**
+
     ```bash
     python main.py decide
     ```
 
--   **Mengeksekusi Trade**  
-    (Membaca `trade_decisions.json` dan mengeksekusi sinyal `BUY`)
+  - **Mengeksekusi Trade yang Disetujui**
+
     ```bash
     python main.py execute
     ```
 
--   **Memeriksa Status Akun & Transaksi Berjalan**
+  - **Memeriksa Status Akun & Order Terbuka**
+
     ```bash
     python main.py status
     ```
 
--   **Menjalankan Mode Otomatis (Autoloop)**  
-    (Berjalan selamanya, jeda 5 menit antar siklus, mengambil 50 pesan)
+  - **Menjalankan Rutinitas Manajemen Posisi (Trailing & Stuck)**
+
     ```bash
-    python main.py autoloop
-    ```
-    (Berjalan selama 2 jam, jeda 10 menit, mengambil 20 pesan)
-    ```bash
-    python main.py autoloop --duration 120 --delay 600 --limit 20
+    python main.py manage
     ```
 
--   **Menjalankan Seluruh Alur Sekali Jalan**  
-    (Fetch -> Decide -> Execute)
+  - **Menjalankan Mode Otomatis (Autoloop)**
+    (Berjalan selamanya, jeda 5 menit, fetch awal 100 pesan, siklus berikutnya 50 pesan)
+
     ```bash
-    python main.py run-all
+    python main.py autoloop --delay 300 --initial-limit 100 --limit 50
     ```
 
-## 🌊 Diagram Alur Kerja Bot
+  - **Menjalankan Dashboard Visual**
 
-Diagram di bawah ini mengilustrasikan alur kerja utama bot saat berjalan dalam mode `autoloop`.
+    ```bash
+    streamlit run dashboard.py
+    ```
+
+## 🐳 Menjalankan dengan Docker
+
+Proyek ini dilengkapi dengan `docker-compose.yml` untuk memudahkan deployment.
+
+1.  Pastikan Docker dan Docker Compose terinstall.
+2.  Pastikan file `.env` Anda sudah terisi dengan benar, terutama `MONGO_URI` yang harus menunjuk ke service `mongodb`.
+3.  Jalankan perintah berikut dari root direktori proyek:
+    ```bash
+    docker-compose up --build
+    ```
+    Perintah ini akan membangun image untuk bot dan dashboard, serta menjalankan kontainer MongoDB. Bot akan mulai berjalan dalam mode `autoloop` dan dashboard akan dapat diakses di `http://localhost:8501`.
+
+## 🌊 Diagram Alur Kerja Bot (Autoloop)
 
 ```mermaid
 graph TD
     subgraph "Siklus Bot Autoloop"
-        A[Mulai Siklus] --> B{1. Fetch Pesan Telegram}
-        B --> C[2. Parse & Filter Sinyal Baru]
-        C --> D{3. Generate Keputusan}
-        D -->|Sinyal BUY Ditemukan| E{4. Eksekusi Trade}
-        D -->|Lainnya SKIP/FAIL| G[Tunggu Siklus Berikutnya]
-        E --> F{Cek Open Orders}
-        F -->|Order Aktif Ada| G
-        F -->|Tidak Ada Order Aktif| H{Cek Saldo & Aturan}
-        H -->|Gagal Pengecekan| G
-        H -->|Lolos Pengecekan| I[Beli Aset Market Order]
-        I -->|Gagal Beli| G
-        I -->|Sukses Beli| J[Pasang Proteksi OCO Order]
-        J -->|Gagal OCO CRITICAL| G
-        J -->|Sukses OCO| G
+        A[Mulai Siklus] --> B{1. Fetch Pesan & Simpan ke DB};
+        B --> C{2. Decide: Ambil Sinyal dari DB & Terapkan Filter};
+        C --> |Ada Sinyal 'BUY'| D{3. Execute Trade};
+        C --> |SKIP/FAIL| E[Lanjut ke Manajemen];
+        D --> E;
+        E --> F{4. Manage Positions};
+        F --> |Cek Posisi di DB| G{Update Trailing SL / Tutup Posisi Macet};
+        G --> H[Tunggu Jeda Waktu];
     end
-
-    G -->|Jeda Waktu Delay| A
+    H --> A;
 ```

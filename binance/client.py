@@ -1,4 +1,3 @@
-# Auto Trade Bot/binance/client.py
 import time
 import hmac
 import hashlib
@@ -47,7 +46,6 @@ class BinanceClient:
             query_string += f"&signature={signature}"
             
             try:
-                # Perbaikan: Menggunakan method.upper() untuk konsistensi
                 req_method = method.upper()
                 if req_method == 'GET':
                     response = self.session.get(f"{url}?{query_string}")
@@ -107,9 +105,7 @@ class BinanceClient:
         params = {"symbol": symbol, "side": "BUY", "type": "MARKET", "quoteOrderQty": quote_order_qty}
         return self._send_request("POST", "/order", params, signed=True)
         
-    # --- BARU: Fungsi untuk menjual pada harga pasar ---
     def place_market_sell_order(self, symbol: str, quantity: float) -> Optional[Dict[str, Any]]:
-        """Menempatkan order MARKET SELL untuk sejumlah kuantitas tertentu."""
         symbol_info = self.get_symbol_info(symbol)
         if not symbol_info:
             print(f"Gagal menempatkan Market Sell: tidak ditemukan info untuk {symbol}")
@@ -146,13 +142,22 @@ class BinanceClient:
         params = {"symbol": symbol, "orderListId": order_list_id}
         return self._send_request("DELETE", "/orderList", params, signed=True)
 
+    def cancel_all_open_orders_for_symbol(self, symbol: str) -> Optional[Dict[str, Any]]:
+        print(f"Membatalkan SEMUA order terbuka untuk {symbol}...")
+        params = {"symbol": symbol}
+        return self._send_request("DELETE", "/openOrders", params, signed=True)
+
     def get_current_price(self, symbol: str) -> Optional[float]:
         params = {"symbol": symbol}
         data = self._send_request("GET", "/ticker/price", params)
         return float(data['price']) if data and 'price' in data else None
         
-    def get_all_tickers(self) -> Optional[List[Dict[str, Any]]]:
-        return self._send_request("GET", "/ticker/price")
+    def get_all_tickers(self) -> Optional[Dict[str, float]]:
+        """Mengambil harga ticker terbaru dan mengembalikannya sebagai dict."""
+        tickers_list = self._send_request("GET", "/ticker/price")
+        if tickers_list:
+            return {ticker['symbol']: float(ticker['price']) for ticker in tickers_list}
+        return None
 
     def get_account_info(self) -> Optional[Dict[str, Any]]:
         return self._send_request("GET", "/account", signed=True)
@@ -162,3 +167,16 @@ class BinanceClient:
         if symbol:
             params['symbol'] = symbol
         return self._send_request("GET", "/openOrders", params, signed=True)
+        
+    def get_all_orders(self, symbol: str, limit: int = 100) -> Optional[List[Dict[str, Any]]]:
+        """
+        --- FUNGSI BARU ---
+        Mengambil semua order (termasuk yang sudah terisi/dibatalkan) untuk sebuah simbol.
+        """
+        params = {"symbol": symbol, "limit": limit}
+        return self._send_request("GET", "/allOrders", params, signed=True)
+
+    def get_klines(self, symbol: str, interval: str, limit: int = 100) -> Optional[List[Any]]:
+        """Mengambil data K-lines (candlestick) untuk sebuah simbol."""
+        params = {"symbol": symbol, "interval": interval, "limit": limit}
+        return self._send_request("GET", "/klines", params)

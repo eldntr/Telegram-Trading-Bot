@@ -1,4 +1,4 @@
-# Auto Trade Bot/main.py
+# Auto Trade Bot/main.py (Versi Perbaikan)
 import argparse
 import asyncio
 import os
@@ -8,7 +8,7 @@ from core.routines import (
     run_execute_routine,
     run_status_routine,
     run_autoloop_routine,
-    run_manage_positions_routine # --- BARU: import fungsi manage
+    run_manage_positions_routine
 )
 
 async def main():
@@ -32,8 +32,9 @@ async def main():
 """
     )
     # Argumen Tambahan untuk Kustomisasi
-    parser.add_argument('-l', '--limit', type=int, default=50, help="Jumlah pesan yang di-fetch dari Telegram (default: 50).")
-    parser.add_argument('-d', '--duration', type=int, default=0, help="Durasi (menit) untuk mode 'autoloop'. Set 0 atau tidak diset untuk berjalan selamanya (default: selamanya).")
+    parser.add_argument('-l', '--limit', type=int, default=50, help="Jumlah pesan yang di-fetch per siklus (default: 50).")
+    parser.add_argument('--initial-limit', type=int, default=100, help="Jumlah pesan yang di-fetch pada siklus pertama kali (default: 100).") # <-- BARU
+    parser.add_argument('-d', '--duration', type=int, default=0, help="Durasi (menit) untuk mode 'autoloop'. Set 0 untuk berjalan selamanya (default: selamanya).")
     parser.add_argument('--delay', type=int, default=300, help="Jeda waktu (detik) antar siklus di mode 'autoloop' (default: 300).")
     
     args = parser.parse_args()
@@ -60,7 +61,8 @@ async def main():
         await run_autoloop_routine(
             duration_minutes=args.duration,
             message_limit=args.limit,
-            cycle_delay_seconds=args.delay
+            cycle_delay_seconds=args.delay,
+            initial_fetch_limit=args.initial_limit # <-- BARU
         )
 
 if __name__ == "__main__":
