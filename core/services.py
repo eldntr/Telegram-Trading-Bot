@@ -23,11 +23,8 @@ from telegram.utils import JsonWriter
 
 class SignalService:
     """
-    Bertanggung jawab untuk semua operasi terkait sinyal:
-    - Menghubungkan ke Telegram.
-    - Mengambil pesan.
-    - Mem-parsing pesan menjadi data terstruktur.
-    - Menyimpan sinyal ke database dan file JSON.
+    Bertanggung jawab untuk semua operasi terkait sinyal.
+    Koneksi Telegram kini dikelola dari luar.
     """
     def __init__(self, client_wrapper: TelegramClientWrapper, parser: TelegramMessageParser, mongo: MongoManager):
         self.client_wrapper = client_wrapper
@@ -38,42 +35,39 @@ class SignalService:
 
     async def fetch_and_save_signals(self, limit: int = 50):
         """
-        Menjalankan alur lengkap: fetch, parse, dan simpan sinyal dari Telegram.
+        Menjalankan alur fetch, parse, dan simpan.
+        Tidak lagi mengelola connect/disconnect.
         """
         print(f"Memulai pengambilan {limit} pesan dari Telegram...")
-        parsed_data = []
-        try:
-            # Pastikan klien terhubung sebelum digunakan
-            if not self.client_wrapper.is_connected():
-                await self.client_wrapper.connect()
+        # Asumsikan client sudah terhubung sebelum fungsi ini dipanggil
+        if not self.client_wrapper.is_connected():
+            print("❌ Peringatan: fetch_and_save_signals dipanggil tetapi klien Telegram tidak terhubung.")
+            # Coba hubungkan secara darurat
+            await self.client_wrapper.connect()
 
-            messages = await self.client_wrapper.fetch_historical_messages(config.TARGET_CHAT_ID, limit=limit)
-            if not messages:
-                print("Tidak ada pesan baru yang diambil dari Telegram.")
-                return
 
-            parsed_data = [self.parser.parse_message(msg).to_dict() for msg in messages]
-            self.writer.write(parsed_data) # Simpan semua pesan yang di-parse
+        messages = await self.client_wrapper.fetch_historical_messages(config.TARGET_CHAT_ID, limit=limit)
+        if not messages:
+            print("Tidak ada pesan baru yang diambil dari Telegram.")
+            return
 
-            # Filter hanya untuk sinyal baru
-            new_signals = [m for m in parsed_data if m.get("message_type") == "NewSignal"]
-            if new_signals:
-                self.signal_writer.write(new_signals)
-                self.mongo.save_new_signals(new_signals)
-            else:
-                print("Tidak ada sinyal trading baru yang ditemukan di antara pesan yang diambil.")
+        parsed_data = [self.parser.parse_message(msg).to_dict() for msg in messages]
+        self.writer.write(parsed_data)
 
-        except Exception as e:
-            print(f"❌ Terjadi error dalam rutinitas fetch sinyal: {e}")
-        # Koneksi Telegram tidak ditutup di sini agar bisa digunakan kembali dalam mode autoloop
-
+        new_signals = [m for m in parsed_data if m.get("message_type") == "NewSignal"]
+        if new_signals:
+            # Menggunakan koneksi mongo yang di-pass saat inisialisasi
+            self.mongo.save_new_signals(new_signals)
+            print(f"Berhasil menemukan dan menyimpan {len(new_signals)} sinyal baru ke MongoDB.")
+        else:
+            print("Tidak ada sinyal trading baru yang ditemukan.")
 
 class TradingService:
     """
     Mengelola semua logika yang berhubungan dengan aktivitas trading:
     - Membuat keputusan trading (evaluasi sinyal).
     - Mengeksekusi order (buy/sell).
-    - Mengelola posisi yang sedang berjalan (trailing stop loss, stuck trades).
+    - Mengelola posisi yang sedang berjalan (trailing stop loss, stuck trades, tp partial).
     """
     def __init__(self, strategy: TradingStrategy, trader: Trader, account_manager: AccountManager, mongo: MongoManager, binance_client: BinanceClient):
         self.strategy = strategy
@@ -108,19 +102,18 @@ class TradingService:
 
     def execute_approved_trades(self, decisions_data: Optional[List[Dict[str, Any]]] = None):
         """
-        Mengeksekusi semua keputusan trading yang disetujui ('BUY').
+        Mengeksekusi semua keputusan trading 'BUY' berdasarkan konfigurasi risiko.
         """
         if not all([config.BINANCE_API_KEY, config.BINANCE_API_SECRET]):
             print("Kunci API Binance tidak dikonfigurasi. Melewatkan eksekusi.")
             return
 
-        # Jika data keputusan tidak diberikan sebagai argumen, baca dari file
         if decisions_data is None:
             try:
                 with open(os.path.join("data", "trade_decisions.json"), 'r') as f:
                     decisions_data = json.load(f)
             except (FileNotFoundError, json.JSONDecodeError):
-                print("File trade_decisions.json tidak ditemukan atau kosong. Tidak ada yang dieksekusi.")
+                print("File trade_decisions.json tidak ditemukan. Tidak ada yang dieksekusi.")
                 return
 
         buy_decisions = [d for d in decisions_data if d.get('decision') == 'BUY']
@@ -134,37 +127,46 @@ class TradingService:
         if not account_summary:
             print("❌ Gagal mengambil summary akun, eksekusi dihentikan.")
             return
+            
+        # Hitung posisi terbuka berdasarkan risiko dari DB
+        open_positions = self.mongo.get_all_open_positions()
+        open_positions_by_risk = {"normal": 0, "high": 0}
+        for pos in open_positions:
+            risk = pos.get("risk_level", "normal")
+            open_positions_by_risk[risk] += 1
 
         for decision in buy_decisions:
-            result = self.trader.execute_trade(decision, account_summary)
+            result = self.trader.execute_trade(decision, account_summary, open_positions_by_risk)
             trade_logs.append({"decision_details": decision, "execution_result": result})
 
-            # Jika trade berhasil, simpan posisi ke DB untuk manajemen lebih lanjut
             if result.get('status') == 'SUCCESS':
                 buy_order = result.get('buy_order', {})
                 oco_order = result.get('oco_order', {})
+                risk_level = decision.get("risk_level", "normal").lower()
+                
                 if buy_order and oco_order:
-                    # Hitung harga beli rata-rata
                     executed_qty = float(buy_order.get('executedQty', 0))
-                    cummulative_quote_qty = float(buy_order.get('cummulativeQuoteQty', 0))
-                    avg_price = cummulative_quote_qty / executed_qty if executed_qty > 0 else 0
+                    avg_price = float(buy_order.get('cummulativeQuoteQty', 0)) / executed_qty if executed_qty > 0 else 0
                     
                     position_doc = {
                         "coin_pair": buy_order.get('symbol'),
                         "buy_price": avg_price,
-                        "quantity": executed_qty,
+                        "total_quantity": executed_qty,
+                        "remaining_quantity": executed_qty,
+                        "risk_level": risk_level,
                         "order_list_id": oco_order.get('orderListId'),
-                        "signal_data": decision.get('parsed_signal', {}),
+                        "signal_data": decision,
                         "timestamp": datetime.now(timezone.utc).isoformat(),
-                        "last_tp_level_hit": 0 # TP Level terakhir yang tercapai
+                        "last_tp_level_hit": 0,
+                        "partial_tp_executed": {} # Melacak TP parsial yg sudah dieksekusi
                     }
                     self.mongo.save_open_position(position_doc)
-                # Beri jeda antar eksekusi untuk menghindari rate limit API
+                    open_positions_by_risk[risk_level] += 1 # Tambah hitungan posisi
                 time.sleep(2)
 
         if trade_logs:
             self.log_writer.write(trade_logs)
-
+            
     async def manage_open_positions(self):
         """
         Mengelola posisi aktif: Trailing Stop Loss & penutupan posisi macet.
@@ -187,14 +189,111 @@ class TradingService:
 
             # 1. Sinkronisasi: Periksa apakah posisi masih ada di Binance
             if pos.get('order_list_id') not in [o.get('orderListId') for o in active_binance_orders]:
-                print(f"  -  pozycji {symbol} sudah tertutup di Binance. Menghapus dari pelacakan DB.")
+                print(f"  -  posisi {symbol} sudah tertutup di Binance. Menghapus dari pelacakan DB.")
                 self.mongo.delete_open_position(symbol)
                 await asyncio.sleep(1) # Jeda singkat
                 continue
 
             print(f"\n- Memeriksa posisi aktif: {symbol}...")
+            await self._handle_partial_tp(pos)
             await self._handle_trailing_stop(pos)
             await self._handle_stuck_trade(pos)
+            
+    async def _handle_partial_tp(self, position: Dict[str, Any]):
+        """Logika untuk eksekusi Take Profit (TP) parsial."""
+        symbol = position['coin_pair']
+        signal_data = position.get('signal_data', {})
+        targets = signal_data.get('targets', [])
+        risk_level = position.get("risk_level", "normal")
+        risk_config = self.trader.get_risk_config(risk_level)
+        partial_tp_config = risk_config.get("partial_tp", {})
+        
+        current_price = self.binance_client.get_current_price(symbol)
+        if not current_price:
+            print(f"  - Tidak bisa mendapatkan harga terkini untuk {symbol}. Melewatkan.")
+            return
+
+        last_tp_hit = position.get('last_tp_level_hit', 0)
+        
+        for i in range(last_tp_hit, len(targets)):
+            tp_level = i + 1
+            # Lewati jika persentase jual 0 atau sudah dieksekusi
+            if partial_tp_config.get(tp_level, 0) <= 0 or position.get("partial_tp_executed", {}).get(str(tp_level)):
+                continue
+
+            target_tp = targets[i]
+            if current_price >= target_tp['price']:
+                print(f"  🚀 TP{tp_level} untuk {symbol} tercapai! Harga: {current_price} >= Target: {target_tp['price']}")
+                
+                # Batalkan OCO order lama sebelum menjual
+                oco_id = position.get('order_list_id')
+                if oco_id:
+                    print(f"  - Membatalkan OCO order lama (ID: {oco_id})...")
+                    self.binance_client.cancel_oco_order(symbol, oco_id)
+                    await asyncio.sleep(2) # Beri jeda setelah pembatalan
+
+                # Hitung jumlah yang akan dijual
+                sell_percentage = partial_tp_config[tp_level] / 100.0
+                quantity_to_sell = position['total_quantity'] * sell_percentage
+                
+                print(f"  - Menjual {quantity_to_sell:.8f} {symbol} ({partial_tp_config[tp_level]}% dari total)...")
+                sell_order = self.binance_client.place_market_sell_order(symbol, quantity_to_sell)
+
+                if not sell_order:
+                    print(f"  ❌ GAGAL menjual untuk TP{tp_level}. Akan dicoba lagi di siklus berikutnya.")
+                    # Jika gagal, pasang lagi OCO lama agar aman
+                    # (Implementasi ini bisa ditambahkan jika diperlukan)
+                    break 
+
+                # Update posisi di DB
+                position['remaining_quantity'] -= float(sell_order.get('executedQty', 0))
+                position['last_tp_level_hit'] = tp_level
+                position.setdefault("partial_tp_executed", {})[str(tp_level)] = True
+                
+                # Jika masih ada sisa, buat OCO order baru
+                if position['remaining_quantity'] > 0.000001: # Cek dengan toleransi kecil
+                    try:
+                        # TP baru adalah TP level tertinggi dari config, SL tetap sama
+                        final_tp_level_idx = risk_config["tp_level"] - 1
+                        final_tp_price = targets[final_tp_level_idx]['price']
+                        
+                        sl_level_idx = risk_config["sl_level"]
+                        if sl_level_idx == 0:
+                            sl_price = signal_data['entry_price']
+                        else:
+                            sl_price = signal_data['stop_losses'][sl_level_idx - 1]['price']
+
+                        print(f"  - Sisa {position['remaining_quantity']:.8f}. Membuat OCO baru. TP: {final_tp_price}, SL: {sl_price}")
+                        new_oco = self.binance_client.place_oco_sell_order(
+                            symbol=symbol,
+                            quantity=position['remaining_quantity'],
+                            take_profit_price=final_tp_price,
+                            stop_loss_price=sl_price
+                        )
+                        if new_oco:
+                            position['order_list_id'] = new_oco.get('orderListId')
+                        else:
+                             print(f"  ❌ GAGAL membuat OCO baru. Posisi akan dicek lagi.")
+                             position['order_list_id'] = None # Hapus ID lama
+                    
+                    except (IndexError, KeyError) as e:
+                         print(f"  ❌ GAGAL membuat OCO baru karena error data: {e}")
+                         position['order_list_id'] = None
+
+                else:
+                    print(f"  ✅ Semua posisi untuk {symbol} telah terjual. Menghapus dari DB.")
+                    self.mongo.delete_open_position(symbol)
+                    # Jika sudah habis, hentikan loop untuk posisi ini
+                    self.mongo.save_open_position(position) # Simpan state terakhir sebelum keluar
+                    return 
+
+                # Simpan perubahan ke DB
+                self.mongo.save_open_position(position)
+                await asyncio.sleep(2) # Jeda sebelum lanjut ke TP berikutnya jika ada
+
+            else:
+                # Jika harga belum menyentuh TP saat ini, hentikan pengecekan untuk TP selanjutnya
+                break
 
     async def _handle_trailing_stop(self, position: Dict[str, Any]):
         """Logika untuk menyesuaikan Stop Loss (Trailing SL) saat target profit tercapai."""
@@ -273,9 +372,7 @@ class TradingService:
 
 class AccountService:
     """
-    Menyediakan layanan terkait informasi akun Binance:
-    - Pengecekan saldo.
-    - Pengecekan order terbuka.
+    Menyediakan layanan terkait informasi akun Binance.
     """
     def __init__(self, account_manager: AccountManager):
         self.account_manager = account_manager
@@ -295,17 +392,16 @@ class AccountService:
         if summary:
             self.status_writer.write(summary)
             print(f"✅ Total Estimasi Nilai Akun: ${summary.get('total_balance_usdt', 0):.2f}")
-            print(f"   USDT Tersedia: {summary.get('usdt_free', 0):.2f}")
         else:
             print("❌ Gagal mengambil data saldo.")
 
         print("\n[2/2] Memeriksa Transaksi Berjalan (Open Orders)...")
+        # Mengakses binance_client dari account_manager
         open_orders = self.account_manager.client.get_open_orders()
         if not open_orders:
             print("Tidak ada transaksi berjalan (order aktif) yang ditemukan.")
         else:
             print(f"Ditemukan {len(open_orders)} order aktif.")
-            # Proses data agar lebih mudah dibaca
             processed = [
                 {
                     "symbol": o.get('symbol'), "type": o.get('type'), "side": o.get('side'),

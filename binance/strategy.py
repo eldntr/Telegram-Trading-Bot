@@ -182,4 +182,4 @@ class TradingStrategy:
             else:
                 return TradeDecision(decision="FAIL", coin_pair=coin_pair, reason="Pasar netral & tren lokal juga LEMAH.")
         
-        return TradeDecision(decision="FAIL", coin_pair=coin_pair, reason="Pasar netral & filter altcoin dimatikan.")
+        return self._validate_price_conditions(signal)
