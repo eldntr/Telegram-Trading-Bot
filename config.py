@@ -87,3 +87,6 @@ AVOID_BUYING_AFTER_SL = os.getenv("AVOID_BUYING_AFTER_SL", "True").lower() in ('
 MAX_SL_PERCENTAGE_ENABLED = os.getenv("MAX_SL_PERCENTAGE_ENABLED", "True").lower() in ('true', '1', 't')
 # Ambil nilai absolut dan pastikan negatif untuk perbandingan
 MAX_SL_PERCENTAGE = -abs(float(os.getenv("MAX_SL_PERCENTAGE", "5.0")))
+
+# --- Konfigurasi Stop Loss Level 0 ---
+SL0_PERCENTAGE = float(os.getenv("SL0_PERCENTAGE", "0.995"))

@@ -114,7 +114,7 @@ class Trader:
             # Logika untuk level SL
             if sl_level_idx == 0:
                 # Level 0 berarti SL di harga beli rata-rata aktual
-                sl_price = avg_price * 0.995
+                sl_price = avg_price * config.SL0_PERCENTAGE
             elif sl_level_idx > 0 and (sl_level_idx - 1) < len(decision['stop_losses']):
                 # Level 1 atau 2 menggunakan SL dari sinyal
                 sl_price = decision['stop_losses'][sl_level_idx - 1]['price']
