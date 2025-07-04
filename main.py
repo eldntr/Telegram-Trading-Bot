@@ -95,22 +95,35 @@ async def main():
     """Fungsi utama untuk menginisialisasi dan menjalankan bot."""
     os.makedirs("data", exist_ok=True)
     
-    # Inisialisasi semua klien dan manajer SATU KALI di awal.
+    # --- 1. Memuat Semua Konfigurasi di Satu Tempat ---
+    user_config = config.load_user_config()
+    binance_creds = user_config.get("binance_credentials", {})
+    
+    # Inisialisasi klien dan manajer.
     mongo_manager = MongoManager(config.MONGO_URI, config.MONGO_DB_NAME)
     print("Berhasil terhubung ke MongoDB.")
+
     telegram_client = TelegramClientWrapper(config.SESSION_NAME, config.API_ID, config.API_HASH, config.PHONE_NUMBER)
-    binance_client = BinanceClient(config.BINANCE_API_KEY, config.BINANCE_API_SECRET)
+    binance_client = BinanceClient(binance_creds.get("api_key"), binance_creds.get("api_secret"))
     
+    # ---2. Inject Konfigurasi ke dalam Service & Strategy ---
     parser = TelegramMessageParser()
     account_manager = AccountManager(binance_client)
-    trader = Trader(binance_client)
-    strategy = TradingStrategy(binance_client)
+    trader = Trader(binance_client, user_config)
+    strategy = TradingStrategy(binance_client, user_config.get("strategy_filters", {}))
 
     # Kumpulkan semua service dalam satu dictionary untuk kemudahan akses
     services = {
-        'signal': SignalService(telegram_client, parser, mongo_manager),
-        'trading': TradingService(strategy, trader, account_manager, mongo_manager, binance_client),
-        'account': AccountService(account_manager)
+        'signal': SignalService(telegram_client, parser, mongo_manager, config.TARGET_CHAT_ID),
+        'trading': TradingService(
+            strategy=strategy,
+            trader=trader,
+            account_manager=account_manager,
+            mongo=mongo_manager,
+            binance_client=binance_client,
+            user_config=user_config
+        ),
+        'account': AccountService(account_manager, user_config)
     }
 
     # Konfigurasi CLI yang sama seperti yang Anda gunakan sebelumnya

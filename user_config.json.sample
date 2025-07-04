@@ -1,0 +1,57 @@
+{
+  "binance_credentials": {
+    "api_key": "YOUR_BINANCE_API_KEY",
+    "api_secret": "YOUR_BINANCE_API_SECRET"
+  },
+  "risk_management": {
+    "normal_risk": {
+      "enabled": true,
+      "max_positions": 2,
+      "usdt_amount_per_trade": 35.0,
+      "sl_level": 1,
+      "tp_level": 4,
+      "partial_tp": {
+        "1": 10.0, "2": 20.0, "3": 30.0, "4": 40.0
+      }
+    },
+    "high_risk": {
+      "enabled": true,
+      "max_positions": 1,
+      "usdt_amount_per_trade": 10.0,
+      "sl_level": 0,
+      "tp_level": 2,
+      "partial_tp": {
+        "1": 50.0, "2": 50.0, "3": 0.0, "4": 0.0
+      }
+    }
+  },
+  "strategy_filters": {
+    "prioritize_normal_risk": true,
+    "filter_old_signals": {
+      "enabled": true,
+      "validity_minutes": 45
+    },
+    "avoid_buying_after_sl": {
+      "enabled": true
+    },
+    "max_sl_percentage": {
+      "enabled": true,
+      "limit": -5.0
+    },
+    "btc_trend_filter": {
+      "enabled": true,
+      "timeframe": "4h",
+      "sma_period": 50
+    },
+    "altcoin_trend_filter": {
+      "enabled": true
+    }
+  },
+  "position_management": {
+    "stuck_trade": {
+      "enabled": false,
+      "duration_hours": 6
+    },
+    "sl0_percentage_from_entry": 0.995
+  }
+}

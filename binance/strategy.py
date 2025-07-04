@@ -2,7 +2,6 @@
 
 from typing import Dict, Any, Optional
 from datetime import datetime, timezone, timedelta
-import config
 from .client import BinanceClient
 from .models import TradeDecision, TargetInfo, StopLossInfo
 import numpy as np
@@ -11,8 +10,9 @@ class TradingStrategy:
     """
     Mengevaluasi sinyal trading dan membuat keputusan berdasarkan strategi Filter Berlapis.
     """
-    def __init__(self, binance_client: BinanceClient):
+    def __init__(self, binance_client: 'BinanceClient', strategy_config: Dict[str, Any]):
         self.client = binance_client
+        self.config = strategy_config
 
     def _calculate_rsi(self, prices, period=14) -> Optional[float]:
         if len(prices) < period + 1:
@@ -70,10 +70,11 @@ class TradingStrategy:
         latest_sl_order = max(filled_sl_orders, key=lambda o: o['updateTime'])
         sl_time = datetime.fromtimestamp(latest_sl_order['updateTime'] / 1000, tz=timezone.utc)
         time_since_sl = datetime.now(timezone.utc) - sl_time
-        validity_minutes = timedelta(minutes=config.SIGNAL_VALIDITY_MINUTES)
+        validity_minutes = timedelta(minutes=self.config.get("filter_old_signals", {}).get("validity_minutes", 45))
 
         if time_since_sl < validity_minutes:
-            print(f"🚨 PERINGATAN: SL terdeteksi dalam periode validitas ({config.SIGNAL_VALIDITY_MINUTES} menit). Pembelian akan dicegah.")
+            validity_mins = self.config.get("filter_old_signals", {}).get("validity_minutes", 45)
+            print(f"🚨 PERINGATAN: SL terdeteksi dalam periode validitas ({validity_mins} menit). Pembelian akan dicegah.")
             return True
         
         print("SL terakhir di luar periode validitas. Aman untuk melanjutkan.")
@@ -120,38 +121,44 @@ class TradingStrategy:
             return TradeDecision(decision="FAIL", coin_pair=None, reason="Sinyal tidak memiliki 'coin_pair'.")
 
         # --- Filter 1: Risk Level ---
-        if config.PRIORITIZE_NORMAL_RISK and signal.get("risk_level", "").strip().lower() != 'normal':
+        if self.config.get("prioritize_normal_risk", False) and signal.get("risk_level", "").strip().lower() != 'normal':
             reason = f"Sinyal dilewati karena Risk Level bukan 'Normal'."
             return TradeDecision(decision="FAIL", coin_pair=coin_pair, reason=reason, risk_level=signal.get("risk_level"))
         
         # --- Filter 2: Sinyal Kedaluwarsa ---
-        if config.FILTER_OLD_SIGNALS_ENABLED:
+        filter_old_signals = self.config.get("filter_old_signals", {})
+        if filter_old_signals.get("enabled", True):
             try:
                 signal_time = datetime.fromisoformat(signal.get("timestamp"))
                 age_minutes = (datetime.now(timezone.utc) - signal_time).total_seconds() / 60
-                if age_minutes > config.SIGNAL_VALIDITY_MINUTES:
+                validity_minutes = filter_old_signals.get("validity_minutes", 45)
+                if age_minutes > validity_minutes:
                     return TradeDecision(decision="FAIL", coin_pair=coin_pair, reason=f"Sinyal kedaluwarsa ({age_minutes:.1f} menit lalu).")
             except (TypeError, ValueError):
                 return TradeDecision(decision="FAIL", coin_pair=coin_pair, reason="Timestamp sinyal tidak valid.")
 
         # --- Filter 3: Riwayat Stop Loss ---
-        if config.AVOID_BUYING_AFTER_SL and self._check_for_recent_sl(coin_pair):
-            return TradeDecision(decision="FAIL", coin_pair=coin_pair, reason=f"Pembelian dicegah karena SL terdeteksi dalam {config.SIGNAL_VALIDITY_MINUTES} menit terakhir.")
+        avoid_buying_after_sl = self.config.get("avoid_buying_after_sl", {})
+        if avoid_buying_after_sl.get("enabled", True) and self._check_for_recent_sl(coin_pair):
+            validity_mins = self.config.get("filter_old_signals", {}).get("validity_minutes", 45)
+            return TradeDecision(decision="FAIL", coin_pair=coin_pair, reason=f"Pembelian dicegah karena SL terdeteksi dalam {validity_mins} menit terakhir.")
 
         # --- Filter 4 (BARU): Batas Maksimal Persentase SL ---
-        if config.MAX_SL_PERCENTAGE_ENABLED:
+        max_sl_config = self.config.get("max_sl_percentage", {})
+        if max_sl_config.get("enabled", True):
             try:
                 entry_price = float(signal["entry_price"])
                 sl_price = float(signal["stop_losses"][0]["price"])
                 
                 # Hitung persentase SL. Hasilnya akan negatif.
                 sl_percentage = ((sl_price - entry_price) / entry_price) * 100
+                max_sl_limit = max_sl_config.get("limit", -5.0)
                 
-                print(f"🔍 Memeriksa SL: Sinyal SL {sl_percentage:.2f}%, Batas {config.MAX_SL_PERCENTAGE:.2f}%")
+                print(f"🔍 Memeriksa SL: Sinyal SL {sl_percentage:.2f}%, Batas {max_sl_limit:.2f}%")
 
                 # Bandingkan. Contoh: SL -7% < Batas -5% -> Gagal.
-                if sl_percentage < config.MAX_SL_PERCENTAGE:
-                    reason = f"SL ({sl_percentage:.2f}%) lebih besar dari batas ({config.MAX_SL_PERCENTAGE:.2f}%)"
+                if sl_percentage < max_sl_limit:
+                    reason = f"SL ({sl_percentage:.2f}%) lebih besar dari batas ({max_sl_limit:.2f}%)"
                     print(f"❌ {reason}")
                     return TradeDecision(decision="FAIL", coin_pair=coin_pair, reason=reason)
 
@@ -163,7 +170,12 @@ class TradingStrategy:
         print(f"\n✅ Sinyal {coin_pair} lolos semua pra-filter. Melanjutkan ke analisis pasar...")
         
         # Analisis Kondisi Pasar (BTC dan Altcoin)
-        btc_condition = self._analyze_asset_condition("BTCUSDT", config.BTC_FILTER_TIMEFRAME, config.BTC_FILTER_SMA_PERIOD)
+        btc_filter_config = self.config.get("btc_trend_filter", {})
+        btc_condition = self._analyze_asset_condition(
+            "BTCUSDT", 
+            btc_filter_config.get("timeframe", "4h"), 
+            btc_filter_config.get("sma_period", 50)
+        )
         if btc_condition["error"]:
             return TradeDecision(decision="FAIL", coin_pair=coin_pair, reason=btc_condition["error"])
         
@@ -171,9 +183,13 @@ class TradingStrategy:
             print("🟢 Pasar AMAN. Menjalankan validasi kondisi harga...")
             return self._validate_price_conditions(signal)
         
-        if config.ALTCOIN_TREND_FILTER_ENABLED:
+        if self.config.get("altcoin_trend_filter", {}).get("enabled", True):
             print(f"🟡 Pasar NETRAL. Memeriksa tren lokal {coin_pair}...")
-            alt_condition = self._analyze_asset_condition(coin_pair, config.BTC_FILTER_TIMEFRAME, config.BTC_FILTER_SMA_PERIOD)
+            alt_condition = self._analyze_asset_condition(
+                coin_pair, 
+                btc_filter_config.get("timeframe", "4h"), 
+                btc_filter_config.get("sma_period", 50)
+            )
             if alt_condition["error"]:
                 return TradeDecision(decision="FAIL", coin_pair=coin_pair, reason=alt_condition["error"])
             if alt_condition["is_above_sma"]:

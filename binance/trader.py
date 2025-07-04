@@ -2,20 +2,21 @@
 import time
 from typing import Dict, Any, Tuple
 from .client import BinanceClient
-import config
 
 class Trader:
     """
     Bertanggung jawab untuk mengeksekusi trade berdasarkan keputusan yang sudah dianalisis.
     """
-    def __init__(self, client: BinanceClient):
+    def __init__(self, client: BinanceClient, user_config: Dict[str, Any]):
         self.client = client
+        self.user_config = user_config
 
     def get_risk_config(self, risk_level: str) -> Dict[str, Any]:
         """Mengembalikan konfigurasi yang sesuai berdasarkan level risiko."""
+        risk_management = self.user_config.get("risk_management", {})
         if risk_level and risk_level.lower() == 'high':
-            return config.HIGH_RISK_CONFIG
-        return config.NORMAL_RISK_CONFIG
+            return risk_management.get("high_risk", {})
+        return risk_management.get("normal_risk", {})
 
     def can_execute_trade(self, decision: Dict[str, Any], account_summary: Dict[str, Any], open_positions_by_risk: Dict[str, int]) -> Tuple[bool, str]:
         """
@@ -114,7 +115,8 @@ class Trader:
             # Logika untuk level SL
             if sl_level_idx == 0:
                 # Level 0 berarti SL di harga beli rata-rata aktual
-                sl_price = avg_price * config.SL0_PERCENTAGE
+                sl0_percentage = self.user_config.get("position_management", {}).get("sl0_percentage_from_entry", 0.995)
+                sl_price = avg_price * sl0_percentage
             elif sl_level_idx > 0 and (sl_level_idx - 1) < len(decision['stop_losses']):
                 # Level 1 atau 2 menggunakan SL dari sinyal
                 sl_price = decision['stop_losses'][sl_level_idx - 1]['price']

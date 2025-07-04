@@ -4,7 +4,6 @@ import time
 import asyncio
 import json
 import os
-import config
 from datetime import datetime, timezone, timedelta
 from typing import List, Dict, Any, Optional
 
@@ -26,10 +25,11 @@ class SignalService:
     Bertanggung jawab untuk semua operasi terkait sinyal.
     Koneksi Telegram kini dikelola dari luar.
     """
-    def __init__(self, client_wrapper: TelegramClientWrapper, parser: TelegramMessageParser, mongo: MongoManager):
+    def __init__(self, client_wrapper: TelegramClientWrapper, parser: TelegramMessageParser, mongo: MongoManager, target_chat_id: int):
         self.client_wrapper = client_wrapper
         self.parser = parser
         self.mongo = mongo
+        self.target_chat_id = target_chat_id
         self.writer = JsonWriter("parsed_messages.json")
         self.signal_writer = JsonWriter("new_signals.json")
 
@@ -45,8 +45,7 @@ class SignalService:
             # Coba hubungkan secara darurat
             await self.client_wrapper.connect()
 
-
-        messages = await self.client_wrapper.fetch_historical_messages(config.TARGET_CHAT_ID, limit=limit)
+        messages = await self.client_wrapper.fetch_historical_messages(self.target_chat_id, limit=limit)
         if not messages:
             print("Tidak ada pesan baru yang diambil dari Telegram.")
             return
@@ -69,12 +68,13 @@ class TradingService:
     - Mengeksekusi order (buy/sell).
     - Mengelola posisi yang sedang berjalan (trailing stop loss, stuck trades, tp partial).
     """
-    def __init__(self, strategy: TradingStrategy, trader: Trader, account_manager: AccountManager, mongo: MongoManager, binance_client: BinanceClient):
+    def __init__(self, strategy: TradingStrategy, trader: Trader, account_manager: AccountManager, mongo: MongoManager, binance_client: BinanceClient, user_config: Dict[str, Any]):
         self.strategy = strategy
         self.trader = trader
         self.account_manager = account_manager
         self.mongo = mongo
         self.binance_client = binance_client
+        self.user_config = user_config
         self.decisions_writer = JsonWriter("trade_decisions.json")
         self.log_writer = JsonWriter("trade_log.json")
 
@@ -83,7 +83,8 @@ class TradingService:
         Mengambil sinyal baru dari DB, mengevaluasinya menggunakan strategi,
         dan menyimpan keputusan trading.
         """
-        if not all([config.BINANCE_API_KEY, config.BINANCE_API_SECRET]):
+        binance_creds = self.user_config.get("binance_credentials", {})
+        if not all([binance_creds.get("api_key"), binance_creds.get("api_secret")]):
             print("Kunci API Binance tidak dikonfigurasi. Melewatkan rutinitas keputusan.")
             return []
 
@@ -104,7 +105,8 @@ class TradingService:
         """
         Mengeksekusi semua keputusan trading 'BUY' berdasarkan konfigurasi risiko.
         """
-        if not all([config.BINANCE_API_KEY, config.BINANCE_API_SECRET]):
+        binance_creds = self.user_config.get("binance_credentials", {})
+        if not all([binance_creds.get("api_key"), binance_creds.get("api_secret")]):
             print("Kunci API Binance tidak dikonfigurasi. Melewatkan eksekusi.")
             return
 
@@ -171,7 +173,8 @@ class TradingService:
         """
         Mengelola posisi aktif: Trailing Stop Loss & penutupan posisi macet.
         """
-        if not all([config.BINANCE_API_KEY, config.BINANCE_API_SECRET]):
+        binance_creds = self.user_config.get("binance_credentials", {})
+        if not all([binance_creds.get("api_key"), binance_creds.get("api_secret")]):
             print("Manajemen posisi dilewati: Kunci API tidak ditemukan.")
             return
 
@@ -350,8 +353,15 @@ class TradingService:
         symbol = position['coin_pair']
         time_since_open = datetime.now(timezone.utc) - datetime.fromisoformat(position['timestamp'])
         
-        # Aturan: jika posisi terbuka lebih dari 24 jam dan belum mencapai TP1
-        if time_since_open > timedelta(hours=config.STUCK_TRADE_HOURS_THRESHOLD) and position.get('last_tp_level_hit', 0) == 0:
+        # Ambil konfigurasi stuck trade dari user_config
+        stuck_trade_config = self.user_config.get("position_management", {}).get("stuck_trade", {})
+        if not stuck_trade_config.get("enabled", False):
+            return
+            
+        stuck_threshold_hours = stuck_trade_config.get("duration_hours", 24)
+        
+        # Aturan: jika posisi terbuka lebih dari threshold jam dan belum mencapai TP1
+        if time_since_open > timedelta(hours=stuck_threshold_hours) and position.get('last_tp_level_hit', 0) == 0:
             print(f"  - ⚠️ PERINGATAN: Posisi {symbol} terdeteksi macet ({time_since_open.total_seconds() / 3600:.1f} jam). Menutup posisi...")
             
             # 1. Batalkan OCO order yang ada
@@ -374,8 +384,9 @@ class AccountService:
     """
     Menyediakan layanan terkait informasi akun Binance.
     """
-    def __init__(self, account_manager: AccountManager):
+    def __init__(self, account_manager: AccountManager, user_config: Dict[str, Any]):
         self.account_manager = account_manager
+        self.user_config = user_config
         self.status_writer = JsonWriter("account_status.json")
         self.orders_writer = JsonWriter("open_orders_status.json")
 
@@ -383,7 +394,8 @@ class AccountService:
         """
         Memeriksa status akun (saldo) dan order terbuka, lalu menyimpannya ke file.
         """
-        if not all([config.BINANCE_API_KEY, config.BINANCE_API_SECRET]):
+        binance_creds = self.user_config.get("binance_credentials", {})
+        if not all([binance_creds.get("api_key"), binance_creds.get("api_secret")]):
             print("Kunci API tidak ditemukan. Melewatkan pengecekan status.")
             return
 
